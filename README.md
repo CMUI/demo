@@ -1,4 +1,3 @@
-demo
-====
+# CMUI Demo
 
-CMUI's demo site, full of samples and use case.
+CMUI's demo site, full of samples and use cases.
