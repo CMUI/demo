@@ -1,10 +1,10 @@
-/** @charset 'utf-8'; **/
+@charset "utf-8";
 /* --------------------------------------------- */
 /** The Beginning **/
 body {
 	font: 16px/1.5 Arial, Helvetica, sans-serif;
 	color: black;
-	aa background: white;
+	/*background: white;*/
 }
 section {
 	padding: 10px;
@@ -57,7 +57,7 @@ a {
 body.dpl-demo-font section dl {
 	margin-right: -10px;
 	line-height: 1.5;
-	aa padding-left: 5px;
+	/*padding-left: 5px;*/
 }
 body.dpl-demo-font section dt {
 	clear: both;
@@ -138,7 +138,7 @@ body.dpl-demo-icon dd {
 /* --------------------------------------------- */
 /** demo - btn **/
 body.dpl-demo-btn {
-	aa max-width: 400px;
+	/*max-width: 400px;*/
 }
 .cmBtn .cmIcon {
 	background-color: silver;
@@ -155,8 +155,8 @@ section.suite .cmBtnSuite {
 /* --------------------------------------------- */
 /** demo - list **/
 body.dpl-demo-list {
-	aa max-width: 500px;  /** debug **/
-	aa padding-bottom: 100px;
+	/*max-width: 500px;*/  /** debug **/
+	/*padding-bottom: 100px;*/
 }
 body.dpl-demo-list .cmList .cmIcon {
 	background-color: silver;
@@ -173,7 +173,7 @@ body.dpl-demo-list code {
 /* --------------------------------------------- */
 /** demo - page **/
 body.dpl-demo-page {
-	aa max-width: 320px;  /** debug **/
+	/*max-width: 320px;*/  /** debug **/
 }
 body.dpl-demo-page section .cmPageNavBar {
 	margin-left: -10px;
@@ -196,7 +196,7 @@ body.dpl-widget-overlay section.mask .content {
 /* --------------------------------------------- */
 /** widget - gallery **/
 body.dpl-widget-gallery {
-	aa background: brown;
+	/*background: brown;*/
 }
 body.dpl-widget-gallery .cmGalleryFrame {
 	width: 300px;
@@ -292,7 +292,7 @@ body.dpl-test-event-touch section.pinch .test b,
 body.dpl-test-event-device section.viewport-event .test b,
 body.dpl-test-event-device section.shake .test b {
 	display: inline;
-	aa margin-right: 5px;
+	/*margin-right: 5px;*/
 	padding: 2px 3px;
 	font-weight: 400;
 	white-space: nowrap;
