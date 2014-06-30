@@ -24,6 +24,14 @@ a {
 }
 
 /* --------------------------------------------- */
+/** demo - index **/
+body.dpl-index section.version-info p {
+	font-size: 14px;
+	text-align: center;
+}
+
+
+/* --------------------------------------------- */
 /** demo - font **/
 .verdana {font-family: Verdana;}
 .arial {font-family: Arial;}
