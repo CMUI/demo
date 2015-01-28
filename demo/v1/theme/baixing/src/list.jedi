@@ -1,0 +1,183 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'list'
+		- $data->pageTitle = 'List'
+
+	#main
+		article
+			h1 "概述"
+			div.intro.cmText
+				p
+					"列表元素有一些基本的结构约定。"
+				ul
+					li
+						"列表元素必须具有 "
+						code ".cmList"
+						" 这个基础类名，然后通过其它辅助性的类名来指定细节样式和属性。"
+					li
+						"列表项必须有一个（通常也应该只有一个）子元素作为其“内容元素”。"
+		article
+			h1 "内容"
+			section
+				h2 "普通列表"
+				div.intro
+					p
+						"纯展示列表的列表项的内容元素可以是 "
+						code "<p>"
+						" 或 "
+						code "<div>"
+						" 元素。"
+					pre > code
+						'ul.cmList
+							    li > p
+							    li > p
+							    li > div
+				ul.cmList
+					li
+						p "列表项"
+					li
+						p "列表项"
+					li
+						div "列表项"
+			section
+				h2 "链接列表"
+				div.intro
+					p "我们用得比较多的其实是链接列表，它是很常见的 UI 元素。"
+					p "链接列表的列表项的内容元素是链接元素。"
+					pre > code
+						'ul.cmList
+							    li > a
+							    li > a
+				ul.cmList
+					li
+						a @href="#"
+							"列表项"
+				ul.cmList
+					li
+						a @href="#"
+							"列表项"
+					li
+						a @href="#"
+							"列表项"
+		article
+			h1 "列表项的右箭头"
+			section
+				div.intro
+					p
+						"给需要加右箭头的列表项添加 "
+						code ".cmRightArrow"
+						" 类名。"
+					p "请记住只有链接列表项才会显示出右箭头——这听起来像个限制，但其实很合理。因为，如果这个列表项没有动作，只是纯展示，那它也是不需要有右箭头的。"
+					pre > code
+						'ul.cmList
+							    li > a
+							    li.cmRightArrow > a
+				ul.cmList
+					li
+						a @href="#"
+							"列表项"
+					li.cmRightArrow
+						a @href="#"
+							"列表项"
+			hr
+			section
+				div.intro
+					p
+						"如果恰好一个列表中的每个列表项都需要右箭头，那把 "
+						code ".cmRightArrow"
+						" 类名加给列表元素就可以了。"
+					pre > code
+						'ul.cmList.cmRightArrow
+							    li > a
+							    li > a
+				ul.cmList.cmRightArrow
+					li
+						a @href="#"
+							"列表项"
+					li
+						a @href="#"
+							"列表项"
+
+		article
+			h1 "列表项有徽章"
+			section
+				div.intro
+					p
+						"给列表项添加 "
+						code "data-badge"
+						" 属性可以生成一个徽章。"
+					pre > code
+						'ul.cmList
+							    li @data-badge="999"
+							        p
+							    li @data-badge="999999"
+							        a
+							    li.cmRightArrow @data-badge="999"
+							        a
+				ul.cmList
+					li @data-badge="999"
+						p "列表项"
+					li @data-badge="999999"
+						a @href="#"
+							"列表项"
+					li.cmRightArrow @data-badge="999"
+						a @href="#"
+							"列表项"
+
+		article
+			h1 "列表项有值"
+			section
+				div.intro
+					p
+						"给列表项添加 "
+						code "data-badge"
+						" 属性可以生成一个徽章。"
+					pre > code
+						'ul.cmList
+							    li @data-value="foobar"
+							        p
+							    li @data-value="foo"
+							        a
+							    li.cmRightArrow @data-value="bar"
+							        a
+				ul.cmList
+					li @data-value="列表项的值"
+						p "列表项"
+					li @data-value="列表项的值"
+						a @href="#"
+							"列表项"
+					li.cmRightArrow @data-value="列表项的值很长很长很长很长很长很长很长很长很长很长"
+						a @href="#"
+							"列表项很长很长很长很长很长很长"
+
+		article
+			h1 "列表项有图标"
+			section
+				div.intro
+					p
+						"图标元素应该是列表项内容元素的第一个子元素。有点拗口，看结构吧："
+					pre > code
+						'ul.cmList
+							    li > a @href="#"
+							        i.cmIcon.cmX20
+							        "foobar"
+							    ...
+
+				ul.cmList.icon-size
+					li
+						a @href="#"
+							i.cmIcon.cmX20
+							"试试各种尺寸 20x20"
+					li
+						a @href="#"
+							i.cmIcon.cmX30
+							"试试各种尺寸 30x30"
+					li
+						a @href="#"
+							i.cmIcon.cmX40
+							"试试各种尺寸 40x40"
+					li
+						a @href="#"
+							i.cmIcon.cmX50
+							"试试各种尺寸 50x50"

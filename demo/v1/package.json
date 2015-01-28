@@ -1,0 +1,29 @@
+{
+  "name": "cmui-demo",
+  "version": "0.0.0",
+  "description": "Demo site for CMUI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "gulp clean",
+    "css": "gulp css",
+    "js": "gulp js",
+    "jedi": "gulp jedi",
+    "watch": "gulp watch",
+    "build": "gulp clean-build"
+  },
+  "author": "cssmagic <cssmagic.cn@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "nib": "^1.1.0"
+  },
+  "devDependencies": {
+    "underscore": "^1.7.0",
+    "del": "^1.1.0",
+    "gulp": "3.*",
+    "gulp-jedi": "*",
+    "gulp-stylus": "1.*",
+    "gulp-concat": "^2.4.1",
+    "stylus": "^0.49.3"
+  }
+}

@@ -20,5 +20,8 @@ bower_components/
 *.zip
 *.gz
 
+*.php
+dist/
+
 *.sh
 *.bat

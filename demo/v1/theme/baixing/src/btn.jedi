@@ -1,0 +1,249 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'btn'
+		- $data->pageTitle = 'Button'
+
+	#main
+		article.summary
+			h1 "概述"
+			div.intro
+				p "目前仅可通过预定义的类名（而不是 mixin）来设置按钮样式。"
+				p
+					"所有按钮都应该添加 "
+					code ".cmBtn"
+					" 类名，并根据需要添加其它辅助类名，以设置其尺寸、颜色等样式。"
+
+			div.intro
+				p "所有按钮默认显示为块级，可以按需对特定按钮指定宽度属性。"
+				p "不建议在文本段落中混入按钮。"
+
+		article.btn-size
+			h1 "按钮尺寸"
+			div
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnXSmall @href="#"
+						"超小按钮"
+				p.code > code ".cmBtn.cmBtnXSmall"
+			div
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnSmall @href="#"
+						"小按钮"
+				p.code > code ".cmBtn.cmBtnSmall"
+			div
+				p.cmBtnWrapper
+					a.cmBtn @href="#"
+						"普通按钮"
+				p.code > code ".cmBtn"
+			div
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnLarge @href="#"
+						"大按钮"
+				p.code > code ".cmBtn.cmBtnLarge"
+			div
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnXLarge @href="#"
+						"超大按钮"
+				p.code > code ".cmBtn.cmBtnXLarge"
+
+		article.btn-type
+			h1 "场景类型"
+			div.btn-default
+				p.cmBtnWrapper
+					a.cmBtn @href="#"
+						"常规按钮"
+				p.code > code ".cmBtn"
+			div.btn-success
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnInfo @href="#"
+						"信息按钮"
+				p.code > code ".cmBtn.cmBtnInfo"
+			div.btn-success
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnSuccess @href="#"
+						"成功按钮"
+				p.code > code ".cmBtn.cmBtnSuccess"
+			div.btn-danger
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnDanger @href="#"
+						"危险按钮"
+				p.code > code ".cmBtn.cmBtnDanger"
+			div.btn-warning
+				p.cmBtnWrapper
+					a.cmBtn.cmBtnWarning @href="#"
+						"警告按钮"
+				p.code > code ".cmBtn.cmBtnWarning"
+
+		article.form-btn
+			h1 "表单按钮"
+			div.intro
+				p
+					"以上的各个类名除了可以用于 "
+					code "<a>"
+					" 元素外，还可用于 "
+					code "<input>"
+					" 和 "
+					code "<button>"
+					" 这样的表单按钮元素。"
+				p
+					"表单内的按钮应该优先选择表单元素来实现。"
+			div.intro
+				p
+					"表单按钮天生具备收缩包围的特性，在不指定宽度时，它们只呈现最小宽度。为使它们呈现出通长的块级效果，已对它们设置 "
+					code 'width: 100%;'
+					"。"
+			div
+				p.cmBtnWrapper
+					input.cmBtn @type="button" @value="input 元素"
+			div
+				p.cmBtnWrapper
+					button.cmBtn @type="button"
+						"button 元素"
+
+		article.btn-status
+			h1 "按钮状态"
+			section.btn-status-hover
+				h2
+					"悬停状态"
+				div.intro
+					p
+						"鼠标悬停时可见此状态，不需要修改结构。"
+					p "触屏设备不支持此状态。"
+			section.btn-status-active
+				h2
+					"按下状态"
+				div.intro
+					p
+						"鼠标按下或手指触摸时可见此状态，不需要修改结构。"
+					p "Android 2.X 不支持此状态。"
+				div.intro
+					p "以下按钮可供把玩："
+				div
+					p
+						a.cmBtn @href="#"
+							"按钮"
+
+			section.btn-status-force-active
+				h2
+					"选中状态"
+				div.intro
+					p
+						"当某个按钮具备开关状态时，可以通过添加或除移 "
+						code ".active"
+						" 类来实现效果。"
+					p
+						"请注意，这个类和 CSS 伪类 "
+						code ":active"
+						" 不仅在含义上有区别，样式上也有差异。"
+				div
+					p
+						a.cmBtn.active @href="#"
+							".cmBtn.active"
+
+			section.btn-status-disabled
+				h2
+					"禁用状态"
+				div.intro.cmText
+					p
+						"表单按钮（"
+						code "<button>"
+						"、"
+						code "<input>"
+						" 元素）具有 "
+						code "disabled"
+						" 属性时，可见此状态。"
+					p
+						"对于由 "
+						code "<a>"
+						" 元素实现的按钮，需要添加 "
+						code ".disabled"
+						" 类。（注意：此时链接仍可响应点击动作。）"
+					--p
+						"如需动态切换按钮的禁用状态，请使用以下 JavaScript API（开发中）："
+						ul
+							li > code "CMUI.btn.disable(btn)"
+							li > code "CMUI.btn.enable(btn)"
+				div.intro.cmText
+					p '上述两种按钮禁用状态的结构和效果分别如下：'
+					pre > code
+						'a.cmBtn.disabled
+						'button.cmBtn @disabled
+				-- 禁用
+				div
+					p
+						a.cmBtn.disabled @href="#"
+							".cmBtn.disabled"
+				div
+					p
+						button.cmBtn @disabled
+							".cmBtn:disabled"
+				-- 禁用 + 激活
+				div
+					p
+						a.cmBtn.active.disabled @href="#"
+							".cmBtn.active.disabled"
+				div
+					p
+						button.cmBtn.active @disabled
+							".cmBtn.active:disabled"
+
+		article.btn-multiple
+			h1
+				"按钮的排列组合"
+			section.btn-line
+				h2
+					"并排的按钮"
+				div.intro
+					p "如果需要呈现并排的按钮，请使用以下结构："
+					pre > code
+						'.cmBtnLine
+							    .cmBtn
+							    .cmBtn
+							    .cmBtn
+					p
+						"如果需要调整各按钮的宽度，建议使用 "
+						code "max-width"
+						" 和 "
+						code "min-width"
+						" 属性。"
+				div.cmBtnLine
+					a.cmBtn @href="#"
+						"按钮"
+					a.cmBtn @href="#"
+						"按钮"
+					a.cmBtn @href="#"
+						"按钮"
+				div.cmBtnLine
+					button.cmBtn
+						"表单按钮"
+					button.cmBtn
+						"表单按钮"
+					button.cmBtn
+						"表单按钮"
+
+			hr
+			section.btn-group
+				h2
+					"按钮组合"
+				div.intro
+					p
+						"如果需要将多个按钮合并为一组，请使用以下结构："
+					pre > code
+						'.cmBtnGroup
+							    .cmBtn
+							    .cmBtn
+							    .cmBtn
+				div.cmBtnGroup
+					a.cmBtn @href="#"
+						"按钮"
+					a.cmBtn @href="#"
+						"按钮"
+					a.cmBtn @href="#"
+						"按钮"
+				div.cmBtnGroup
+					button.cmBtn
+						"表单按钮"
+					button.cmBtn
+						"表单按钮"
+					button.cmBtn
+						"表单按钮"

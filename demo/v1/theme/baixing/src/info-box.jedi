@@ -1,0 +1,46 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'info-box'
+		- $data->pageTitle = 'Info Box'
+
+	#main
+		article.info-box
+			h1 "信息框"
+			section.as-layout-wrapper
+				h2 "作为布局容器"
+				div.intro
+					p
+						"对块级元素使用 "
+						code ".cmInfoBox"
+						" 类名即可。"
+					p "下面是一个信息框作为布局容器的例子："
+					pre > code
+						'div.cmInfoBox
+							    p
+							    a.cmBtn
+				div.cmInfoBox
+					p "这里是按钮的提示语："
+					a.cmBtn @href="#"
+						'示例按钮'
+			section.as-text-wrapper
+				h2 "作为文本容器"
+				div.intro
+					p
+						"如果需要内部的元素呈现出文本格式，则需要再追加 "
+						code ".cmText"
+						" 类名。"
+					p "下面是一个信息框作为文本容器的例子："
+					pre > code
+						'div.cmInfoBox.cmText
+							    h2
+							    p
+							    h3
+							    p
+							    p
+				div.cmInfoBox.cmText
+					h2 "二级标题"
+					p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+					h3 "三级标题"
+					p "段落文字段落文字段落文字段落文字。"
+					p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"

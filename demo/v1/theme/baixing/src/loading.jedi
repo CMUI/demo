@@ -1,0 +1,51 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'loading'
+		- $data->pageTitle = 'Loading'
+
+	#main
+		article.loading
+			h1
+				"Loading 提示"
+			div.intro
+				p "Loading 标志一种很好的暗示用户等待的方式，可以显著提升用户的耐心。"
+				p "当某个操作可能耗时超过 100ms 时，就应该使用 Loading 提示。当某个操作耗时超过 10 秒且仍然存活时，应在 Loading 提示上更新提示语，以提示用户当前操作仍在进行。"
+			section.normal
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-show"
+							"显示"
+					dd > code 'CMUI.loading.show()'
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-hide"
+							"隐藏"
+					dd > code 'CMUI.loading.hide()'
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-fade-in"
+							"淡入"
+					dd > code 'CMUI.loading.fadeIn()'
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-fade-out"
+							"淡出"
+					dd > code 'CMUI.loading.fadeOut()'
+			section.with-text
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-show-with-text"
+							"带文字显示"
+					dd > code "CMUI.loading.show('str')"
+					dd > code "CMUI.loading.fadeIn('str')"
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-update-text"
+							"更新文字"
+					dd > code "CMUI.loading.updateText('new-str')"
+				dl
+					dt
+						a.cmBtn @href="#" @data-action="loading-clear-text"
+							"清除文字"
+					dd > code "CMUI.loading.updateText('')"

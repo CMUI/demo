@@ -1,0 +1,113 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'text'
+		- $data->pageTitle = 'Text'
+
+	#main
+		article.text
+			h1 "通用文本格式"
+			div.intro
+				p
+					"在文本块的容器元素上加 "
+					code ".cmText"
+					" 类，可以令其内部的标题、列表、段落元素显示出其自身的语义格式。"
+				p
+					"在 "
+					code "<ul>"
+					" 和 "
+					code "<ol>"
+					" 元素上直接应用 "
+					code ".cmText"
+					" 类也可以令其语义格式生效。"
+			hr
+			section.cmText
+				h1 "一级标题"
+				h2 "二级标题"
+				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+				h3 "三级标题"
+				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+				h2 "二级标题"
+				h3 "三级标题"
+				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+			hr
+			section.cmText
+				h2 "二级标题"
+				ol
+					li "有序列表"
+					li "有序列表"
+				h2 "二级标题"
+				h3 "三级标题"
+				ol
+					li "有序列表"
+					li "有序列表"
+				h3 "三级标题"
+				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+				ol
+					li "有序列表"
+					li "有序列表"
+				ol
+					li "有序列表"
+					li "有序列表"
+				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+			hr
+			section.cmText
+				ul
+					li
+						"无序列表
+						ul
+							li
+								"无序列表
+								ul
+									li "无序列表"
+									li "无序列表"
+									li "无序列表"
+							li "无序列表"
+					li "无序列表"
+
+		article.theme-text
+			h1 "主题专有文本格式"
+			section.mixin
+				h2 "预定义 Mixin"
+				div.intro
+					p
+						"网站内文本内容的行高为 1.6（建议使用变量 "
+						code "$line-height-text"
+						" 指定行高）。如果文本元素符合以下预定义格式，请使用对应的 mixin。"
+					p "绿色虚线框用于示意行高。"
+				dl.bx-headline
+					dt > code "bx-headline()"
+					dd "大标题 （18px 常规字重）"
+				dl.bx-headline-minor
+					dt > code "bx-headline-minor()"
+					dd "小标题 （16px 粗体）"
+				dl.bx-text
+					dt > code "bx-text()"
+					dd "全局通用文本 （15px 常规字重）"
+				dl.bx-text-minor
+					dt > code "bx-text-minor()"
+					dd "次级内容 （13px 常规字重）"
+
+			section.link
+				h2 "链接元素"
+				dl
+					dt > code "a"
+					dd > a @href="#"
+						"链接文本"
+					dd.intro "文本段落中出现的链接，字号与普通文本一致。"
+
+		article.label
+			h1 "标签"
+			div.intro
+				p
+					"对行内元素使用 "
+					code ".cmLabel"
+					" 类名即可。"
+			dl
+				dt > code ".cmLabel"
+				dd > span.cmLabel
+					"普通标签"
+			dl
+				dt > code ".cmLabel.cmLabelSuccess"
+				dd > span.cmLabel.cmLabelSuccess
+					"成功标签"
