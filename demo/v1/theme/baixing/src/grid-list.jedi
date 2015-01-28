@@ -1,0 +1,129 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'grid-list'
+		- $data->pageTitle = 'Grid List'
+
+	#main
+		article.summary
+			h1 "概述"
+			div.intro
+				p "网格列表主要以行列式呈现的列表。"
+				p
+					"网格列表元素必须具有 "
+					code ".cmGridList"
+					" 这个基础类名。"
+				pre > code
+					'ul.cmGridList
+						    li > a
+						    li > a
+						    li > a
+
+		article.line-style
+			h1 "网格列表样式"
+			section
+				h2 "默认有分隔线"
+				ul.cmGridList
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+			section
+				h2 "无有分隔线"
+				div.intro
+					p
+						"给列表元素增加 "
+						code ".cmGridListNoBorder"
+						" 类名即可去除分隔线。"
+					p
+						"绿色虚线框用于示意元素范围。"
+				ul.cmGridList.cmGridListNoBorder
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+
+		article.column-width
+			h1 "网格列表的列数"
+			section
+				h2
+					"默认两列"
+				ul.cmGridList
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+			section
+				h2
+					"多列 "
+				div.intro
+					p "可以通过指定列表项的宽度来实现对列数的控制。比如下面的 CSS 代码将列数设置为（最多）4 列，并确保每列最多可显示 6 个汉字。"
+					pre > code
+						'#my-grid-list > li {
+							    width: 25%;
+							    min-width: 6em;
+							}
+
+		article.selected-item
+			h1 "当前项的样式"
+			div.intro
+				p
+					"给当前列表项增加 "
+					code ".selected"
+					" 类名即可。"
+			ul.cmGridList
+				li > a @href="#"
+					"列表项"
+				li.selected > a @href="#"
+					"当前列表项"
+				li > a @href="#"
+					"列表项"
+				li > a @href="#"
+					"列表项"
+
+		article.form
+			h1 "用于表单"
+			div.intro
+				p "可用于表单中的单选框、复选框等。"
+				pre > code
+					'form > ul.cmGridList
+						    li > label > input
+						    li > label > input
+						    li > label > input
+			ul.cmGridList
+				li > label
+					input @name='radio' @type='radio'
+					"表单选项"
+				li > label
+					input @name='radio' @type='radio'
+					"表单选项"
+				li > label
+					input @name='checkbox' @type='checkbox'
+					"表单选项"
+				li > label
+					input @name='checkbox' @type='checkbox'
+					"表单选项"

@@ -1,0 +1,157 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'page'
+		- $data->pageTitle = 'Page'
+
+	#main
+		article.cmSubview
+			h1 "概述"
+			div.intro
+				p > strong
+					"本页面的 HTML 结构是为演示效果而特别编写的，不具有实际参考意义。所有元素的 HTML 结构约定请以各元素的相关描述为准。"
+			div.intro
+				p
+					"一个 HTML 页面可能包含多个功能页面（包括主页面及其子页面，比如 L2V）。每个功能页面都应该被放置在单独的 "
+					code "body > article.cmSubview"
+					" 元素中。"
+				p "因此整个 HTML 文档的结构应该是这样的（以 L2V 为例）："
+				pre > code
+					'html
+						    head
+						    body
+						        article.cmSubview#listing-view  //主页面
+						        article.cmSubview#vad-view      //子页面
+						        article.cmSubview#other-view    //子页面
+			div.intro
+				p
+					"每个页面内的主要结构应该是这样的："
+				pre > code
+					'article.cmSubview  //页面级容器
+						    header  //页头
+						    main    //页面主体
+						    footer  //页脚
+			div.intro
+				p
+					"页面内的各个区块详见如下各小节。"
+
+		article.cmSubview.header
+			h1 "页头"
+			div.intro
+				p "页头可以包含一个或多个导航元素。"
+				p "通常页头内唯一的导航元素就是导航栏（导航栏的具体结构和样式参见下一节）。"
+				pre > code
+					'header  //页头区域
+						    nav.cmNavBar  //导航栏
+			header
+				nav.cmNavBar
+					h1 "（这里是导航栏）"
+					div.cmBtnWrapper.cmNavBarLeft
+						a.cmBtn @href="#action"
+							"导航栏按钮"
+					div.cmBtnWrapper.cmNavBarRight
+						a.cmBtn @href="#action"
+							"导航栏按钮"
+
+			div.intro
+				p "除了导航栏之外，你还可以在页头中添加其它导航元素。"
+				pre > code
+					'header  //页头区域
+						    nav.cmNavBar  //导航栏
+						    nav           //其它导航元素
+			header
+				nav.cmNavBar
+					h1 "（这里是导航栏）"
+					div.cmBtnWrapper.cmNavBarLeft
+						a.cmBtn @href="#action"
+							"导航栏按钮"
+					div.cmBtnWrapper.cmNavBarRight
+						a.cmBtn @href="#action"
+							"导航栏按钮"
+				nav
+					"（这里是另一个导航元素）"
+
+		article.cmSubview.nav-bar
+			h1 "导航栏"
+			div.intro
+				p "导航栏内部的结构约定如下："
+				pre > code
+					'nav.cmNavBar  //导航栏
+						    h1                              //导航栏标题
+						    div.cmBtnWrapper.cmNavBarLeft   //左按钮容器
+						        a.cmBtn.cmBtnBack           //后退按钮
+						    div.cmBtnWrapper.cmNavBarRight  //右按钮容器
+						        a.cmBtn                     //动作按钮
+			header
+				nav.cmNavBar
+					h1 "页面标题"
+					div.cmBtnWrapper.cmNavBarLeft
+						a.cmBtn.cmBtnBack @href="#back"
+							"返回按钮"
+					div.cmBtnWrapper.cmNavBarRight
+						a.cmBtn @href="#action"
+							"动作按钮"
+
+			div.intro
+				p "导航栏按钮可选以下样式："
+				ul.cmText
+					li > code '.cmBtnInfo'
+					li > code '.cmBtnSuccess'
+					li > code '.cmBtnDanger'
+			header
+				nav.cmNavBar
+					h1 "页面标题"
+					div.cmBtnWrapper.cmNavBarLeft
+						a.cmBtn @href="#action"
+							"Default"
+					div.cmBtnWrapper.cmNavBarRight
+						a.cmBtn.cmBtnInfo @href="#action"
+							"Info"
+
+			header
+				nav.cmNavBar
+					h1 "页面标题"
+					div.cmBtnWrapper.cmNavBarLeft
+						a.cmBtn.cmBtnSuccess @href="#action"
+							"Success"
+					div.cmBtnWrapper.cmNavBarRight
+						a.cmBtn.cmBtnDanger @href="#action"
+							"Danger"
+
+		article.cmSubview.main
+			h1 "页面主体"
+			div.intro
+				p
+					"在下面的图示中，外层的红色虚线框是 "
+					code "<main>"
+					" 元素占据的范围，内层的绿色虚线框是 "
+					code "<main>"
+					" 的内容区的范围。"
+				p
+					"可以看出，由于 "
+					code "<main>"
+					" 元素存在水平内边距，默认情况其内部的块级元素左右两侧距离页面边缘存在一定的空隙（见 Block 1）。"
+				p
+					"如果需要生成一个通长的元素（见 Block 2），可以使用 "
+					code "full-width-block()"
+					" 这个 mixin。"
+			main
+				h2 "页面主体"
+				div.content-range
+					h3 "内容区"
+					div.block
+						"Block 1"
+					div.block.full-width
+						"Block 2"
+						p > code "full-width-block()"
+			div.intro
+				p
+					code "<main>"
+					" 元素与页头页脚之间没有设置任何垂直边距。如果页面主体内容需要与页头页尾保持距离，可以通过设置内容元素（如 Block 1、Block 2）的垂直 "
+					code "margin"
+					" 来实现。"
+
+		article.cmSubview.footer
+			h1 "页脚"
+			div.intro
+				p "未对页脚进行任何样式定义，请自定处理。"

@@ -1,0 +1,84 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'icon'
+		- $data->pageTitle = 'Icon'
+
+	#main
+		article
+			h1 "概述"
+			section
+				h2 "结构约定"
+				div.intro
+					p
+						"所有图标建议采用 "
+						code "i.cmIcon"
+						" 这样的结构。"
+			section
+				h2 "初始样式"
+				div.intro.cmText
+					p
+						code ".cmIcon"
+						" 类具有以下初始样式："
+					ul
+						li '显示为块级'
+						li '水平居中（此特性可能会取消）'
+						li '无浮动，无定位属性'
+						li '溢出隐藏'
+						li '内部文字自动隐藏（可在其内部包含文本，以增强可访问性）'
+			section
+				h2 "图标尺寸"
+				div.intro.cmText
+					p "添加以下类名来指定图标的尺寸。"
+					ul
+						li
+							code ".cmX20"
+							" - 20px × 20px"
+						li
+							code ".cmX30"
+							" - 30px × 30px"
+						li
+							code ".cmX40"
+							" - 40px × 40px"
+						li
+							code ".cmX50"
+							" - 50px × 50px"
+		article.system-icon
+			h1 "系统图标"
+			div.intro
+				p "以下图标仅供 CMUI 组件内部使用。"
+			dl
+				dt > i.cmIcon.cmX50.loading-black-bg
+				dd '黑底白图的 loading 标志'
+			dl
+				dt > i.cmIcon.cmX20.msg-info
+				dd '普通提示'
+			dl
+				dt > i.cmIcon.cmX20.msg-success
+				dd '成功提示'
+			dl
+				dt > i.cmIcon.cmX20.msg-error
+				dd '错误提示'
+			dl
+				dt > i.cmIcon.cmX20.msg-forbidden
+				dd '禁止提示'
+			dl
+				dt > i.cmIcon.cmX20.msg-warning
+				dd '警告提示'
+
+		article.custom-icon
+			h1 "自定义图标"
+			div.intro.cmText
+				p "CMUI 未对图标的实现做限制，选择权完全交给业务层。"
+				p
+					"以下图标方案都可与 "
+					code "i.cmIcon"
+					" 正常整合："
+				ul
+					li '背景图片（以及 CSS Sprites）'
+					li 'Icon Font'
+					li 'SVG Icon'
+				p
+					"图标尺寸可自行定义，也可以采用上述 "
+					code ".cmX20"
+					" 等尺寸类。"
