@@ -1,5 +1,5 @@
 #base
-	- $data = new ArrayObject([], ArrayObject::ARRAY_AS_PROPS);
+	- $data = new ArrayObject(array(), ArrayObject::ARRAY_AS_PROPS)
 	- $data->pathStatic = '/demo/v1/static/baixing'
 	- $data->pathCSS = $data->pathStatic . '/css/dist'
 	- $data->pathJS = $data->pathStatic . '/js/dist'
@@ -60,4 +60,4 @@ html @lang='zh-cmn-Hans'
 		#defer-scripts
 			script @src="{pathJS}/lib.js"
 			script @src="{pathJS}/cmui.js"
-			script @src="{pathJS}/../src/demo.js"
+			script @src="{pathJS}/demo.js"

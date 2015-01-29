@@ -1,5 +1,10 @@
 var jsSrcList = {}
 
+jsSrcList['lib'] = [
+	'./bower_components/zepto/zepto.js',
+	'./bower_components/underscore/underscore.js',
+	'./bower_components/underscore.ext/dist/underscore.ext.js',
+]
 jsSrcList['cmui'] = [
 	'./bower_components/cmui/src/js/adapter-trad/_intro.js',
 	'./bower_components/cmui/src/js/adapter-trad/_var.js',
@@ -10,10 +15,8 @@ jsSrcList['cmui'] = [
 	'./bower_components/cmui/src/js/overlay-loading.js',
 	'./bower_components/cmui/src/js/adapter-trad/_outro.js',
 ]
-jsSrcList['lib'] = [
-	'./bower_components/zepto/zepto.js',
-	'./bower_components/underscore/underscore.js',
-	'./bower_components/underscore.ext/dist/underscore.ext.js',
+jsSrcList['demo'] = [
+	'./static/baixing/js/src/demo.js',
 ]
 
 module.exports = {

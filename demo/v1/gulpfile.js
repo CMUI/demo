@@ -7,6 +7,7 @@ var del = require('del')
 var concat = require('gulp-concat')
 
 var path = require('path')
+
 var PATH_STATIC_ROOT = './static/baixing'
 var PATH_DIST_JS = path.join(PATH_STATIC_ROOT, 'js/dist/')
 var PATH_DIST_CSS = path.join(PATH_STATIC_ROOT, 'css/dist/')
@@ -15,15 +16,25 @@ var FILES_DIST_CSS = path.join(PATH_DIST_CSS, '*.css')
 var PATH_SRC_CSS = path.join(PATH_STATIC_ROOT, 'css/src/')
 var FILES_SRC_CSS = path.join(PATH_SRC_CSS, '*.styl')
 
+var PATH_THEME_ROOT = './theme'
+var PATH_DIST_BAIXING = path.join(PATH_THEME_ROOT, 'baixing')
+var FILES_DIST_BAIXING = path.join(PATH_DIST_BAIXING, '*.php')
+var PATH_SRC_BAIXING = path.join(PATH_THEME_ROOT, 'baixing/src')
+var FILES_SRC_BAIXING = path.join(PATH_SRC_BAIXING, '*.jedi')
+
+
 gulp.task('default', ['clean-build'])
 gulp.task('build', ['js', 'css', 'jedi'])
 gulp.task('clean-build', ['clean'], function () {
 	gulp.start('build')
 })
 
-
 gulp.task('clean', function () {
-	del([FILES_DIST_JS, FILES_DIST_CSS], {
+	del([
+		FILES_DIST_JS,
+		FILES_DIST_CSS,
+		FILES_DIST_BAIXING,
+	], {
 		force: true
 	}, function (err, deletedFiles) {
 		console.log('[clean] deleted:')
@@ -66,10 +77,6 @@ gulp.task('css', function () {
 })
 
 var jedi = require('gulp-jedi')
-var PATH_THEME_ROOT = './theme'
-var PATH_DIST_BAIXING = path.join(PATH_THEME_ROOT, 'baixing')
-var PATH_SRC_BAIXING = path.join(PATH_THEME_ROOT, 'baixing/src')
-var FILES_SRC_BAIXING = path.join(PATH_SRC_BAIXING, '*.jedi')
 gulp.task('jedi', function () {
 	gulp.src(FILES_SRC_BAIXING)
 		.pipe(jedi())
