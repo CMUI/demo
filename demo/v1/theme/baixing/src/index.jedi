@@ -4,6 +4,13 @@
 		- $data->pageId = 'index'
 
 	#main
+		article.version-info
+			div.cmInfoBox.cmText
+				p '以下演示页面适用于 CMUI v0.10。'
+				p
+					a @href="https://github.com/CMUI/CMUI" @target="_blank"
+						'View on GitHub'
+
 		article
 			h1 "基础风格"
 			ul.content
