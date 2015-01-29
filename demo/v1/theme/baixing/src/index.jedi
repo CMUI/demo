@@ -5,7 +5,7 @@
 
 	#main
 		article.version-info
-			div.cmInfoBox.cmText
+			div
 				p '以下演示页面适用于 CMUI v0.10。'
 				p
 					a @href="https://github.com/CMUI/CMUI" @target="_blank"
