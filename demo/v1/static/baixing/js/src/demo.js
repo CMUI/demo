@@ -77,3 +77,36 @@ void function () {
 	//init
 	demo.init()
 }()
+
+void function () {
+	'use strict'
+
+	var tracker = {
+		isProduction: false,
+		init: function () {
+			this._getEnv()
+			this._setGA()
+		},
+		_getEnv: function () {
+			this.isProduction = location.host === 'cmui.net'
+		},
+		_setGA: function () {
+			if (!this.isProduction) return
+			var _gaq = window._gaq = window._gaq || []
+			_gaq.push(['_setAccount', 'UA-17208063-8'])
+			_gaq.push(['_trackPageview'])
+
+			var url = '//www.google-analytics.com/ga.js'
+			var elemScript = document.createElement('script')
+			elemScript.src = url
+			var elemOldScript = document.getElementsByTagName('script')[0]
+			elemOldScript.parentNode.insertBefore(elemScript, elemOldScript)
+		}
+	}
+
+	//exports
+	window.tracker = tracker
+
+	//init
+	tracker.init()
+}()
