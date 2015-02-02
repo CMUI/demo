@@ -49,11 +49,11 @@
 						'ul.cmList
 							    li > a
 							    li > a
+							    li > a
 				ul.cmList
 					li
 						a @href="#"
 							"列表项"
-				ul.cmList
 					li
 						a @href="#"
 							"列表项"
@@ -131,8 +131,8 @@
 				div.intro
 					p
 						"给列表项添加 "
-						code "data-badge"
-						" 属性可以生成一个徽章。"
+						code "data-value"
+						" 属性可以在列表项右侧显示一个值。"
 					pre > code
 						'ul.cmList
 							    li @data-value="foobar"

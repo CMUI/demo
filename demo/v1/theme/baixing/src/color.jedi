@@ -5,8 +5,11 @@
 		- $data->pageTitle = 'Color'
 
 	#main
-		article.system-color
-			h1 "通用颜色"
+		article.color
+			h1 "颜色"
+			div.intro
+				p "设计师已指定以下颜色，应通过变量来使用这些颜色。"
+
 			dl.color-fg
 				dt '[深灰]'
 				dd > code '$color-fg'
@@ -28,8 +31,8 @@
 				dd > code '$color-fg-highlight'
 				dd '高亮文本颜色'
 
-		article
-			h1 "主题专有颜色"
+			hr
+
 			dl.bx-color-gray
 				dt '[灰]'
 				dd > code '$bx-color-gray'
