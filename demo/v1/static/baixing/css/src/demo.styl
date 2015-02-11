@@ -37,7 +37,7 @@ page-wrapper()
 	background-color $color-bg
 section-wrapper()
 	box-sizing border-box
-	padding 15px $page-content-h-padding 25px
+	padding 15px $page-content-padding-h 25px
 	border-bottom 1px solid #ccc
 
 body
@@ -47,7 +47,7 @@ body
 	> div.cmSubview
 		page-wrapper()
 		> header
-			padding 15px $page-content-h-padding
+			padding 15px $page-content-padding-h
 			text-align center
 			h1
 				font-size 2em
@@ -273,7 +273,7 @@ body > div.cmSubview > article
 
 	article.main
 		main
-			padding 0 ($page-content-h-padding - 1)
+			padding 0 ($page-content-padding-h - 1)
 			border-dashed(brown)
 			full-width-block()
 			text-align center
