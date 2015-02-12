@@ -10,7 +10,7 @@
     "js": "gulp js",
     "jedi": "gulp jedi",
     "watch": "gulp watch",
-    "build": "gulp clean-build"
+    "dist": "gulp dist"
   },
   "author": "cssmagic <cssmagic.cn@gmail.com>",
   "license": "MIT",

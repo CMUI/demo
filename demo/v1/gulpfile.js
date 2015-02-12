@@ -25,7 +25,7 @@ var FILES_SRC_BAIXING = path.join(PATH_SRC_BAIXING, '*.jedi')
 
 gulp.task('default', ['clean-build'])
 gulp.task('build', ['js', 'css', 'jedi'])
-gulp.task('clean-build', ['clean'], function () {
+gulp.task('dist', ['clean'], function () {
 	gulp.start('build')
 })
 
@@ -48,9 +48,6 @@ gulp.task('js', function () {
 	jsFilenames.forEach(function (filename) {
 		if (!filename || filename.indexOf('_') === 0) return
 		var src = jsSrcList[filename]
-//		src = src.map(function (item) {
-//			return path.join(PATH_STATIC_ROOT, item)
-//		})
 		gulp.src(src)
 			.pipe(concat(filename + '.js'))
 			.pipe(gulp.dest(PATH_DIST_JS))
@@ -98,7 +95,7 @@ gulp.task('jedi', function () {
 })
 
 
-gulp.task('watch', function () {
+gulp.task('watch', ['css-dev', 'jedi'], function () {
 	gulp.watch(FILES_SRC_CSS, ['css-dev'])
 	gulp.watch('./bower_components/cmui/src/**/*.styl', ['css-dev'])
 	gulp.watch(FILES_SRC_BAIXING, ['jedi'])
