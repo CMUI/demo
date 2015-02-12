@@ -65,8 +65,22 @@ gulp.task('css', function () {
 	var styl = stylus({
 		use: [nib()],
 		import: 'nib',
-	//	linenos: true,
+		linenos: false,
 		compress: true,
+		errors: true,
+	})
+	gulp.src(FILES_SRC_CSS)
+		.pipe(styl)
+		.pipe(gulp.dest(PATH_DIST_CSS))
+	console.log('[css] compiling stylus: ' + FILES_SRC_CSS)
+	console.log('[css] output css: ' + PATH_DIST_CSS)
+})
+gulp.task('css-dev', function () {
+	var styl = stylus({
+		use: [nib()],
+		import: 'nib',
+		linenos: true,
+		compress: false,
 		errors: true,
 	})
 	gulp.src(FILES_SRC_CSS)
@@ -85,6 +99,7 @@ gulp.task('jedi', function () {
 
 
 gulp.task('watch', function () {
-	gulp.watch(FILES_SRC_CSS, ['css'])
+	gulp.watch(FILES_SRC_CSS, ['css-dev'])
+	gulp.watch('./bower_components/cmui/src/**/*.styl', ['css-dev'])
 	gulp.watch(FILES_SRC_BAIXING, ['jedi'])
 })
