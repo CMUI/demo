@@ -4,8 +4,6 @@
 
 /* --------------------------------------------- */
 /** common **/
-.cmText
-	font-size inherit
 
 //code
 $code-color-bg = #eee
@@ -44,19 +42,19 @@ body
 	line-height $line-height-text
 	background #ccc
 	
-	> div.cmSubview
-		page-wrapper()
-		> header
-			padding 15px $page-content-padding-h
-			text-align center
-			h1
-				font-size 2em
-		> footer
-			section-wrapper()
-			padding-bottom 15px
-			text-align center
+.cmSubview
+	page-wrapper()
+	> header
+		padding 15px $page-content-padding-h
+		text-align center
+		h1
+			font-size 2em
+	> footer
+		section-wrapper()
+		padding-bottom 15px
+		text-align center
 
-body > div.cmSubview > article
+.cmSubview > article
 	section-wrapper()
 	> h1
 		font-size 1.75em
