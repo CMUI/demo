@@ -1,0 +1,63 @@
+#base
+	- $data = new ArrayObject(array(), ArrayObject::ARRAY_AS_PROPS)
+	- $data->pathStatic = 'http://s.baixing.net/w'
+	- $data->pathCSS = $data->pathStatic
+	- $data->pathJS = $data->pathStatic
+	- $data->pageId = ''
+	- $data->pageTitle = ''
+	- $data->metaKeywords = 'CMUI, UI, Framework, CSS, Mobile, Web'
+	- $data->metaDescription = 'CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。'
+
+html @lang='zh-cmn-Hans'
+	head
+		meta @charset='utf-8'
+		title
+			#title
+				:if pageTitle
+					= pageTitle
+					' - '
+				'CMUI Demo'
+
+		#head-meta
+			meta @name='viewport'
+				@content='initial-scale=1, user-scalable=no'
+		#head-seo
+			meta if metaKeywords
+				@name='keywords'
+				@content="{metaKeywords}"
+			meta if metaDescription
+				@name='description'
+				@content="{metaDescription}"
+
+		#stylesheets
+			link @rel='stylesheet' @href="{pathCSS}/demo.css"
+		#head-scripts
+
+	body @id="{pageId}"
+		#content
+			div.cmSubview.cmSubviewRoot
+				#header
+					header
+						h1
+							#heading
+								:if pageTitle
+									= pageTitle
+								:else
+									'CMUI Demo'
+				#main
+
+				#back
+					article.back if pageTitle
+						a @href="index.php"
+							"<< 返回首页"
+				#footer
+					footer
+						:unsafe '&copy; CMUI.NET'
+
+		#subviews
+		#widgets
+
+		#defer-scripts
+			script @src="{pathJS}/cmui-v2-libs.js"
+			script @src="{pathJS}/cmui-v2.js"
+			script @src="{pathJS}/cmui-v2-demo.js"

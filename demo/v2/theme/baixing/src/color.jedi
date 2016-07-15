@@ -1,0 +1,51 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'color'
+		- $data->pageTitle = 'Color'
+
+	#main
+		article.color
+			h1 "颜色"
+			div.intro
+				p "设计师已指定以下颜色，应通过变量来使用这些颜色。"
+
+			dl.color-fg
+				dt '[深灰]'
+				dd > code '$color-fg'
+				dd '常规文本颜色'
+			dl.color-fg-minor
+				dt '[浅灰]'
+				dd > code '$color-fg-minor'
+				dd '次要文本颜色'
+			dl.color-fg-light
+				dt '[中灰]'
+				dd > code '$color-fg-light'
+				dd '次级文本中的强调颜色'
+			dl.color-fg-dark
+				dt '[黑灰]'
+				dd > code '$color-fg-dark'
+				dd '特别强调文本颜色'
+			dl.color-fg-highlight
+				dt '[高亮]'
+				dd > code '$color-fg-highlight'
+				dd '高亮文本颜色'
+
+			hr
+
+			dl.bx-color-gray
+				dt '[灰]'
+				dd > code '$bx-color-gray'
+				dd '图片边框颜色'
+			dl.bx-color-light-gray
+				dt '[浅灰]'
+				dd > code '$bx-color-light-gray'
+				dd '一般作为分割线颜色'
+			dl.bx-color-x-light-gray
+				dt '[超浅灰]'
+				dd > code '$bx-color-x-light-gray'
+				dd '一般作为区块底色'
+			dl.bx-color-active-green
+				dt '[激活绿]'
+				dd > code '$bx-color-active-green'
+				dd '已激活项目的颜色'

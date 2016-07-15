@@ -1,0 +1,323 @@
+
+////////////////////  demo  ////////////////////
+@import '../../node_modules/cmui-v2/src/css/theme/baixing/index'
+
+/* --------------------------------------------- */
+/** common **/
+
+//code
+$code-color-bg = #eee
+$code-color-border = #ddd
+code
+	padding 1px 3px
+	font-family Consolas, Menlo, monospace
+	background $code-color-bg
+	border 1px solid $code-color-border
+	border-radius 2px
+pre code
+	display block
+	padding 0
+	background-color transparent
+	border none
+pre
+	padding 5px 10px
+	background $code-color-bg
+	border 1px solid $code-color-border
+	border-left-width 2px
+	border-radius 2px
+	-webkit-overflow-scrolling touch
+
+/* --------------------------------------------- */
+/** layout **/
+page-wrapper()
+	margin 0 auto
+	max-width 640px
+	background-color $color-bg
+section-wrapper()
+	box-sizing border-box
+	padding 15px $page-content-padding-h 25px
+	border-bottom 1px solid #ccc
+
+body
+	line-height $line-height-text
+	background #ccc
+
+.cmSubview
+	page-wrapper()
+	> header
+		padding 15px $page-content-padding-h
+		text-align center
+		h1
+			font-size 2em
+	> footer
+		section-wrapper()
+		padding-bottom 15px
+		text-align center
+
+.cmSubview > article
+	section-wrapper()
+	> h1
+		font-size 1.75em
+		margin-bottom 0.5em
+
+	div.intro
+		&
+			padding 0.75em 1em
+			font-size 13px
+			border-left 3px solid $bx-color-light-gray
+			background-color $bx-color-x-light-gray
+		&:not(:last-child)
+			margin-bottom 1.5em
+		pre:not(:first-child)
+		ul:not(:first-child)
+		p:not(:first-child)
+			margin-top 0.5em
+		pre:not(:last-child)
+		ul:not(:last-child)
+		p:not(:last-child)
+			margin-bottom 0.5em
+	section
+		&:not(:last-child)
+			margin-bottom 1.5em
+		h2
+			font-size 1.25em
+			margin-bottom 0.5em
+	hr
+		margin 1em 0 1.25em
+		color $bx-color-light-gray
+
+	&.back
+		padding 0
+		a
+			display inline-block
+			padding 15px
+
+/* --------------------------------------------- */
+/** index **/
+#index
+	article
+		h2
+			font-size 1.25em
+			margin-left 0.5em
+		ul.content + h2
+				margin-top 1em
+
+		ul.content
+			padding-left 2em
+			list-style outside disc
+			li > a
+				display inline-block
+				font-size 1.25em
+				padding 0.5em
+
+	.version-info
+		padding-top 25px
+		padding-bottom 25px
+		p
+			text-align center
+
+/* --------------------------------------------- */
+/** color **/
+#color
+	dl:not(:last-child)
+		margin-bottom 1em
+	dt
+		hide-text()
+		display block
+		margin-bottom 0.5em
+		size 100px 30px
+		border 2px solid #999
+
+.bx-color-x-light-gray dt
+	background-color $bx-color-x-light-gray
+.bx-color-light-gray dt
+	background-color $bx-color-light-gray
+.bx-color-gray dt
+	background-color $bx-color-gray
+.bx-color-active-green dt
+	background-color $bx-color-active-green
+
+.color-fg-minor dt
+	background-color $color-fg-minor
+.color-fg-light dt
+	background-color $color-fg-light
+.color-fg dt
+	background-color $color-fg
+.color-fg-dark dt
+	background-color $color-fg-dark
+.color-fg-highlight dt
+	background-color $color-fg-highlight
+
+/* --------------------------------------------- */
+/** text **/
+#text
+	dl:not(:last-child)
+		margin-bottom 1.5em
+	dt
+		margin-bottom 5px
+	dd
+		border-dashed(green)
+		& + dd
+			margin-top 0.25em
+		&.intro
+			border none
+
+	.bx-headline dd
+		bx-headline()
+	.bx-headline-minor dd
+		bx-headline-minor()
+	.bx-text dd
+		bx-text()
+	.bx-text-minor dd
+		bx-text-minor()
+
+/* --------------------------------------------- */
+/** icon **/
+#icon
+	dl:not(:last-child)
+		margin-bottom 1em
+	dt
+		display inline-block
+		margin-bottom 0.5em
+		border 2px solid #999
+		i.cmIcon.cmX50.loading-black-bg
+			background-color black
+
+/* --------------------------------------------- */
+/** btn **/
+#btn
+	article
+		section
+			&:not(:last-child)
+				margin-bottom 2em
+		div:not(:last-child):not(.intro)
+			margin-bottom 0.5em
+	.btn-size
+	.btn-type
+		.cmBtnWrapper + p.code
+			margin-top 0.25em
+/*
+	.btn-size
+	.btn-type
+	.form-btn
+	.btn-status
+		.cmBtnWrapper .cmBtn
+			width 80%
+*/
+
+/* --------------------------------------------- */
+/** info box **/
+#info-box
+	article.info-box
+		div.cmInfoBox
+			p + a.cmBtn
+				margin-top 5px
+
+
+/* --------------------------------------------- */
+/** list **/
+#list
+	ul.cmList
+		& + div.intro
+			margin-top 2em
+
+		&.icon-size .cmIcon
+			background-color green
+
+
+/* --------------------------------------------- */
+/** grid list **/
+#grid-list
+	.cmGridList
+		line-height $line-height-ui
+	.cmGridListNoBorder
+		border-dashed(green)
+
+
+/* --------------------------------------------- */
+/** msg box **/
+#msg-box
+	article.msg-box
+		div.cmMsgBox + div.intro
+			margin-top 2em
+
+
+/* --------------------------------------------- */
+/** page **/
+#page
+	article > header,
+	article > main,
+	article > footer
+		& + div.intro
+			margin-top 2em
+
+	article.header
+	article.nav-bar
+		& > header
+			full-width-block()
+		& > header + header
+			margin-top 0.5em
+	article.header
+		nav:not(:first-child)
+			text-center()
+			height $nav-bar-height
+			line-height $nav-bar-height
+
+	article.footer
+		/*padding-bottom 0*/
+		& > footer
+			full-width-block()
+			//border-dashed(green)
+
+	article.main
+		main
+			padding 0 ($page-content-padding-h - 1)
+			border-dashed(brown)
+			full-width-block()
+			text-align center
+			h2, h3
+				margin 10px
+				text-align left
+			& > h2
+				margin-left 0
+			div.content-range
+				margin 10px 0
+				border-dashed(green)
+			div.block
+				margin 10px 0 20px
+				padding 20px
+				background $bx-color-x-light-gray
+				clearfix()
+				&.full-width
+					background $bx-color-light-gray
+					full-width-block()
+
+/* --------------------------------------------- */
+/** overlay **/
+#mask
+#loading
+	dl
+		clearfix()
+	dl:not(:last-child)
+		margin-bottom 1em
+	dt
+		display inline-block
+		vertical-align middle
+		margin-right 1em
+		min-width 23%
+	dd
+		display inline-block
+		vertical-align middle
+#mask
+	.cmMask
+		pointer-events none
+#loading
+	article.loading
+		section.with-text
+			dt
+				min-width 50%
+				margin-bottom 0.5em
+			dd
+				display block
+
+

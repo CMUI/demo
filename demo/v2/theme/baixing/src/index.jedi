@@ -1,0 +1,44 @@
+:import skeleton
+
+	#base::after
+		- $data->pageId = 'index'
+
+	#main
+		article.version-info
+			div
+				p '以下演示页面适用于 CMUI v0.10。'
+				p
+					a @href="https://github.com/CMUI/CMUI" @target="_blank"
+						'View on GitHub'
+
+		article
+			h1 "基础风格"
+			ul.content
+				li > a @href="color.php"
+					"颜色"
+				li > a @href="text.php"
+					"文本"
+				li > a @href="icon.php"
+					"图标"
+		article
+			h1 "元素"
+			ul.content
+				li > a @href="btn.php"
+					"按钮"
+				li > a @href="info-box.php"
+					"信息框"
+				li > a @href="list.php"
+					"列表"
+				li > a @href="grid-list.php"
+					"网格列表"
+				li > a @href="msg-box.php"
+					"提示框"
+				li > a @href="page.php"
+					"页面"
+		article
+			h1 "组件"
+			ul.content
+				li > a @href="mask.php"
+					"遮罩层（Mask）"
+				li > a @href="loading.php"
+					"加载提示（Loading）"
