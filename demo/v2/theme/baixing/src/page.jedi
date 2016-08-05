@@ -154,4 +154,4 @@
 		article.cmSubview.footer
 			h1 "页脚"
 			div.intro
-				p "未对页脚进行任何样式定义，请自定处理。"
+				p "CMUI 未对页脚进行任何样式定义，请自定处理。"

@@ -32,23 +32,23 @@ pre
 page-wrapper()
 	margin 0 auto
 	max-width 640px
-	background-color $color-bg
+	background-color $cm-color-bg
 section-wrapper()
 	box-sizing border-box
-	padding 15px $page-content-padding-h 25px
+	padding 15px $cm-page-content-padding-h 25px
 	border-bottom 1px solid #ccc
 
 body
-	line-height $line-height-text
+	line-height $cm-line-height-ui
 	background #ccc
 
 .cmSubview
 	page-wrapper()
 	> header
-		padding 15px $page-content-padding-h
+		padding 10px $cm-page-content-padding-h
 		text-align center
 		h1
-			font-size 2em
+			font-size 1.85em
 	> footer
 		section-wrapper()
 		padding-bottom 15px
@@ -57,15 +57,20 @@ body
 .cmSubview > article
 	section-wrapper()
 	> h1
-		font-size 1.75em
+		margin-left (- $cm-page-content-padding-h)
 		margin-bottom 0.5em
+		padding-left 10px
+		padding-top 0.15em
+		font-size 1.5em
+		line-height $cm-line-height-min
+		border-left 10px solid $cm-color-highlight
 
 	div.intro
 		&
-			padding 0.75em 1em
-			font-size 13px
-			border-left 3px solid $bx-color-light-gray
-			background-color $bx-color-x-light-gray
+			//padding 0.75em 1em
+			font-size 14px
+			//border-left 3px solid $bx-color-light-gray
+			//background-color $bx-color-x-light-gray
 		&:not(:last-child)
 			margin-bottom 1.5em
 		pre:not(:first-child)
@@ -84,7 +89,7 @@ body
 			margin-bottom 0.5em
 	hr
 		margin 1em 0 1.25em
-		color $bx-color-light-gray
+		color #eee
 
 	&.back
 		padding 0
