@@ -37,7 +37,7 @@ pre
 	box-sizing border-box
 	margin-top 10px
 	margin-bottom 10px
-	padding 10px $cm-page-content-padding-h 25px
+	padding 10px $cm-content-padding 25px
 	box-shadow 0 1px 0 $cm-color-stage-shadow
 	background-color $cm-color-bg
 
@@ -47,7 +47,7 @@ body
 body > .cmSubview
 	-page-wrapper()
 	> header
-		padding 10px $cm-page-content-padding-h
+		padding 10px $cm-content-padding
 		text-align center
 		color #eee
 		$headerBg = #333
@@ -63,7 +63,7 @@ body > .cmSubview > section
 	-section()
 
 	> h2
-		margin-left (- $cm-page-content-padding-h)
+		margin-left (- $cm-content-padding)
 		margin-bottom 1em
 		padding-left 10px
 		padding-top 0.15em
@@ -92,7 +92,7 @@ body > .cmSubview > section
 	section
 		&:not(:last-child)
 			margin-bottom 1.5em
-		h3
+		> h3
 			font-size 1.25em
 			margin-bottom 0.5em
 	hr
@@ -263,8 +263,8 @@ body > .cmSubview > section
 	section.header
 	section.nav-bar
 		> header
-			margin-left (- $cm-page-content-padding-h)
-			margin-right (- $cm-page-content-padding-h)
+			margin-left (- $cm-content-padding)
+			margin-right (- $cm-content-padding)
 		> header + header
 			margin-top 15px
 	section.header
@@ -281,7 +281,7 @@ body > .cmSubview > section
 
 	section.main
 		main
-			padding 0 ($cm-page-content-padding-h - 1)
+			padding 0 ($cm-content-padding - 1)
 			border 1px dashed brown
 			full-width-block()
 			text-align center
