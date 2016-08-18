@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Button'
 
 	#main
-		article.summary
+		section.summary
 			h1 "概述"
 			div.intro
 				p "目前仅可通过预定义的类名（而不是 mixin）来设置按钮样式。"
@@ -18,7 +18,7 @@
 				p "所有按钮默认显示为块级，可以按需对特定按钮指定宽度属性。"
 				p "不建议在文本段落中混入按钮。"
 
-		article.btn-size
+		section.btn-size
 			h1 "按钮尺寸"
 			div
 				p.cmBtnWrapper
@@ -46,7 +46,7 @@
 						"超大按钮"
 				p.code > code ".cmBtn.cmBtnXLarge"
 
-		article.btn-type
+		section.btn-type
 			h1 "场景类型"
 			div.btn-default
 				p.cmBtnWrapper
@@ -74,7 +74,7 @@
 						"警告按钮"
 				p.code > code ".cmBtn.cmBtnWarning"
 
-		article.form-btn
+		section.form-btn
 			h1 "表单按钮"
 			div.intro
 				p
@@ -100,7 +100,7 @@
 					button.cmBtn @type="button"
 						"button 元素"
 
-		article.btn-status
+		section.btn-status
 			h1 "按钮状态"
 			section.btn-status-hover
 				h2
@@ -187,7 +187,7 @@
 						button.cmBtn.active @disabled
 							".cmBtn.active:disabled"
 
-		article.btn-multiple
+		section.btn-multiple
 			h1
 				"按钮的排列组合"
 			section.btn-line

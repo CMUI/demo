@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Page'
 
 	#main
-		article.cmSubview
+		section.cmSubview
 			h1 "概述"
 			div.intro
 				p > strong
@@ -35,7 +35,7 @@
 				p
 					"页面内的各个区块详见如下各小节。"
 
-		article.cmSubview.header
+		section.cmSubview.header
 			h1 "页头"
 			div.intro
 				p "页头可以包含一个或多个导航元素。"
@@ -71,7 +71,7 @@
 				nav
 					"（这里是另一个导航元素）"
 
-		article.cmSubview.nav-bar
+		section.cmSubview.nav-bar
 			h1 "导航栏"
 			div.intro
 				p "导航栏内部的结构约定如下："
@@ -118,7 +118,7 @@
 						a.cmBtn.cmBtnDanger @href="#action"
 							"Danger"
 
-		article.cmSubview.main
+		section.cmSubview.main
 			h1 "页面主体"
 			div.intro
 				p
@@ -151,7 +151,7 @@
 					code "margin"
 					" 来实现。"
 
-		article.cmSubview.footer
+		section.cmSubview.footer
 			h1 "页脚"
 			div.intro
 				p "CMUI 未对页脚进行任何样式定义，请自定处理。"

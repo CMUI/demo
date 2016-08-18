@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Mask'
 
 	#main
-		article.mask
+		section.mask
 			h1
 				"遮罩层"
 			div.intro

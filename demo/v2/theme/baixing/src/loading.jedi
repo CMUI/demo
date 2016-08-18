@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Loading'
 
 	#main
-		article.loading
+		section.loading
 			h1
 				"Loading 提示"
 			div.intro

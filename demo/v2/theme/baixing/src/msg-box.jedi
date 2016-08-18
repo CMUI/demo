@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Msg Box'
 
 	#main
-		article.msg-box
+		section.msg-box
 			h1 "提示框"
 			div.intro
 				p "目前来说，提示框是静态的 UI 元素，用户无法自行关闭。开发者可通过脚本手动控制其显隐。未来可能会提供关闭按钮的功能。"

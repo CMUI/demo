@@ -29,33 +29,36 @@ pre
 
 /* --------------------------------------------- */
 /** layout **/
-page-wrapper()
+-page-wrapper()
 	margin 0 auto
 	max-width 640px
-	background-color $cm-color-bg
-section-wrapper()
+-section()
 	box-sizing border-box
+	margin-top 10px
+	margin-bottom 10px
 	padding 15px $cm-page-content-padding-h 25px
-	border-bottom 1px solid #ccc
+	border-bottom 1px solid $cm-color-stage-shadow
+	background-color $cm-color-bg
 
 body
 	line-height $cm-line-height-ui
-	background #ccc
 
 .cmSubview
-	page-wrapper()
+	-page-wrapper()
 	> header
 		padding 10px $cm-page-content-padding-h
 		text-align center
 		h1
-			font-size 1.85em
+			font-size 1.5em
 	> footer
-		section-wrapper()
-		padding-bottom 15px
+		padding 15px
 		text-align center
 
-.cmSubview > article
-	section-wrapper()
+.cmSubview > section
+	-section()
+
+
+
 	> h1
 		margin-left (- $cm-page-content-padding-h)
 		margin-bottom 0.5em
@@ -81,6 +84,8 @@ body
 		ul:not(:last-child)
 		p:not(:last-child)
 			margin-bottom 0.5em
+
+	// l2 section
 	section
 		&:not(:last-child)
 			margin-bottom 1.5em
@@ -100,7 +105,7 @@ body
 /* --------------------------------------------- */
 /** index **/
 #index
-	article
+	section
 		h2
 			font-size 1.25em
 			margin-left 0.5em
@@ -116,6 +121,7 @@ body
 				padding 0.5em
 
 	.version-info
+		-section()
 		padding-top 25px
 		padding-bottom 25px
 		p
@@ -191,7 +197,7 @@ body
 /* --------------------------------------------- */
 /** btn **/
 #btn
-	article
+	section
 		section
 			&:not(:last-child)
 				margin-bottom 2em
@@ -213,7 +219,7 @@ body
 /* --------------------------------------------- */
 /** info box **/
 #info-box
-	article.info-box
+	section.info-box
 		div.cmInfoBox
 			p + a.cmBtn
 				margin-top 5px
@@ -242,7 +248,7 @@ body
 /* --------------------------------------------- */
 /** msg box **/
 #msg-box
-	article.msg-box
+	section.msg-box
 		div.cmMsgBox + div.intro
 			margin-top 2em
 
@@ -250,31 +256,31 @@ body
 /* --------------------------------------------- */
 /** page **/
 #page
-	article > header,
-	article > main,
-	article > footer
+	section > header,
+	section > main,
+	section > footer
 		& + div.intro
 			margin-top 2em
 
-	article.header
-	article.nav-bar
+	section.header
+	section.nav-bar
 		& > header
 			full-width-block()
 		& > header + header
 			margin-top 0.5em
-	article.header
+	section.header
 		nav:not(:first-child)
 			text-center()
 			height $nav-bar-height
 			line-height $nav-bar-height
 
-	article.footer
+	section.footer
 		/*padding-bottom 0*/
 		& > footer
 			full-width-block()
 			//border-dashed(green)
 
-	article.main
+	section.main
 		main
 			padding 0 ($page-content-padding-h - 1)
 			border-dashed(brown)
@@ -317,7 +323,7 @@ body
 	.cmMask
 		pointer-events none
 #loading
-	article.loading
+	section.loading
 		section.with-text
 			dt
 				min-width 50%

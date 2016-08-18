@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'List'
 
 	#main
-		article
+		section.summary
 			h1 "概述"
 			div.intro.cmText
 				p
@@ -17,7 +17,7 @@
 						" 这个基础类名，然后通过其它辅助性的类名来指定细节样式和属性。"
 					li
 						"列表项必须有一个（通常也应该只有一个）子元素作为其“内容元素”。"
-		article
+		section
 			h1 "内容"
 			section
 				h2 "普通列表"
@@ -60,7 +60,7 @@
 					li
 						a @href="#"
 							"列表项"
-		article
+		section
 			h1 "列表项的右箭头"
 			section
 				div.intro
@@ -99,7 +99,7 @@
 						a @href="#"
 							"列表项"
 
-		article
+		section
 			h1 "列表项有徽章"
 			section
 				div.intro
@@ -125,7 +125,7 @@
 						a @href="#"
 							"列表项"
 
-		article
+		section
 			h1 "列表项有值"
 			section
 				div.intro
@@ -151,7 +151,7 @@
 						a @href="#"
 							"列表项很长很长很长很长很长很长"
 
-		article
+		section
 			h1 "列表项有图标"
 			section
 				div.intro

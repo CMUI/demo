@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Icon'
 
 	#main
-		article
+		section.summary
 			h1 "概述"
 			section
 				h2 "结构约定"
@@ -43,7 +43,7 @@
 						li
 							code ".cmX50"
 							" - 50px × 50px"
-		article.system-icon
+		section.system-icon
 			h1 "系统图标"
 			div.intro
 				p "以下图标仅供 CMUI 组件内部使用。"
@@ -66,7 +66,7 @@
 				dt > i.cmIcon.cmX20.msg-warning
 				dd '警告提示'
 
-		article.custom-icon
+		section.custom-icon
 			h1 "自定义图标"
 			div.intro.cmText
 				p "CMUI 未对图标的实现做限制，选择权完全交给业务层。"

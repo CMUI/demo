@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Text'
 
 	#main
-		article.text
+		section.text
 			h1 "通用文本格式"
 			div.intro
 				p
@@ -65,7 +65,7 @@
 							li "无序列表"
 					li "无序列表"
 
-		article.theme-text
+		section.theme-text
 			h1 "主题专有文本格式"
 			section.mixin
 				h2 "预定义 Mixin"
@@ -96,7 +96,7 @@
 						"链接文本"
 					dd.intro "文本段落中出现的链接，字号与普通文本一致。"
 
-		article.label
+		section.label
 			h1 "标签"
 			div.intro
 				p

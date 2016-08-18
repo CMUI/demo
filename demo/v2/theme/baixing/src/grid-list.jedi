@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Grid List'
 
 	#main
-		article.summary
+		section.summary
 			h1 "概述"
 			div.intro
 				p "网格列表主要以行列式呈现的列表。"
@@ -19,7 +19,7 @@
 						    li > a
 						    li > a
 
-		article.line-style
+		section.line-style
 			h1 "网格列表样式"
 			section
 				h2 "默认有分隔线"
@@ -59,7 +59,7 @@
 					li > a @href="#"
 						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 
-		article.column-width
+		section.column-width
 			h1 "网格列表的列数"
 			section
 				h2
@@ -88,7 +88,7 @@
 							    min-width: 6em;
 							}
 
-		article.selected-item
+		section.selected-item
 			h1 "当前项的样式"
 			div.intro
 				p
@@ -105,7 +105,7 @@
 				li > a @href="#"
 					"列表项"
 
-		article.form
+		section.form
 			h1 "用于表单"
 			div.intro
 				p "可用于表单中的单选框、复选框等。"

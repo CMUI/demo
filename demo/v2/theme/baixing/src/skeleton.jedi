@@ -35,7 +35,7 @@ html @lang='zh-cmn-Hans'
 
 	body @id="{pageId}"
 		#content
-			div.cmSubview.cmSubviewRoot
+			article.cmSubview.cmSubviewRoot
 				#header
 					header
 						h1
@@ -47,7 +47,7 @@ html @lang='zh-cmn-Hans'
 				#main
 
 				#back
-					article.back if pageTitle
+					section.back if pageTitle
 						a @href="index.php"
 							"<< 返回首页"
 				#footer

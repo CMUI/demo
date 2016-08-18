@@ -5,7 +5,7 @@
 		- $data->pageTitle = 'Info Box'
 
 	#main
-		article.info-box
+		section.info-box
 			h1 "信息框"
 			section.as-layout-wrapper
 				h2 "作为布局容器"

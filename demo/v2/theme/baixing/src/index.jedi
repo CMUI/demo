@@ -4,14 +4,14 @@
 		- $data->pageId = 'index'
 
 	#main
-		article.version-info
+		div.version-info
 			div
 				p '以下演示页面适用于 CMUI v2。'
 				p
 					a @href="https://github.com/CMUI/CMUI" @target="_blank"
 						'View on GitHub'
 
-		article
+		section
 			h1 "基础样式"
 			ul.content
 				li > a @href="color.php"
@@ -22,7 +22,7 @@
 					"(标题、段落、列表、标签等)"
 				li > a @href="icon.php"
 					"图标"
-		article
+		section
 			h1 "元素"
 			ul.content
 				li
@@ -45,7 +45,7 @@
 					a @href="page.php"
 						"页面框架"
 					"(Subview、标题栏、内容区等)"
-		article
+		section
 			h1 "交互组件"
 			ul.content
 				li > a @href="mask.php"
