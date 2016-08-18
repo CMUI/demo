@@ -1,4 +1,4 @@
-:import skeleton
+:import _skeleton
 
 	#base::after
 		- $data->pageId = 'grid-list'
