@@ -6,7 +6,7 @@
 
 	#main
 		section.summary
-			h1 "概述"
+			h2 "概述"
 			div.intro
 				p "网格列表主要以行列式呈现的列表。"
 				p
@@ -20,9 +20,9 @@
 						    li > a
 
 		section.line-style
-			h1 "网格列表样式"
+			h2 "网格列表样式"
 			section
-				h2 "默认有分隔线"
+				h3 "默认有分隔线"
 				ul.cmGridList
 					li > a @href="#"
 						"列表项"
@@ -37,7 +37,7 @@
 					li > a @href="#"
 						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 			section
-				h2 "无有分隔线"
+				h3 "无有分隔线"
 				div.intro
 					p
 						"给列表元素增加 "
@@ -60,10 +60,9 @@
 						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 
 		section.column-width
-			h1 "网格列表的列数"
+			h2 "网格列表的列数"
 			section
-				h2
-					"默认两列"
+				h3 "默认两列"
 				ul.cmGridList
 					li > a @href="#"
 						"列表项"
@@ -78,8 +77,7 @@
 					li > a @href="#"
 						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 			section
-				h2
-					"多列 "
+				h3 "多列 "
 				div.intro
 					p "可以通过指定列表项的宽度来实现对列数的控制。比如下面的 CSS 代码将列数设置为（最多）4 列，并确保每列最多可显示 6 个汉字。"
 					pre > code
@@ -89,7 +87,7 @@
 							}
 
 		section.selected-item
-			h1 "当前项的样式"
+			h2 "当前项的样式"
 			div.intro
 				p
 					"给当前列表项增加 "
@@ -106,7 +104,7 @@
 					"列表项"
 
 		section.form
-			h1 "用于表单"
+			h2 "用于表单"
 			div.intro
 				p "可用于表单中的单选框、复选框等。"
 				pre > code

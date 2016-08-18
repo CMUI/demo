@@ -36,8 +36,8 @@ pre
 	box-sizing border-box
 	margin-top 10px
 	margin-bottom 10px
-	padding 15px $cm-page-content-padding-h 25px
-	border-bottom 1px solid $cm-color-stage-shadow
+	padding 10px $cm-page-content-padding-h 25px
+	box-shadow 0 1px 0 $cm-color-stage-shadow
 	background-color $cm-color-bg
 
 body
@@ -57,11 +57,9 @@ body
 .cmSubview > section
 	-section()
 
-
-
-	> h1
+	> h2
 		margin-left (- $cm-page-content-padding-h)
-		margin-bottom 0.5em
+		margin-bottom 1em
 		padding-left 10px
 		padding-top 0.15em
 		font-size 1.5em
@@ -89,7 +87,7 @@ body
 	section
 		&:not(:last-child)
 			margin-bottom 1.5em
-		h2
+		h3
 			font-size 1.25em
 			margin-bottom 0.5em
 	hr
@@ -106,12 +104,6 @@ body
 /** index **/
 #index
 	section
-		h2
-			font-size 1.25em
-			margin-left 0.5em
-		ul.content + h2
-				margin-top 1em
-
 		ul.content
 			padding-left 2em
 			list-style outside disc

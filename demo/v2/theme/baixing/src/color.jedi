@@ -6,7 +6,7 @@
 
 	#main
 		section.color
-			h1 "颜色"
+			h2 "颜色"
 			div.intro
 				p "设计师已指定以下颜色，应通过变量来使用这些颜色。"
 

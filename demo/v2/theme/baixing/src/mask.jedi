@@ -6,8 +6,7 @@
 
 	#main
 		section.mask
-			h1
-				"遮罩层"
+			h2 "遮罩层"
 			div.intro
 				p "遮罩层是一个覆盖整个视口的半透明层，被它遮住的元素不可交互。这个组件是一个底层组件，可以和 Loading 组件同时使用，也可以被对话框组件调用作为 backdrop（未完成）。"
 			div.intro

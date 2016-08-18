@@ -6,7 +6,7 @@
 
 	#main
 		section.cmSubview
-			h1 "概述"
+			h2 "概述"
 			div.intro
 				p > strong
 					"本页面的 HTML 结构是为演示效果而特别编写的，不具有实际参考意义。所有元素的 HTML 结构约定请以各元素的相关描述为准。"
@@ -36,7 +36,7 @@
 					"页面内的各个区块详见如下各小节。"
 
 		section.cmSubview.header
-			h1 "页头"
+			h2 "页头"
 			div.intro
 				p "页头可以包含一个或多个导航元素。"
 				p "通常页头内唯一的导航元素就是导航栏（导航栏的具体结构和样式参见下一节）。"
@@ -72,7 +72,7 @@
 					"（这里是另一个导航元素）"
 
 		section.cmSubview.nav-bar
-			h1 "导航栏"
+			h2 "导航栏"
 			div.intro
 				p "导航栏内部的结构约定如下："
 				pre > code
@@ -119,7 +119,7 @@
 							"Danger"
 
 		section.cmSubview.main
-			h1 "页面主体"
+			h2 "页面主体"
 			div.intro
 				p
 					"在下面的图示中，外层的红色虚线框是 "
@@ -152,6 +152,6 @@
 					" 来实现。"
 
 		section.cmSubview.footer
-			h1 "页脚"
+			h2 "页脚"
 			div.intro
 				p "CMUI 未对页脚进行任何样式定义，请自定处理。"

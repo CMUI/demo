@@ -6,7 +6,7 @@
 
 	#main
 		section.summary
-			h1 "概述"
+			h2 "概述"
 			div.intro.cmText
 				p
 					"列表元素有一些基本的结构约定。"
@@ -18,9 +18,9 @@
 					li
 						"列表项必须有一个（通常也应该只有一个）子元素作为其“内容元素”。"
 		section
-			h1 "内容"
+			h2 "内容"
 			section
-				h2 "普通列表"
+				h3 "普通列表"
 				div.intro
 					p
 						"纯展示列表的列表项的内容元素可以是 "
@@ -41,7 +41,7 @@
 					li
 						div "列表项"
 			section
-				h2 "链接列表"
+				h3 "链接列表"
 				div.intro
 					p "我们用得比较多的其实是链接列表，它是很常见的 UI 元素。"
 					p "链接列表的列表项的内容元素是链接元素。"
@@ -61,7 +61,7 @@
 						a @href="#"
 							"列表项"
 		section
-			h1 "列表项的右箭头"
+			h2 "列表项的右箭头"
 			section
 				div.intro
 					p
@@ -100,7 +100,7 @@
 							"列表项"
 
 		section
-			h1 "列表项有徽章"
+			h2 "列表项有徽章"
 			section
 				div.intro
 					p
@@ -126,7 +126,7 @@
 							"列表项"
 
 		section
-			h1 "列表项有值"
+			h2 "列表项有值"
 			section
 				div.intro
 					p
@@ -152,7 +152,7 @@
 							"列表项很长很长很长很长很长很长"
 
 		section
-			h1 "列表项有图标"
+			h2 "列表项有图标"
 			section
 				div.intro
 					p

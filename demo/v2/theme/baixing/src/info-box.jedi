@@ -6,9 +6,9 @@
 
 	#main
 		section.info-box
-			h1 "信息框"
+			h2 "信息框"
 			section.as-layout-wrapper
-				h2 "作为布局容器"
+				h3 "作为布局容器"
 				div.intro
 					p
 						"对块级元素使用 "
@@ -24,7 +24,7 @@
 					a.cmBtn @href="#"
 						'示例按钮'
 			section.as-text-wrapper
-				h2 "作为文本容器"
+				h3 "作为文本容器"
 				div.intro
 					p
 						"如果需要内部的元素呈现出文本格式，则需要再追加 "

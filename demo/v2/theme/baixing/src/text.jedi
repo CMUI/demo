@@ -6,7 +6,7 @@
 
 	#main
 		section.text
-			h1 "通用文本格式"
+			h2 "通用文本格式"
 			div.intro
 				p
 					"在文本块的容器元素上加 "
@@ -66,7 +66,7 @@
 					li "无序列表"
 
 		section.theme-text
-			h1 "主题专有文本格式"
+			h2 "主题专有文本格式"
 			section.mixin
 				h2 "预定义 Mixin"
 				div.intro
@@ -97,7 +97,7 @@
 					dd.intro "文本段落中出现的链接，字号与普通文本一致。"
 
 		section.label
-			h1 "标签"
+			h2 "标签"
 			div.intro
 				p
 					"对行内元素使用 "

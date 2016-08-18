@@ -5,14 +5,13 @@
 
 	#main
 		div.version-info
-			div
-				p '以下演示页面适用于 CMUI v2。'
-				p
-					a @href="https://github.com/CMUI/CMUI" @target="_blank"
-						'View on GitHub'
+			p '以下演示页面适用于 CMUI v2。'
+			p
+				a @href="https://github.com/CMUI/CMUI" @target="_blank"
+					'View on GitHub'
 
 		section
-			h1 "基础样式"
+			h2 "基础样式"
 			ul.content
 				li > a @href="color.php"
 					"颜色"
@@ -23,7 +22,7 @@
 				li > a @href="icon.php"
 					"图标"
 		section
-			h1 "元素"
+			h2 "元素"
 			ul.content
 				li
 					a @href="btn.php"
@@ -46,7 +45,7 @@
 						"页面框架"
 					"(Subview、标题栏、内容区等)"
 		section
-			h1 "交互组件"
+			h2 "交互组件"
 			ul.content
 				li > a @href="mask.php"
 					"遮罩层（Mask）"

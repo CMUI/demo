@@ -6,16 +6,17 @@
 
 	#main
 		section.summary
-			h1 "概述"
+			h2 "概述"
+
 			section
-				h2 "结构约定"
+				h3 "结构约定"
 				div.intro
 					p
 						"所有图标建议采用 "
 						code "i.cmIcon"
 						" 这样的结构。"
 			section
-				h2 "初始样式"
+				h3 "初始样式"
 				div.intro.cmText
 					p
 						code ".cmIcon"
@@ -27,7 +28,7 @@
 						li '溢出隐藏'
 						li '内部文字自动隐藏（可在其内部包含文本，以增强可访问性）'
 			section
-				h2 "图标尺寸"
+				h3 "图标尺寸"
 				div.intro.cmText
 					p "添加以下类名来指定图标的尺寸。"
 					ul
@@ -44,7 +45,7 @@
 							code ".cmX50"
 							" - 50px × 50px"
 		section.system-icon
-			h1 "系统图标"
+			h2 "系统图标"
 			div.intro
 				p "以下图标仅供 CMUI 组件内部使用。"
 			dl
@@ -67,7 +68,7 @@
 				dd '警告提示'
 
 		section.custom-icon
-			h1 "自定义图标"
+			h2 "自定义图标"
 			div.intro.cmText
 				p "CMUI 未对图标的实现做限制，选择权完全交给业务层。"
 				p
