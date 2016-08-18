@@ -25,6 +25,7 @@ pre
 	border 1px solid $code-color-border
 	border-left-width 2px
 	border-radius 2px
+	overflow-x auto
 	-webkit-overflow-scrolling touch
 
 /* --------------------------------------------- */
@@ -43,18 +44,22 @@ pre
 body
 	line-height $cm-line-height-ui
 
-.cmSubview
+body > .cmSubview
 	-page-wrapper()
 	> header
 		padding 10px $cm-page-content-padding-h
 		text-align center
+		color #eee
+		$headerBg = #333
+		background-color $headerBg
+		background-image linear-gradient(to bottom, lighten($headerBg, 15%), darken($headerBg, 15%))
 		h1
 			font-size 1.5em
 	> footer
 		padding 15px
 		text-align center
 
-.cmSubview > section
+body > .cmSubview > section
 	-section()
 
 	> h2
@@ -174,6 +179,11 @@ body
 	.bx-text-minor dd
 		bx-text-minor()
 
+	section.info-box
+		div.cmInfoBox
+			p + a.cmBtn
+				margin-top 5px
+
 /* --------------------------------------------- */
 /** icon **/
 #icon
@@ -185,6 +195,11 @@ body
 		border 2px solid #999
 		i.cmIcon.cmX50.loading-black-bg
 			background-color black
+
+/* --------------------------------------------- */
+/** label **/
+#label
+
 
 /* --------------------------------------------- */
 /** btn **/
@@ -207,15 +222,6 @@ body
 		.cmBtnWrapper .cmBtn
 			width 80%
 */
-
-/* --------------------------------------------- */
-/** info box **/
-#info-box
-	section.info-box
-		div.cmInfoBox
-			p + a.cmBtn
-				margin-top 5px
-
 
 /* --------------------------------------------- */
 /** list **/
@@ -256,15 +262,16 @@ body
 
 	section.header
 	section.nav-bar
-		& > header
-			full-width-block()
-		& > header + header
-			margin-top 0.5em
+		> header
+			margin-left (- $cm-page-content-padding-h)
+			margin-right (- $cm-page-content-padding-h)
+		> header + header
+			margin-top 15px
 	section.header
 		nav:not(:first-child)
 			text-center()
-			height $nav-bar-height
-			line-height $nav-bar-height
+			height $cm-nav-bar-height
+			line-height $cm-nav-bar-height
 
 	section.footer
 		/*padding-bottom 0*/
@@ -274,8 +281,8 @@ body
 
 	section.main
 		main
-			padding 0 ($page-content-padding-h - 1)
-			border-dashed(brown)
+			padding 0 ($cm-page-content-padding-h - 1)
+			border 1px dashed brown
 			full-width-block()
 			text-align center
 			h2, h3
@@ -285,14 +292,14 @@ body
 				margin-left 0
 			div.content-range
 				margin 10px 0
-				border-dashed(green)
+				border 1px dashed green
 			div.block
 				margin 10px 0 20px
 				padding 20px
-				background $bx-color-x-light-gray
+				background #eee
 				clearfix()
 				&.full-width
-					background $bx-color-light-gray
+					background #eee
 					full-width-block()
 
 /* --------------------------------------------- */

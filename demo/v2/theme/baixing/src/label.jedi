@@ -1,0 +1,22 @@
+:import _skeleton
+
+	#base::after
+		- $data->pageId = 'label'
+		- $data->pageTitle = 'Label'
+
+	#main
+		section.label
+			h2 "标签"
+			div.intro
+				p
+					"对行内元素使用 "
+					code ".cmLabel"
+					" 类名即可。"
+			dl
+				dt > code ".cmLabel"
+				dd > span.cmLabel
+					"普通标签"
+			dl
+				dt > code ".cmLabel.cmLabelSuccess"
+				dd > span.cmLabel.cmLabelSuccess
+					"成功标签"

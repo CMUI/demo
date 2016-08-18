@@ -96,18 +96,42 @@
 						"链接文本"
 					dd.intro "文本段落中出现的链接，字号与普通文本一致。"
 
-		section.label
-			h2 "标签"
-			div.intro
-				p
-					"对行内元素使用 "
-					code ".cmLabel"
-					" 类名即可。"
-			dl
-				dt > code ".cmLabel"
-				dd > span.cmLabel
-					"普通标签"
-			dl
-				dt > code ".cmLabel.cmLabelSuccess"
-				dd > span.cmLabel.cmLabelSuccess
-					"成功标签"
+		section.info-box
+			h2 "信息框"
+			section.as-layout-wrapper
+				h3 "作为布局容器"
+				div.intro
+					p
+						"对块级元素使用 "
+						code ".cmInfoBox"
+						" 类名即可。"
+					p "下面是一个信息框作为布局容器的例子："
+					pre > code
+						'div.cmInfoBox
+							    p
+							    a.cmBtn
+				div.cmInfoBox
+					p "这里是按钮的提示语："
+					a.cmBtn @href="#"
+						'示例按钮'
+			section.as-text-wrapper
+				h3 "作为文本容器"
+				div.intro
+					p
+						"如果需要内部的元素呈现出文本格式，则需要再追加 "
+						code ".cmText"
+						" 类名。"
+					p "下面是一个信息框作为文本容器的例子："
+					pre > code
+						'div.cmInfoBox.cmText
+							    h2
+							    p
+							    h3
+							    p
+							    p
+				div.cmInfoBox.cmText
+					h2 "二级标题"
+					p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
+					h3 "三级标题"
+					p "段落文字段落文字段落文字段落文字。"
+					p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
