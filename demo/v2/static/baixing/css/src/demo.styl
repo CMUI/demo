@@ -23,10 +23,21 @@ pre
 	padding 5px 10px
 	background $code-color-bg
 	border 1px solid $code-color-border
-	border-left-width 2px
+	border-left-width 4px
 	border-radius 2px
 	overflow-x auto
 	-webkit-overflow-scrolling touch
+
+dl.code-result
+	clearfix()
+	&:not(:last-child)
+		margin-bottom 1em
+	dt
+		margin-bottom 5px
+	dd
+		//border 1px dashed green
+		& + dd
+			margin-top 0.25em
 
 /* --------------------------------------------- */
 /** layout **/
@@ -127,49 +138,44 @@ body > .cmSubview > section
 /* --------------------------------------------- */
 /** color **/
 #color
-	dl:not(:last-child)
-		margin-bottom 1em
-	dt
-		hide-text()
-		display block
-		margin-bottom 0.5em
-		size 100px 30px
-		border 2px solid #999
+	dl.code-result
+		dd:nth-child(2)
+			hide-text()
+			float left
+			margin-right 10px
+			size 50px 30px
+			border 2px solid #999
+		dd:last-child
+			padding-top 5px
 
-.bx-color-x-light-gray dt
-	background-color $bx-color-x-light-gray
-.bx-color-light-gray dt
-	background-color $bx-color-light-gray
-.bx-color-gray dt
-	background-color $bx-color-gray
-.bx-color-active-green dt
-	background-color $bx-color-active-green
+	dl.fg dd:nth-child(2)
+		background-color $cm-color-fg
+	dl.bg dd:nth-child(2)
+		background-color $cm-color-bg
+	dl.highlight dd:nth-child(2)
+		background-color $cm-color-highlight
+	dl.link dd:nth-child(2)
+		background-color $cm-color-link
 
-.color-fg-minor dt
-	background-color $color-fg-minor
-.color-fg-light dt
-	background-color $color-fg-light
-.color-fg dt
-	background-color $color-fg
-.color-fg-dark dt
-	background-color $color-fg-dark
-.color-fg-highlight dt
-	background-color $color-fg-highlight
+	dl.stage dd:nth-child(2)
+		background-color $cm-color-stage
+	dl.stage-shadow dd:nth-child(2)
+		background-color $cm-color-stage-shadow
+	dl.stage-backdrop dd:nth-child(2)
+		background-color $cm-color-stage-backdrop
+
+	dl.fg-minor dd:nth-child(2)
+		background-color $cm-color-fg-minor
+	dl.fg-light dd:nth-child(2)
+		background-color $cm-color-fg-light
+	dl.splitter dd:nth-child(2)
+		background-color $cm-color-splitter
+	dl.splitter-top dd:nth-child(2)
+		background-color $cm-color-splitter-top
 
 /* --------------------------------------------- */
 /** text **/
 #text
-	dl:not(:last-child)
-		margin-bottom 1.5em
-	dt
-		margin-bottom 5px
-	dd
-		border-dashed(green)
-		& + dd
-			margin-top 0.25em
-		&.intro
-			border none
-
 	.bx-headline dd
 		bx-headline()
 	.bx-headline-minor dd

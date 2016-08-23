@@ -6,7 +6,7 @@
 
 	#main
 		section.text
-			h2 "通用文本格式"
+			h2 "通用文本样式"
 			div.intro
 				p
 					"在文本块的容器元素上加 "
@@ -21,7 +21,7 @@
 					code ".cmText"
 					" 类也可以令其语义格式生效。"
 			hr
-			section.cmText
+			div.cmText
 				h1 "一级标题"
 				h2 "二级标题"
 				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
@@ -31,12 +31,11 @@
 				h3 "三级标题"
 				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
 			hr
-			section.cmText
+			div.cmText
 				h2 "二级标题"
 				ol
 					li "有序列表"
 					li "有序列表"
-				h2 "二级标题"
 				h3 "三级标题"
 				ol
 					li "有序列表"
@@ -51,7 +50,7 @@
 					li "有序列表"
 				p "段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。"
 			hr
-			section.cmText
+			div.cmText
 				ul
 					li
 						"无序列表
@@ -65,39 +64,24 @@
 							li "无序列表"
 					li "无序列表"
 
-		section.theme-text
-			h2 "主题专有文本格式"
-			section.mixin
-				h2 "预定义 Mixin"
-				div.intro
-					p
-						"网站内文本内容的行高为 1.6（建议使用变量 "
-						code "$line-height-text"
-						" 指定行高）。如果文本元素符合以下预定义格式，请使用对应的 mixin。"
-					p "绿色虚线框用于示意行高。"
-				dl.bx-headline
-					dt > code "bx-headline()"
-					dd "大标题 （18px 常规字重）"
-				dl.bx-headline-minor
-					dt > code "bx-headline-minor()"
-					dd "小标题 （16px 粗体）"
-				dl.bx-text
-					dt > code "bx-text()"
-					dd "全局通用文本 （15px 常规字重）"
-				dl.bx-text-minor
-					dt > code "bx-text-minor()"
-					dd "次级内容 （13px 常规字重）"
-
+		section
+			h2 "其它文本样式"
 			section.link
-				h2 "链接元素"
-				dl
-					dt > code "a"
+				h3 "链接元素"
+				div.intro
+					"链接元素（"
+					code "<a>"
+					"）天生具有链接应有的样式，无需添加额外类名。其字号与普通文本一致。"
+				dl.code-result
+					dt > code "a @herf='#' '链接'"
 					dd > a @href="#"
-						"链接文本"
-					dd.intro "文本段落中出现的链接，字号与普通文本一致。"
+						"链接"
 
 		section.info-box
-			h2 "信息框"
+			h2 "文本信息框"
+			div.intro
+				p "“文本信息框” 是一种容器，用于把多段文本（或文本与其它元素）集合起来。"
+				p "文本信息框组织的是正文，而且它没有状态样式。因此，如果需要呈现警告或错误等状态，请使用 “提示框”。"
 			section.as-layout-wrapper
 				h3 "作为布局容器"
 				div.intro
@@ -105,7 +89,7 @@
 						"对块级元素使用 "
 						code ".cmInfoBox"
 						" 类名即可。"
-					p "下面是一个信息框作为布局容器的例子："
+					p "下面是文本信息框作为布局容器的例子："
 					pre > code
 						'div.cmInfoBox
 							    p
@@ -121,7 +105,7 @@
 						"如果需要内部的元素呈现出文本格式，则需要再追加 "
 						code ".cmText"
 						" 类名。"
-					p "下面是一个信息框作为文本容器的例子："
+					p "下面是文本信息框作为文本容器的例子："
 					pre > code
 						'div.cmInfoBox.cmText
 							    h2

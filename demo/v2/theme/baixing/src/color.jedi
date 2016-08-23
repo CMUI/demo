@@ -8,44 +8,60 @@
 		section.color
 			h2 "颜色"
 			div.intro
-				p "设计师已指定以下颜色，应通过变量来使用这些颜色。"
+				p
+					strong "注意"
+					"：本页内容还未完全确定。"
+				p "设计师已提供以下颜色，应通过变量来使用这些颜色。"
 
-			dl.color-fg
-				dt '[深灰]'
-				dd > code '$color-fg'
-				dd '常规文本颜色'
-			dl.color-fg-minor
-				dt '[浅灰]'
-				dd > code '$color-fg-minor'
-				dd '次要文本颜色'
-			dl.color-fg-light
-				dt '[中灰]'
-				dd > code '$color-fg-light'
-				dd '次级文本中的强调颜色'
-			dl.color-fg-dark
-				dt '[黑灰]'
-				dd > code '$color-fg-dark'
-				dd '特别强调文本颜色'
-			dl.color-fg-highlight
-				dt '[高亮]'
-				dd > code '$color-fg-highlight'
-				dd '高亮文本颜色'
+			section.core-color
+				h3 "基础颜色"
+				dl.code-result.fg
+					dt > code '$cm-color-fg = #333'
+					dd '[深灰]'
+					dd '常规文本颜色'
+				dl.code-result.bg
+					dt > code '$cm-color-bg = white'
+					dd '[纯白]'
+					dd '区块背景色'
+				dl.code-result.highlight
+					dt > code '$cm-color-highlight = #ff4466'
+					dd '[玫红色]'
+					dd '网站主题色、着重色'
+				dl.code-result.link
+					dt > code '$cm-color-link = #015EE7'
+					dd '[亮蓝]'
+					dd '链接文本颜色'
 
-			hr
+			section.layout-color
+				h3 "页面框架颜色"
+				dl.code-result.stage
+					dt > code '$cm-color-stage = #f2f2f2'
+					dd '[极浅灰]'
+					dd '页面主体区域的底色'
+				dl.code-result.stage-shadow
+					dt > code '$cm-color-stage-shadow = #ddd'
+					dd '[浅灰]'
+					dd '区块投影色'
+				dl.code-result.stage-backdrop
+					dt > code '$cm-color-stage-backdrop = #999'
+					dd '[深灰]'
+					dd '页面主体区域之外的一片虚无'
 
-			dl.bx-color-gray
-				dt '[灰]'
-				dd > code '$bx-color-gray'
-				dd '图片边框颜色'
-			dl.bx-color-light-gray
-				dt '[浅灰]'
-				dd > code '$bx-color-light-gray'
-				dd '一般作为分割线颜色'
-			dl.bx-color-x-light-gray
-				dt '[超浅灰]'
-				dd > code '$bx-color-x-light-gray'
-				dd '一般作为区块底色'
-			dl.bx-color-active-green
-				dt '[激活绿]'
-				dd > code '$bx-color-active-green'
-				dd '已激活项目的颜色'
+			section.additional-color
+				h3 "扩展颜色"
+				dl.code-result.fg-minor
+					dt > code '$cm-color-fg-minor = #666'
+					dd '[浅灰]'
+					dd '次要文本颜色'
+				dl.code-result.fg-light
+					dt > code '$cm-color-fg-light = #999'
+					dd '[中灰]'
+					dd '弱化的文本颜色'
+				dl.code-result.splitter
+					dt > code '$cm-color-splitter = #e6e6e6'
+					dd '[黑灰]'
+					dd '内容分隔线'
+				dl.code-result.splitter-top
+					dt > code '$cm-color-splitter-top = #ccc'
+					dd '[高亮]'
+					dd '顶部分隔线(我暂时不明白)'

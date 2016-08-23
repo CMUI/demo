@@ -5,18 +5,88 @@
 		- $data->pageTitle = 'Label'
 
 	#main
-		section.label
+		section.summary
 			h2 "标签"
 			div.intro
 				p
-					"对行内元素使用 "
+					"为行内元素添加 "
 					code ".cmLabel"
-					" 类名即可。"
-			dl
+					" 类名即可将其设置为标签。"
+				p
+					"标签的 "
+					code "display"
+					" 属性将被设置为 "
+					code "inline-block"
+					"。"
+			dl.code-result
 				dt > code ".cmLabel"
 				dd > span.cmLabel
-					"普通标签"
-			dl
-				dt > code ".cmLabel.cmLabelSuccess"
-				dd > span.cmLabel.cmLabelSuccess
-					"成功标签"
+					"标签"
+
+		section.size
+			h2 "标签尺寸"
+			div.intro
+				p
+					"为标签追加辅助类即可设置其尺寸。"
+			dl.code-result
+				dt > code ".cmLabel.cmLabelXSmall"
+				dd
+					span.cmLabel.cmLabelXSmall
+						"超小标签"
+			dl.code-result
+				dt > code ".cmLabel.cmLabelSmall"
+				dd
+					span.cmLabel.cmLabelSmall
+						"小标签"
+			dl.code-result
+				dt > code ".cmLabel"
+				dd
+					span.cmLabel
+						"常规标签"
+			dl.code-result
+				dt > code ".cmLabel.cmLabelLarge"
+				dd
+					span.cmLabel.cmLabelLarge
+						"大标签"
+			dl.code-result
+				dt > code ".cmLabel.cmLabelXLarge"
+				dd
+					span.cmLabel.cmLabelXLarge
+						"超大标签"
+			hr
+			div.intro
+				p
+					"把 "
+					code ".cmLabel"
+					" 类名加到 "
+					code "<small>"
+					" 元素上也可以得到 “超小标签” 的效果。"
+			dl.code-result
+				dt > code "small.cmLabel"
+				dd
+					small.cmLabel
+						"超小标签"
+
+		section.style
+			h2 "标签样式"
+			div.intro
+				p
+					"给标签追加 "
+					code ".cmLabelSolid"
+					" 类名可以得到实心标签的效果。"
+				p
+					strong "注意"
+					"：Firefox 48- 无法正常显示实心标签效果。"
+			dl.code-result
+				dt > code ".cmLabel.cmLabelSolid"
+				dd
+					span.cmLabel.cmLabelSolid
+						"实心标签"
+
+		section.color
+			h2 "标签颜色"
+			div.intro
+				p
+					"对标签设置 "
+					code "color"
+					" 属性即可设置标签的主色调。"
