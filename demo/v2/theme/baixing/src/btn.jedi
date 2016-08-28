@@ -10,69 +10,123 @@
 			div.intro
 				p "目前仅可通过预定义的类名（而不是 mixin）来设置按钮样式。"
 				p
-					"所有按钮都应该添加 "
+					"为元素添加 "
 					code ".cmBtn"
-					" 类名，并根据需要添加其它辅助类名，以设置其尺寸、颜色等样式。"
+					" 类名，即可得到一个实色按钮。"
+			dl.code-result
+				dt > code ".cmBtn"
+				dd
+					a.cmBtn @href="#"
+						"按钮"
 
 			div.intro
-				p "所有按钮默认显示为块级，可以按需对特定按钮指定宽度属性。"
-				p "不建议在文本段落中混入按钮。"
+				p
+					"需要 “ghost button”？为按钮追加 "
+					code ".cmBtnBordered"
+					" 类就可以了。"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnBordered"
+				dd
+					a.cmBtn.cmBtnBordered @href="#"
+						"边框型按钮"
+
+			hr
+			div.intro
+				h3 "其它说明"
+				ul.cmText
+					li "CMUI 提供了大量辅助类，用于设置按钮的尺寸、颜色等样式。这些辅助类通常可以组合使用。"
+					li "所有按钮默认显示为块级，可以按需对特定按钮指定宽度属性。"
+					li "不建议在文本段落中混入按钮。"
 
 		section.btn-size
 			h2 "按钮尺寸"
-			div
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnXSmall @href="#"
-						"超小按钮"
-				p.code > code ".cmBtn.cmBtnXSmall"
-			div
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnSmall @href="#"
-						"小按钮"
-				p.code > code ".cmBtn.cmBtnSmall"
-			div
-				p.cmBtnWrapper
-					a.cmBtn @href="#"
-						"普通按钮"
-				p.code > code ".cmBtn"
-			div
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnLarge @href="#"
-						"大按钮"
-				p.code > code ".cmBtn.cmBtnLarge"
-			div
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnXLarge @href="#"
-						"超大按钮"
-				p.code > code ".cmBtn.cmBtnXLarge"
+			div.intro
+				p "为按钮添加尺寸辅助类，可以设置其尺寸。"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnXSmall"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnXSmall @href="#"
+							"超小按钮"
+						a.cmBtn.cmBtnBordered.cmBtnXSmall @href="#"
+							"超小按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnSmall"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnSmall @href="#"
+							"小按钮"
+						a.cmBtn.cmBtnBordered.cmBtnSmall @href="#"
+							"小按钮"
+			dl.code-result
+				dt > code ".cmBtn"
+				dd
+					div.cmBtnLine
+						a.cmBtn @href="#"
+							"常规按钮"
+						a.cmBtn.cmBtnBordered @href="#"
+							"常规按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnLarge"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnLarge @href="#"
+							"大按钮"
+						a.cmBtn.cmBtnBordered.cmBtnLarge @href="#"
+							"大按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnXLarge"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnXLarge @href="#"
+							"超大按钮"
+						a.cmBtn.cmBtnBordered.cmBtnXLarge @href="#"
+							"超大按钮"
 
 		section.btn-type
 			h2 "场景类型"
-			div.btn-default
-				p.cmBtnWrapper
-					a.cmBtn @href="#"
-						"常规按钮"
-				p.code > code ".cmBtn"
-			div.btn-success
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnInfo @href="#"
-						"信息按钮"
-				p.code > code ".cmBtn.cmBtnInfo"
-			div.btn-success
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnSuccess @href="#"
-						"成功按钮"
-				p.code > code ".cmBtn.cmBtnSuccess"
-			div.btn-danger
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnDanger @href="#"
-						"危险按钮"
-				p.code > code ".cmBtn.cmBtnDanger"
-			div.btn-warning
-				p.cmBtnWrapper
-					a.cmBtn.cmBtnWarning @href="#"
-						"警告按钮"
-				p.code > code ".cmBtn.cmBtnWarning"
+			div.intro
+				p "按钮在不同的功能场景下，往往体现为不同的颜色。CMUI 定义了以下场景类名。"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnPrimary"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnPrimary @href="#"
+							"重要按钮"
+						a.cmBtn.cmBtnBordered.cmBtnPrimary @href="#"
+							"重要按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnInfo"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnInfo @href="#"
+							"信息按钮"
+						a.cmBtn.cmBtnBordered.cmBtnInfo @href="#"
+							"信息按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnSuccess"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnSuccess @href="#"
+							"成功按钮"
+						a.cmBtn.cmBtnBordered.cmBtnSuccess @href="#"
+							"成功按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnDanger"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnDanger @href="#"
+							"危险按钮"
+						a.cmBtn.cmBtnBordered.cmBtnDanger @href="#"
+							"危险按钮"
+			dl.code-result
+				dt > code ".cmBtn.cmBtnWarning"
+				dd
+					div.cmBtnLine
+						a.cmBtn.cmBtnWarning @href="#"
+							"警告按钮"
+						a.cmBtn.cmBtnBordered.cmBtnWarning @href="#"
+							"警告按钮"
 
 		section.form-btn
 			h2 "表单按钮"
@@ -92,11 +146,13 @@
 					"表单按钮天生具备收缩包围的特性，在不指定宽度时，它们只呈现最小宽度。为使它们呈现出通长的块级效果，已对它们设置 "
 					code 'width: 100%;'
 					"。"
-			div
-				p.cmBtnWrapper
+			dl.code-result
+				dt > code 'input.cmBtn @type="button"'
+				dd
 					input.cmBtn @type="button" @value="input 元素"
-			div
-				p.cmBtnWrapper
+			dl.code-result
+				dt > code 'button.cmBtn'
+				dd
 					button.cmBtn @type="button"
 						"button 元素"
 
@@ -105,41 +161,28 @@
 			section.btn-status-hover
 				h3 "悬停状态"
 				div.intro
-					p
-						"鼠标悬停时可见此状态，不需要修改结构。"
-					p "触屏设备不支持此状态。"
+					p "鼠标悬停时可见此状态，不需要修改结构。"
+					p "触屏设备可能不支持此状态。"
 			section.btn-status-active
-				h3 "按下状态"
+				h3 "激活状态"
 				div.intro
+					p "鼠标按下或手指触摸时可见此状态，不需要修改结构。"
 					p
-						"鼠标按下或手指触摸时可见此状态，不需要修改结构。"
-					p "Android 2.X 不支持此状态。"
-				div.intro
-					p "以下按钮可供把玩："
-				div
-					p
-						a.cmBtn @href="#"
-							"按钮"
-
-			section.btn-status-force-active
-				h3 "选中状态"
-				div.intro
-					p
-						"当某个按钮具备开关状态时，可以通过添加或除移 "
+						"如果需要按钮一直保持在激活的状态（比如你需要做一个具有开关功能的按钮），可以通过添加 "
 						code ".active"
-						" 类来实现效果。"
-					p
-						"请注意，这个类和 CSS 伪类 "
-						code ":active"
-						" 不仅在含义上有区别，样式上也有差异。"
-				div
-					p
-						a.cmBtn.active @href="#"
-							".cmBtn.active"
+						" 类来实现效果。效果如下："
+				dl.code-result
+					dt > code '.cmBtn.active'
+					dd
+						div.cmBtnLine
+							a.cmBtn.active @href="#"
+								"激活的按钮"
+							a.cmBtn.cmBtnBordered.active @href="#"
+								"激活的按钮"
 
 			section.btn-status-disabled
 				h3 "禁用状态"
-				div.intro.cmText
+				div.intro
 					p
 						"表单按钮（"
 						code "<button>"
@@ -153,35 +196,57 @@
 						code "<a>"
 						" 元素实现的按钮，需要添加 "
 						code ".disabled"
-						" 类。（注意：此时链接仍可响应点击动作。）"
+						" 类。"
+
+				-- 禁用
+				div.intro
+					p '上述两种按钮的禁用效果分别如下：'
+				dl.code-result
+					dt > code 'a.cmBtn.disabled'
+					dd
+						div.cmBtnLine
+							a.cmBtn.disabled @href="#"
+								"禁用的按钮"
+							a.cmBtn.cmBtnBordered.disabled @href="#"
+								"禁用的按钮"
+				dl.code-result
+					dt > code 'button.cmBtn @disabled'
+					dd
+						div.cmBtnLine
+							button.cmBtn @disabled
+								"禁用的按钮"
+							button.cmBtn.cmBtnBordered @disabled
+								"禁用的按钮"
+
+				-- 禁用 + 激活
+				div.intro
+					p '禁用且激活的效果如下：'
+				dl.code-result
+					dt > code 'a.cmBtn.active.disabled'
+					dd
+						div.cmBtnLine
+							a.cmBtn.active.disabled @href="#"
+								"禁用的按钮"
+							a.cmBtn.cmBtnBordered.active.disabled @href="#"
+								"禁用的按钮"
+				dl.code-result
+					dt > code 'button.cmBtn.active @disabled'
+					dd
+						div.cmBtnLine
+							button.cmBtn.active @disabled
+								"禁用的按钮"
+							button.cmBtn.cmBtnBordered.active @disabled
+								"禁用的按钮"
+
+				-- 禁用 + 激活
+				div.intro
+					h4 "注意"
+					p '被禁用的按钮无法响应点击动作。如果你真的需要监听它们的点击事件，则只能为它们包一层容器，然后监听容器的点击事件。'
 					--p
 						"如需动态切换按钮的禁用状态，请使用以下 JavaScript API（开发中）："
 						ul
 							li > code "CMUI.btn.disable(btn)"
 							li > code "CMUI.btn.enable(btn)"
-				div.intro.cmText
-					p '上述两种按钮禁用状态的结构和效果分别如下：'
-					pre > code
-						'a.cmBtn.disabled
-						'button.cmBtn @disabled
-				-- 禁用
-				div
-					p
-						a.cmBtn.disabled @href="#"
-							".cmBtn.disabled"
-				div
-					p
-						button.cmBtn @disabled
-							".cmBtn:disabled"
-				-- 禁用 + 激活
-				div
-					p
-						a.cmBtn.active.disabled @href="#"
-							".cmBtn.active.disabled"
-				div
-					p
-						button.cmBtn.active @disabled
-							".cmBtn.active:disabled"
 
 		section.btn-multiple
 			h2 "按钮的排列组合"
@@ -194,26 +259,29 @@
 							    .cmBtn
 							    .cmBtn
 							    .cmBtn
+				div.result
+					div.cmBtnLine
+						a.cmBtn @href="#"
+							"按钮"
+						a.cmBtn @href="#"
+							"按钮"
+						a.cmBtn @href="#"
+							"按钮"
+					div.cmBtnLine
+						a.cmBtn.cmBtnBordered @href="#"
+							"表单按钮"
+						a.cmBtn.cmBtnBordered @href="#"
+							"表单按钮"
+						a.cmBtn.cmBtnBordered @href="#"
+							"表单按钮"
+				div.intro
+					h4 "注意"
 					p
-						"如果需要调整各按钮的宽度，建议使用 "
+						"如果需要调整各按钮的宽度，建议给 "
 						code "max-width"
 						" 和 "
 						code "min-width"
-						" 属性。"
-				div.cmBtnLine
-					a.cmBtn @href="#"
-						"按钮"
-					a.cmBtn @href="#"
-						"按钮"
-					a.cmBtn @href="#"
-						"按钮"
-				div.cmBtnLine
-					button.cmBtn
-						"表单按钮"
-					button.cmBtn
-						"表单按钮"
-					button.cmBtn
-						"表单按钮"
+						" 属性指定百分比值。"
 
 			hr
 			section.btn-group
@@ -226,17 +294,18 @@
 							    .cmBtn
 							    .cmBtn
 							    .cmBtn
-				div.cmBtnGroup
-					a.cmBtn @href="#"
-						"按钮"
-					a.cmBtn @href="#"
-						"按钮"
-					a.cmBtn @href="#"
-						"按钮"
-				div.cmBtnGroup
-					button.cmBtn
-						"表单按钮"
-					button.cmBtn
-						"表单按钮"
-					button.cmBtn
-						"表单按钮"
+				div.result
+					div.cmBtnGroup
+						a.cmBtn @href="#"
+							"按钮"
+						a.cmBtn @href="#"
+							"按钮"
+						a.cmBtn @href="#"
+							"按钮"
+					div.cmBtnGroup
+						a.cmBtn.cmBtnBordered @href="#"
+							"表单按钮"
+						a.cmBtn.cmBtnBordered @href="#"
+							"表单按钮"
+						a.cmBtn.cmBtnBordered @href="#"
+							"表单按钮"

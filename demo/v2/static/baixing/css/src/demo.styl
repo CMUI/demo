@@ -39,6 +39,11 @@ dl.code-result
 		& + dd
 			margin-top 0.25em
 
+dl.code-result
+div.result
+	+ div.intro
+		margin-top 2em
+
 /* --------------------------------------------- */
 /** layout **/
 -page-wrapper()
@@ -90,6 +95,8 @@ body > .cmSubview > section
 			//background-color $bx-color-x-light-gray
 		&:not(:last-child)
 			margin-bottom 1.5em
+		h3
+			font-size 1.25em
 		pre:not(:first-child)
 		ul:not(:first-child)
 		p:not(:first-child)
@@ -185,11 +192,6 @@ body > .cmSubview > section
 	.bx-text-minor dd
 		bx-text-minor()
 
-	section.info-box
-		div.cmInfoBox
-			p + a.cmBtn
-				margin-top 5px
-
 /* --------------------------------------------- */
 /** icon **/
 #icon
@@ -204,30 +206,15 @@ body > .cmSubview > section
 
 /* --------------------------------------------- */
 /** label **/
-#label
 
 
 /* --------------------------------------------- */
 /** btn **/
 #btn
 	section
-		section
-			&:not(:last-child)
-				margin-bottom 2em
-		div:not(:last-child):not(.intro)
+		div.cmBtnLine
+		div.cmBtnGroup
 			margin-bottom 0.5em
-	.btn-size
-	.btn-type
-		.cmBtnWrapper + p.code
-			margin-top 0.25em
-/*
-	.btn-size
-	.btn-type
-	.form-btn
-	.btn-status
-		.cmBtnWrapper .cmBtn
-			width 80%
-*/
 
 /* --------------------------------------------- */
 /** list **/
