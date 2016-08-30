@@ -151,6 +151,22 @@
 					code "margin"
 					" 来实现。"
 
+		section.cmSubview.card
+			h2 "卡片"
+			div.intro
+				p
+					"页面往往由多个逻辑区块组成，每个区块如果需要呈现出卡片的样式，可以为其添加 "
+					code ".cmCard"
+					" 这个类。因此页面主体内的结构往往是这样的："
+				pre > code
+					'main  //页面主体
+						    section.cmCard  //逻辑区块
+						    section.cmCard  //逻辑区块
+						    ...
+			div.intro
+				p "你现在正在阅读的 “卡片” 这个段落就是一个卡片。"
+				p "每个卡片默认拥有上下外边距，以保证与其它元素隔开：没有左右外边距，从而实现 “边到边” 的满幅效果。卡片没有默认的内边距，其内部布局需要另行设置。"
+
 		section.cmSubview.footer
 			h2 "页脚"
 			div.intro
