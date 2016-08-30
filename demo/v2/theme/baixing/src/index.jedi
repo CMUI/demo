@@ -24,6 +24,10 @@
 		section
 			h2 "元素"
 			ul.content
+				li
+					a @href="layout.php"
+						"页面框架"
+					"(Subview、标题栏、内容区等)"
 				li > a @href="label.php"
 					"标签"
 				li
@@ -40,10 +44,6 @@
 					a @href="msg-box.php"
 						"提示框"
 					"(包含常规、警告、成功、错误等状态)"
-				li
-					a @href="page.php"
-						"页面框架"
-					"(Subview、标题栏、内容区等)"
 		section
 			h2 "交互组件"
 			ul.content

@@ -1,8 +1,8 @@
 :import _skeleton
 
 	#base::after
-		- $data->pageId = 'page'
-		- $data->pageTitle = 'Page'
+		- $data->pageId = 'layout'
+		- $data->pageTitle = 'Layout'
 
 	#main
 		section.cmSubview
