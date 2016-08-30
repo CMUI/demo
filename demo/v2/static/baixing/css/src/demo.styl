@@ -131,12 +131,21 @@ body > .cmSubview > section
 #index
 	section
 		ul.content
-			padding-left 2em
+			padding-left 1.5em
 			list-style outside disc
-			li > a
-				display inline-block
-				font-size 1.25em
-				padding 0.5em
+			li
+				padding-left 0.25em
+				a
+					display inline-block
+					font-size 1.25em
+					padding 0.5em
+					margin-left -0.5em
+				small
+					display block
+					margin-top -1em
+					font-size 12px
+					pointer-events none
+					color $cm-color-fg-light
 
 	.version-info
 		-section()
