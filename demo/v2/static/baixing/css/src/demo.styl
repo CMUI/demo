@@ -44,6 +44,10 @@ div.result
 	+ div.intro
 		margin-top 2em
 
+div.demo-stage
+	border 1px dashed green
+	background-color $cm-color-stage
+
 /* --------------------------------------------- */
 /** layout **/
 -page-wrapper()
@@ -102,6 +106,8 @@ body > .cmSubview > section
 		ul:not(:last-child)
 		p:not(:last-child)
 			margin-bottom 0.5em
+		pre + p
+			margin-top 1em !important
 
 	// l2 section
 	section

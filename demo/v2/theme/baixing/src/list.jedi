@@ -7,16 +7,79 @@
 	#main
 		section.summary
 			h2 "概述"
-			div.intro.cmText
+			div.intro
 				p
 					"列表元素有一些基本的结构约定。"
-				ul
+				ul.cmText
 					li
 						"列表元素必须具有 "
 						code ".cmList"
 						" 这个基础类名，然后通过其它辅助性的类名来指定细节样式和属性。"
 					li
-						"列表项必须有一个（通常也应该只有一个）子元素作为其“内容元素”。"
+						"列表的各个列表项（"
+						code ".cmList > li"
+						"）必须有一个（通常也应该只有一个）子元素作为其 “内容元素”。"
+				p "因此一个列表的结构往往是这样的："
+				pre > code
+					'ul.cmList
+						    li > p
+						    li > p
+						    ...
+				p "其效果如下："
+
+			ul.cmList
+				li > p '列表项'
+				li > p '列表项'
+				li > p '列表项'
+
+		section
+			h2 "卡片型列表"
+			div.intro
+				p
+					"卡片型列表可以作为独立的逻辑区块存在。给列表追加 "
+					code ".cmCard"
+					" 类即可将其设置为卡片型列表。"
+				p
+					"卡片型列表可以有自己的标题，列表标题需添加 "
+					code ".cmListTitle"
+					" 类。此时结构往往是这样的："
+				pre > code
+					'h2.cmListTitle
+					'ul.cmList.cmCard
+						    li > p
+						    li > p
+						    ...
+				p "其效果如下：（绿色虚线表示容器边界）"
+
+			div.demo-stage
+				h2.cmListTitle '列表标题'
+				ul.cmList.cmCard
+					li > p '列表项'
+					li > p '列表项'
+					li > p '列表项'
+
+		section
+			h2 "间距"
+			div.intro
+				p "常规列表没有默认的垂直外边距，因此列表与其它元素之间的间距需要另行设置。不过两个列表之间是有默认间距的："
+			ul.cmList
+				li > p '常规列表 · 列表项'
+				li > p '常规列表 · 列表项'
+			ul.cmList
+				li > p '常规列表 · 列表项'
+
+			div.intro
+				p "卡片型列表具有卡片默认的垂直外边距。卡片型列表、列表标题等元素之间也是有默认间距的：（绿色虚线表示容器边界）"
+			div.demo-stage
+				ul.cmList.cmCard
+					li > p '卡片型列表 · 列表项'
+				h2.cmListTitle '列表标题'
+				ul.cmList.cmCard
+					li > p '卡片型列表 · 列表项'
+					li > p '卡片型列表 · 列表项'
+				ul.cmList.cmCard
+					li > p '卡片型列表 · 列表项'
+
 		section
 			h2 "内容"
 			section
