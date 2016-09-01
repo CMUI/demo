@@ -15,7 +15,7 @@
 			ul.content
 				li
 					a @href="color.php"
-						"颜色"
+						"颜色 ✓"
 					small "预定义的颜色变量"
 				li
 					a @href="text.php"
@@ -23,7 +23,7 @@
 					small "标题、段落、列表、文本信息框等"
 				li
 					a @href="icon.php"
-						"图标"
+						"图标 ✓"
 					small "预定义图标、自定义图标等"
 
 		section
@@ -51,7 +51,7 @@
 					small "行列式布局的列表、弹性网络列表"
 				li
 					a @href="msg-box.php"
-						"提示框"
+						"提示框 ✓"
 					small "包含常规、警告、成功、错误等状态"
 
 		section
@@ -65,3 +65,15 @@
 					a @href="loading.php"
 						"加载提示（Loading）"
 					small "提示用户操作正在进行、可附加文字提示、JS API"
+				li
+					a @href="#"
+						"悬浮提示（Toast）"
+					small "（开发中）"
+				li
+					a @href="#"
+						"弹框（Dialog）"
+					small "（开发中）"
+				li
+					a @href="#"
+						"标签页（Tab）"
+					small "（开发中）"

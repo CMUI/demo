@@ -16,7 +16,9 @@
 						'div.cmMsgBox
 							    "提示文本"
 				div.cmMsgBox
-					"常规提示文本段落。"
+					"提示文本"
+				div.cmMsgBox
+					"提示文本超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长……"
 
 				div.intro
 					p "可在提示框元素上增加额外的类名，以设置其场景样式。"
@@ -26,13 +28,14 @@
 						li > code '.cmMsgBoxError'
 						li > code '.cmMsgBoxForbidden'
 				div.cmMsgBox.cmMsgBoxWarning
-					"警告提示文本段落。"
+					"警告提示文本"
 				div.cmMsgBox.cmMsgBoxSuccess
-					"成功提示文本段落。"
+					"成功提示文本"
 				div.cmMsgBox.cmMsgBoxError
-					"错误提示文本段落。"
+					"错误提示文本"
 				div.cmMsgBox.cmMsgBoxForbidden
-					"禁止操作提示文本段落。"
+					"禁止操作提示文本"
+
 			section.rich-text
 				h3 "富文本提示"
 				div.intro

@@ -12,7 +12,7 @@
 				h3 "结构约定"
 				div.intro
 					p
-						"所有图标建议采用 "
+						"所有图标采用 "
 						code "i.cmIcon"
 						" 这样的结构。"
 			section
@@ -23,8 +23,7 @@
 						" 类具有以下初始样式："
 					ul
 						li '显示为块级'
-						li '水平居中（此特性可能会取消）'
-						li '无浮动，无定位属性'
+						li '无浮动、无定位属性'
 						li '溢出隐藏'
 						li '内部文字自动隐藏（可在其内部包含文本，以增强可访问性）'
 			section
@@ -34,38 +33,20 @@
 					ul
 						li
 							code ".cmX20"
-							" - 20px × 20px"
+							" —— 20px 宽高的正方形"
 						li
 							code ".cmX30"
-							" - 30px × 30px"
+							" —— 30px 宽高的正方形"
 						li
 							code ".cmX40"
-							" - 40px × 40px"
+							" —— 40px 宽高的正方形"
 						li
 							code ".cmX50"
-							" - 50px × 50px"
+							" —— 50px 宽高的正方形"
 		section.system-icon
 			h2 "系统图标"
 			div.intro
-				p "以下图标仅供 CMUI 组件内部使用。"
-			dl
-				dt > i.cmIcon.cmX50.loading-black-bg
-				dd '黑底白图的 loading 标志'
-			dl
-				dt > i.cmIcon.cmX20.msg-info
-				dd '普通提示'
-			dl
-				dt > i.cmIcon.cmX20.msg-success
-				dd '成功提示'
-			dl
-				dt > i.cmIcon.cmX20.msg-error
-				dd '错误提示'
-			dl
-				dt > i.cmIcon.cmX20.msg-forbidden
-				dd '禁止提示'
-			dl
-				dt > i.cmIcon.cmX20.msg-warning
-				dd '警告提示'
+				p "CMUI 内置了一些图标，仅供提示框、加载提示等组件内部使用。"
 
 		section.custom-icon
 			h2 "自定义图标"
