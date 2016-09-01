@@ -47,7 +47,7 @@
 					small "普通列表、链接列表、卡片式列表、带箭头、带徽章、带值、带图标"
 				li
 					a @href="grid-list.php"
-						"网格列表"
+						"网格列表 ✓"
 					small "行列式布局的列表、弹性网络列表"
 				li
 					a @href="msg-box.php"

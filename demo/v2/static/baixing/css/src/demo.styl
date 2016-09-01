@@ -232,7 +232,7 @@ body > .cmSubview > section
 /** list **/
 #list
 	ul.cmList
-		& + div.intro
+		+ div.intro
 			margin-top 2em
 
 		&.icon-size .cmIcon
@@ -243,9 +243,8 @@ body > .cmSubview > section
 /** grid list **/
 #grid-list
 	.cmGridList
-		line-height $line-height-ui
-	.cmGridListNoBorder
-		border-dashed(green)
+		+ div.intro
+			margin-top 2em
 
 
 /* --------------------------------------------- */

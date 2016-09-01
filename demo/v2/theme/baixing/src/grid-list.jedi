@@ -8,7 +8,7 @@
 		section.summary
 			h2 "概述"
 			div.intro
-				p "网格列表主要以行列式呈现的列表。"
+				p "网格列表是以行列式呈现的列表。"
 				p
 					"网格列表元素必须具有 "
 					code ".cmGridList"
@@ -18,49 +18,22 @@
 						    li > a
 						    li > a
 						    li > a
-
-		section.line-style
-			h2 "网格列表样式"
-			section
-				h3 "默认有分隔线"
-				ul.cmGridList
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
-					li > a @href="#"
-						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
-			section
-				h3 "无有分隔线"
-				div.intro
-					p
-						"给列表元素增加 "
-						code ".cmGridListNoBorder"
-						" 类名即可去除分隔线。"
-					p
-						"绿色虚线框用于示意元素范围。"
-				ul.cmGridList.cmGridListNoBorder
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项"
-					li > a @href="#"
-						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
-					li > a @href="#"
-						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+			ul.cmGridList
+				li > a @href="#"
+					"列表项"
+				li > a @href="#"
+					"列表项"
+				li > a @href="#"
+					"列表项"
+				li > a @href="#"
+					"列表项"
+				li > a @href="#"
+					"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+				li > a @href="#"
+					"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 
 		section.column-width
-			h2 "网格列表的列数"
+			h2 "列数与列宽"
 			section
 				h3 "默认两列"
 				ul.cmGridList
@@ -77,7 +50,7 @@
 					li > a @href="#"
 						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 			section
-				h3 "多列 "
+				h3 "多列"
 				div.intro
 					p "可以通过指定列表项的宽度来实现对列数的控制。比如下面的 CSS 代码将列数设置为（最多）4 列，并确保每列最多可显示 6 个汉字。"
 					pre > code
@@ -85,28 +58,107 @@
 							    width: 25%;
 							    min-width: 6em;
 							}
+			section
+				h3 "弹性"
+				div.intro
+					p
+						"给列表添加 "
+						code ".cmGridListFlexible"
+						" 类即可将其设置为 “弹性网格列表”。"
+					p
+						"弹性网格列表可以根据屏幕宽度自动调整列数（3～5 列）。"
+					pre > code
+						'ul.cmGridList.cmGridListFlexible
+							    li > a
+							    li > a
+							    ...
+				ul.cmGridList.cmGridListFlexible
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+					li > a @href="#"
+						"列表项"
+				div.intro
+					p
+						"如果列表项中包含很长的文字，不希望每列太窄裁掉文字，可以给列表添加 "
+						code ".cmGridListLongText"
+						" 类。它可以让弹性网格列表在窄屏上显示 2 列。"
+					pre > code
+						'ul.cmGridList.cmGridListFlexible.cmGridListLongText
+							    li > a
+							    li > a
+							    ...
+				ul.cmGridList.cmGridListFlexible.cmGridListLongText
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
+					li > a @href="#"
+						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 
-		section.selected-item
-			h2 "当前项的样式"
+		section
+			h2 "被选中的列表项"
 			div.intro
 				p
-					"给当前列表项增加 "
+					"给列表项（"
+					code "<li>"
+					"）元素添加 "
 					code ".selected"
-					" 类名即可。"
+					" 类名，即可将其设置为被选中的状态。"
+				pre > code
+					'ul.cmGridList
+						    li > a @href="#"
+						    li.selected > a @href="#"
+						    li > a @href="#"
+						    li > a @href="#"
 			ul.cmGridList
 				li > a @href="#"
 					"列表项"
 				li.selected > a @href="#"
-					"当前列表项"
+					"被选中的列表项"
 				li > a @href="#"
 					"列表项"
 				li > a @href="#"
 					"列表项"
+			div.intro
+				p
+					"给列表项内的 "
+					code "<a>"
+					" 元素添加 "
+					code ".selected"
+					" 类，也可以将该列表项设置为被选中的状态。（以下代码的实际效果同上。）"
+				pre > code
+					'ul.cmGridList
+						    li > a @href="#"
+						    li > a.selected @href="#"
+						    li > a @href="#"
+						    li > a @href="#"
 
 		section.form
 			h2 "用于表单"
 			div.intro
-				p "可用于表单中的单选框、复选框等。"
+				p "可用于组织表单中的单选框、复选框等。"
 				pre > code
 					'form > ul.cmGridList
 						    li > label > input
