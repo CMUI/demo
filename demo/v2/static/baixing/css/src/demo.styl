@@ -34,10 +34,10 @@ dl.code-result
 		margin-bottom 1em
 	dt
 		margin-bottom 5px
-	dd
-		//border 1px dashed green
-		& + dd
-			margin-top 0.25em
+	dd:not(:last-child)
+		margin-bottom 1em
+	dd + dd
+		margin-top 0.25em
 
 dl.code-result
 div.result
@@ -252,10 +252,12 @@ body > .cmSubview > section
 /* --------------------------------------------- */
 /** msg box **/
 #msg-box
-	section.msg-box
-		div.cmMsgBox + div.intro
-			margin-top 2em
-
+	.cmMsgBox + div.intro
+		margin-top 2em
+	.cmMsgBox:last-child
+		margin-bottom 0
+	.code-result dd .cmMsgBox
+		margin 0
 
 /* --------------------------------------------- */
 /** layout **/
