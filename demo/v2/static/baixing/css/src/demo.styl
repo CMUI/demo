@@ -54,9 +54,10 @@ div.demo-stage
 	margin 0 auto
 	max-width 640px
 -section()
-	cmCard()
 	box-sizing border-box
+	margin 10px 0
 	padding 10px $cm-content-padding 25px
+	background-color $cm-color-bg
 
 body
 	line-height $cm-line-height-ui
@@ -110,7 +111,7 @@ body > .cmSubview > section
 			margin-top 1em !important
 
 	// l2 section
-	section
+	> section
 		&:not(:last-child)
 			margin-bottom 1.5em
 		> h3
@@ -309,6 +310,9 @@ body > .cmSubview > section
 				&.full-width
 					background #eee
 					full-width-block()
+	section.section
+		.demo-stage .cmSectionContent p
+			padding 20px $cm-content-padding
 
 /* --------------------------------------------- */
 /** overlay **/

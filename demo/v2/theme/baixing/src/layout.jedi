@@ -151,23 +151,72 @@
 					code "margin"
 					" 来实现。"
 
-		section.cmSubview.card
-			h2 "卡片"
+		section.section
+			h2 "逻辑区块"
 			div.intro
 				p
-					"页面往往由多个逻辑区块组成，每个区块如果需要呈现出卡片的样式，可以为其添加 "
-					code ".cmCard"
-					" 这个类。因此页面主体内的结构往往是这样的："
+					"页面主体往往由多个逻辑区块组成，逻辑区块建议采用 "
+					code "<section>"
+					" 元素来标记。因此页面主体的结构往往是这样的："
 				pre > code
-					'main  //页面主体
-						    section.cmCard  //逻辑区块
-						    section.cmCard  //逻辑区块
+					'article.cmSubview > main  //页面主体
+						    section  //逻辑区块
+						    section  //逻辑区块
 						    ...
+				p
+					code "<section>"
+					" 元素没有任何特殊样式，因此你需要另行设置它的垂直外边距。"
 			div.intro
-				p "你现在正在阅读的 “卡片” 这个段落就是一个卡片。"
-				p "每个卡片默认拥有上下外边距，以保证与其它元素隔开：没有左右外边距，从而实现 “边到边” 的满幅效果。卡片没有默认的内边距，其内部布局需要另行设置。"
+				p
+					"逻辑区块必须包含一个内容元素（"
+					code ".cmSectionContent"
+					"），可以有一个标题元素（"
+					code ".cmSectionTitle"
+					"）。因此其结构往往是这样的："
+				pre > code
+					'main > section  //逻辑区块
+						    h2.cmSectionTitle     //标题元素（可选）
+						    div.cmSectionContent  //内容元素（必需）
+			section
+				h3 "内容元素"
+				div.intro
+					p
+						"逻辑区块的内容元素需要添加 "
+						code ".cmSectionContent"
+						" 这个类。"
+					p "它将具有白色背景，但没有边框和投影；它是一个容器，因此也没有其它特殊样式。"
+			section
+				h3 "标题元素"
+				div.intro
+					p
+						"逻辑区块的标题元素需要添加 "
+						code ".cmSectionTitle"
+						" 这个类。"
+					p "它设置了水平内边距；字体不加粗，颜色为灰色；背景透明，因此可以透过它看见 Subview 的背景色。"
+			section
+				h3 "示例"
+				div.intro
+					p "假设我们有两个逻辑区块，则结构可能是这样的：（为演示清楚，我们为区块内容元素添加了内边距。）"
+					pre > code
+						'section
+							    h2.cmSectionTitle "区块标题"
+							    div.cmSectionContent
+							        p "区块内容"
+							section
+							    h2.cmSectionTitle "区块标题"
+							    div.cmSectionContent
+							        p "区块内容"
+				div.demo-stage.cmSubview
+					section
+						h2.cmSectionTitle "区块标题"
+						div.cmSectionContent
+							p "区块内容"
+					section
+						h2.cmSectionTitle "区块标题"
+						div.cmSectionContent
+							p "区块内容"
 
-		section.cmSubview.footer
+		section.footer
 			h2 "页脚"
 			div.intro
 				p "CMUI 未对页脚进行任何样式定义，请自定处理。"
