@@ -168,15 +168,7 @@
 					" 元素没有任何特殊样式，因此你需要另行设置它的垂直外边距。"
 			div.intro
 				p
-					"逻辑区块必须包含一个内容元素（"
-					code ".cmSectionContent"
-					"），可以有一个标题元素（"
-					code ".cmSectionTitle"
-					"）。因此其结构往往是这样的："
-				pre > code
-					'main > section  //逻辑区块
-						    h2.cmSectionTitle     //标题元素（可选）
-						    div.cmSectionContent  //内容元素（必需）
+					"逻辑区块必须包含一个内容元素，可以有一个标题元素。"
 			section
 				h3 "内容元素"
 				div.intro
@@ -196,16 +188,14 @@
 			section
 				h3 "示例"
 				div.intro
-					p "假设我们有两个逻辑区块，则结构可能是这样的：（为演示清楚，我们为区块内容元素添加了内边距。）"
+					p "如果一个逻辑区域拥有标题，则它的结构可能是这样的："
 					pre > code
 						'section
 							    h2.cmSectionTitle "区块标题"
 							    div.cmSectionContent
 							        p "区块内容"
-							section
-							    h2.cmSectionTitle "区块标题"
-							    div.cmSectionContent
-							        p "区块内容"
+					p "如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）"
+
 				div.demo-stage.cmSubview
 					section
 						h2.cmSectionTitle "区块标题"
@@ -213,6 +203,22 @@
 							p "区块内容"
 					section
 						h2.cmSectionTitle "区块标题"
+						div.cmSectionContent
+							p "区块内容"
+
+				div.intro
+					p "如果一个逻辑区域省略了标题，则它的内容元素将具有顶部外边距，以便把多个逻辑区块从视觉区分开。"
+					pre > code
+						'section
+							    div.cmSectionContent
+							        p "区块内容"
+					p "如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）"
+
+				div.demo-stage.cmSubview
+					section
+						div.cmSectionContent
+							p "区块内容"
+					section
 						div.cmSectionContent
 							p "区块内容"
 
