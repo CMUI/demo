@@ -36,9 +36,9 @@
 			h2 "作为区块内容"
 			div.intro
 				p
-					"列表可以作为逻辑区块的内容元素。我们只需要给列表追加 "
+					"列表可以作为逻辑区块的内容元素。我们需要给列表追加 "
 					code ".cmSectionContent"
-					" 类，并将其作为子元素放置到 "
+					" 类，然后将其作为子元素放置到 "
 					code "<section>"
 					" 元素中。"
 				p
@@ -49,7 +49,6 @@
 						    ul.cmList.cmSectionContent
 						        li > p '列表项'
 						        li > p '列表项'
-						        ...
 				p "如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）"
 
 			div.demo-stage
@@ -58,11 +57,9 @@
 					ul.cmList.cmSectionContent
 						li > p '列表项'
 						li > p '列表项'
-						li > p '列表项'
 				section
 					h2.cmSectionTitle '列表标题'
 					ul.cmList.cmSectionContent
-						li > p '列表项'
 						li > p '列表项'
 						li > p '列表项'
 
@@ -75,22 +72,6 @@
 				li > p '常规列表 · 列表项'
 			ul.cmList
 				li > p '常规列表 · 列表项'
-
-			div.intro
-				p "当列表作为逻辑区块的内容元素存在时，列表与列表之间、列表与标题之间的间距由逻辑区块的样式决定：（绿色虚线表示容器边界）"
-			div.demo-stage
-				section
-					ul.cmList.cmSectionContent
-						li > p '列表项'
-				section
-					h2.cmSectionTitle '列表标题'
-					ul.cmList.cmSectionContent
-						li > p '列表项'
-						li > p '列表项'
-						li > p '列表项'
-				section
-					ul.cmList.cmSectionContent
-						li > p '列表项'
 
 		section
 			h2 "内容"
