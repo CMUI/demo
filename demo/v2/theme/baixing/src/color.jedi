@@ -42,10 +42,6 @@
 					dt > code '$cm-color-stage = #f2f2f2'
 					dd '[极浅灰]'
 					dd '页面主体区域的底色'
-				dl.code-result.stage-shadow
-					dt > code '$cm-color-stage-shadow = #ddd'
-					dd '[浅灰]'
-					dd '区块投影色'
 				dl.code-result.stage-backdrop
 					dt > code '$cm-color-stage-backdrop = #999'
 					dd '[深灰]'

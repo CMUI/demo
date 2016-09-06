@@ -17,13 +17,13 @@
 				dt > code ".cmBtn"
 				dd
 					a.cmBtn @href="#"
-						"按钮"
+						"实色按钮"
 
 			div.intro
 				p
-					"需要 “ghost button”？为按钮追加 "
+					"需要空心按钮（ghost button）？为按钮追加 "
 					code ".cmBtnBordered"
-					" 类就可以了。"
+					" 类就可以了。（以下所有段落都同时提供了实色按钮和实心按钮内的效果。）"
 			dl.code-result
 				dt > code ".cmBtn.cmBtnBordered"
 				dd
