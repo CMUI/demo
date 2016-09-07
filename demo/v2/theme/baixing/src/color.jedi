@@ -61,7 +61,3 @@
 					dt > code '$cm-color-splitter = #e6e6e6'
 					dd '[黑灰]'
 					dd '内容分隔线'
-				dl.code-result.splitter-dark
-					dt > code '$cm-color-splitter-dark = #ccc'
-					dd '[高亮]'
-					dd '顶部分隔线（我暂时不明白）'
