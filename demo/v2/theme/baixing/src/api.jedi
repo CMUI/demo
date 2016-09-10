@@ -1,0 +1,91 @@
+:import _skeleton
+
+	#base::after
+		- $data->pageId = 'api'
+		- $data->pageTitle = 'API'
+
+	#main
+		section
+			h2 "概述"
+			div.intro
+				p
+					"和绝大多数 UI 框架一样，CMUI 提供的接口以 HTML 结构约定和元素的类名为主。"
+				p
+					"此外，为保证风格统一，CMUI 也抽象出了一些变量供业务层使用；为提升开发效率，CMUI 还为业务层提供了一些工具性的 mixin。"
+
+		section
+			h2 "类名"
+			div.intro
+				p "CMUI 提供的通用工具类如下："
+
+			section
+				h3 "布局"
+				dl.code-result
+					dt > code '.clearfix'
+					dd
+						'闭合浮动（它是通过 '
+						code 'clearfix()'
+						' 这个 mixin 来实现的）'
+			section
+				h3 "尺寸"
+				dl.code-result
+					dt > code '.cmX20'
+					dd '将元素的宽高均设置为 20px'
+					dt > code '.cmX30'
+					dd '将元素的宽高均设置为 30px'
+					dt > code '.cmX40'
+					dd '将元素的宽高均设置为 40px'
+					dt > code '.cmX50'
+					dd '将元素的宽高均设置为 50px'
+
+		section
+			h2 "变量"
+			div.intro
+				p "业务层应把这些变量视为常量，不应在业务开发中修改它们的值。"
+				p
+					"关于颜色变量，请参见 "
+					a @href='color.php'
+						'颜色'
+					" 章节。"
+			div.intro
+				p "更多变量的值和含义如下："
+
+			section
+				h3 "字体大小"
+				dl.code-result
+					dt > code '$cm-font-size-s = 12px'
+					dd '小字号（次要文字等）'
+					dt > code '$cm-font-size = 14px'
+					dd '常规字号（正文、段落等）'
+					dt > code '$cm-font-size-l = 16px'
+					dd '大字号（标题等）'
+					dt > code '$cm-font-size-xl = 18px'
+					dd '超大字号（重着强调的文字等）'
+
+			section
+				h3 "文字行高"
+				dl.code-result
+					dt > code '$cm-line-height = 1.5'
+					dd '默认行高'
+					dt > code '$cm-line-height-min = 1.2'
+					dd '最小行高（某些 UI 元素可能需要把行高压缩到最小值）'
+					dt > code '$cm-line-height-text = 1.5'
+					dd '段落文本的行高'
+
+			section
+				h3 "元素样式"
+				dl.code-result
+					dt > code '$cm-content-padding = 10px'
+					dd '文本距离容器边缘的空隙'
+
+		section
+			h2 "Mixin"
+			div.intro
+				p
+					"Mixin 可以生成多行声明或多条规则，从而实现某种样式或功能。"
+
+			section
+				h3 "布局"
+				dl.code-result
+					dt > code 'clearfix()'
+					dd '闭合浮动'

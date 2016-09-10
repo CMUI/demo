@@ -77,3 +77,11 @@
 					a @href="#"
 						"标签页（Tab）"
 					small "（开发中）"
+
+		section
+			h2 "开发者需知"
+			ul.content
+				li
+					a @href="api.php"
+						"接口"
+					small "变量、mixin 等编码接口"
