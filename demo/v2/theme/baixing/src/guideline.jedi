@@ -1,0 +1,32 @@
+:import _skeleton
+
+	#base::after
+		- $data->pageId = 'guideline'
+		- $data->pageTitle = 'Guideline'
+
+	#main
+		section
+			h2 "CMUI 规范"
+			div.intro
+				ul.cmList.cmRightArrow
+					li
+						a @@ href="https://github.com/CMUI/doc/issues/2" target="_blank"
+							"CMUI 浏览器分级支持策略"
+					li
+						a @@ href="https://github.com/CMUI/doc/issues/1" target="_blank"
+							"CMUI 之 Stylus 编码规范（草案）"
+
+		section
+			h2 "Haojing 开发规范"
+			div.intro
+				ul.cmList.cmRightArrow
+					li
+						a @@ href="https://github.com/baixing/Notes/issues/152" target="_blank"
+							"前端代码通用规范（草案）"
+					li
+						a @@ href="https://github.com/baixing/Notes/issues/121" target="_blank"
+							"Stylus 编码规范（草案）"
+					li
+						a @@ href="https://github.com/baixing/Notes/issues/176" target="_blank"
+							"Jedi 编码规范（草案）"
+

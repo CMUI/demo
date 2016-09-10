@@ -15,15 +15,15 @@
 			ul.content
 				li
 					a @href="color.php"
-						"颜色 ✓"
+						"颜色"
 					small "预定义的颜色变量"
 				li
 					a @href="text.php"
-						"文本 ✓"
+						"文本"
 					small "标题、段落、列表、文本信息框等"
 				li
 					a @href="icon.php"
-						"图标 ✓"
+						"图标"
 					small "预定义图标、自定义图标等"
 
 		section
@@ -35,23 +35,23 @@
 					small "Subview、标题栏、内容区、卡片等"
 				li
 					a @href="label.php"
-						"标签 ✓"
+						"标签"
 					small "空心标签、实心标签、多种尺寸"
 				li
 					a @href="btn.php"
-						"按钮 ✓"
+						"按钮"
 					small "多种尺寸、多种类型、多种状态、多种排列组合"
 				li
 					a @href="list.php"
-						"列表 ✓"
+						"列表"
 					small "普通列表、链接列表、卡片式列表、带箭头、带徽章、带值、带图标"
 				li
 					a @href="grid-list.php"
-						"网格列表 ✓"
+						"网格列表"
 					small "行列式布局的列表、弹性网络列表"
 				li
 					a @href="msg-box.php"
-						"提示框 ✓"
+						"提示框"
 					small "包含常规、警告、成功、错误等状态"
 
 		section
@@ -81,6 +81,10 @@
 		section
 			h2 "开发者需知"
 			ul.content
+				li
+					a @href="guideline.php"
+						"技术规范"
+					small "编码规范、浏览器支持策略等"
 				li
 					a @href="api.php"
 						"接口"
