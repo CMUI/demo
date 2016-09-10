@@ -29,26 +29,18 @@
 				p
 					"为标签追加辅助类即可设置其尺寸。"
 			dl.code-result
-				dt > code ".cmLabel.cmLabelXSmall"
-				dd
-					span.cmLabel.cmLabelXSmall
-						"超小标签"
-			dl.code-result
 				dt > code ".cmLabel.cmLabelSmall"
 				dd
 					span.cmLabel.cmLabelSmall
 						"小标签"
-			dl.code-result
 				dt > code ".cmLabel"
 				dd
 					span.cmLabel
 						"常规标签"
-			dl.code-result
 				dt > code ".cmLabel.cmLabelLarge"
 				dd
 					span.cmLabel.cmLabelLarge
 						"大标签"
-			dl.code-result
 				dt > code ".cmLabel.cmLabelXLarge"
 				dd
 					span.cmLabel.cmLabelXLarge
@@ -60,12 +52,12 @@
 					code ".cmLabel"
 					" 类名加到 "
 					code "<small>"
-					" 元素上也可以得到 “超小标签” 的效果。"
+					" 元素上也可以得到 “小标签” 的效果。"
 			dl.code-result
 				dt > code "small.cmLabel"
 				dd
 					small.cmLabel
-						"超小标签"
+						"小标签"
 
 		section.style
 			h2 "标签样式"
@@ -76,7 +68,7 @@
 					" 类名可以得到实心标签的效果。"
 				p
 					strong "注意"
-					"：Firefox 48- 无法正常显示实心标签效果。"
+					"：Firefox 48- 可能无法正常显示实心标签效果。"
 			dl.code-result
 				dt > code ".cmLabel.cmLabelSolid"
 				dd
