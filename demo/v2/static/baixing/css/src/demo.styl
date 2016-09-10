@@ -62,9 +62,6 @@ div.demo-stage
 	padding 10px $cm-content-padding 25px
 	background-color $cm-color-bg
 
-body
-	line-height $cm-line-height-ui
-
 body > .cmSubview
 	-page-wrapper()
 	> header
@@ -75,7 +72,7 @@ body > .cmSubview
 		background-color $headerBg
 		background-image linear-gradient(to bottom, lighten($headerBg, 15%), darken($headerBg, 15%))
 		h1
-			font-size 1.5em
+			font-size 1.75em
 	> footer
 		padding 15px
 		text-align center
@@ -92,16 +89,12 @@ body > .cmSubview > section
 		line-height $cm-line-height-min
 		border-left 10px solid $cm-color-primary
 
+	h3
+		font-size 1.25em
+
 	div.intro
-		&
-			//padding 0.75em 1em
-			font-size 14px
-			//border-left 3px solid $bx-color-light-gray
-			//background-color $bx-color-x-light-gray
 		&:not(:last-child)
 			margin-bottom 1.5em
-		h3
-			font-size 1.25em
 		pre:not(:first-child)
 		ul:not(:first-child)
 		p:not(:first-child)
@@ -118,7 +111,6 @@ body > .cmSubview > section
 		&:not(:last-child)
 			margin-bottom 1.5em
 		> h3
-			font-size 1.25em
 			margin-bottom 0.5em
 		> h4
 			margin-bottom 0.25em
@@ -149,7 +141,7 @@ body > .cmSubview > section
 				small
 					display block
 					margin-top -1em
-					font-size 12px
+					font-size $cm-font-size-s
 					pointer-events none
 					color $cm-color-fg-light
 
@@ -168,45 +160,36 @@ body > .cmSubview > section
 			hide-text()
 			float left
 			margin-right 10px
+			margin-bottom 0
 			size 50px 30px
 			border 2px solid #999
 		dd:last-child
-			padding-top 5px
+			padding-top 7px
 
+	dl.fg-light dd:nth-child(2)
+		background-color $cm-color-fg-light
 	dl.fg dd:nth-child(2)
 		background-color $cm-color-fg
-	dl.bg dd:nth-child(2)
-		background-color $cm-color-bg
+	dl.fg-dark dd:nth-child(2)
+		background-color $cm-color-fg-dark
+
 	dl.primary dd:nth-child(2)
 		background-color $cm-color-primary
 	dl.highlight dd:nth-child(2)
 		background-color $cm-color-highlight
 	dl.link dd:nth-child(2)
 		background-color $cm-color-link
-
+	dl.bg dd:nth-child(2)
+		background-color $cm-color-bg
 	dl.stage dd:nth-child(2)
 		background-color $cm-color-stage
-	dl.stage-backdrop dd:nth-child(2)
-		background-color $cm-color-stage-backdrop
 
-	dl.fg-minor dd:nth-child(2)
-		background-color $cm-color-fg-minor
-	dl.fg-light dd:nth-child(2)
-		background-color $cm-color-fg-light
 	dl.splitter dd:nth-child(2)
 		background-color $cm-color-splitter
 
 /* --------------------------------------------- */
 /** text **/
-#text
-	.bx-headline dd
-		bx-headline()
-	.bx-headline-minor dd
-		bx-headline-minor()
-	.bx-text dd
-		bx-text()
-	.bx-text-minor dd
-		bx-text-minor()
+
 
 /* --------------------------------------------- */
 /** icon **/

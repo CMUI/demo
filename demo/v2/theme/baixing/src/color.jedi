@@ -13,16 +13,23 @@
 					"：本页内容还未完全确定。"
 				p "设计师已提供以下颜色，应通过变量来使用这些颜色。"
 
-			section.core-color
-				h3 "基础颜色"
+			section
+				h3 "文本颜色"
+				dl.code-result.fg-light
+					dt > code '$cm-color-fg-light = #666'
+					dd '[浅灰]'
+					dd '次要文本颜色'
 				dl.code-result.fg
-					dt > code '$cm-color-fg = #333'
+					dt > code '$cm-color-fg = #999'
+					dd '[中灰]'
+					dd '常规的文本颜色'
+				dl.code-result.fg-dark
+					dt > code '$cm-color-fg-dark = #333'
 					dd '[深灰]'
-					dd '常规文本颜色'
-				dl.code-result.bg
-					dt > code '$cm-color-bg = white'
-					dd '[纯白]'
-					dd '区块背景色'
+					dd '强化的文本颜色'
+
+			section
+				h3 "基本色调"
 				dl.code-result.primary
 					dt > code '$cm-color-primary = #ff4466'
 					dd '[玫红色]'
@@ -35,28 +42,17 @@
 					dt > code '$cm-color-link = #015EE7'
 					dd '[亮蓝]'
 					dd '链接文本色'
-
-			section.layout-color
-				h3 "页面框架颜色"
+				dl.code-result.bg
+					dt > code '$cm-color-bg = white'
+					dd '[纯白]'
+					dd '区块背景色'
 				dl.code-result.stage
 					dt > code '$cm-color-stage = #f2f2f2'
 					dd '[极浅灰]'
 					dd '页面主体区域的底色'
-				dl.code-result.stage-backdrop
-					dt > code '$cm-color-stage-backdrop = #999'
-					dd '[深灰]'
-					dd '页面主体区域之外的一片虚无'
 
-			section.additional-color
-				h3 "扩展颜色"
-				dl.code-result.fg-minor
-					dt > code '$cm-color-fg-minor = #666'
-					dd '[浅灰]'
-					dd '次要文本颜色'
-				dl.code-result.fg-light
-					dt > code '$cm-color-fg-light = #999'
-					dd '[中灰]'
-					dd '弱化的文本颜色'
+			section
+				h3 "其它"
 				dl.code-result.splitter
 					dt > code '$cm-color-splitter = #e6e6e6'
 					dd '[黑灰]'
