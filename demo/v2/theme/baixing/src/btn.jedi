@@ -174,7 +174,7 @@
 					p
 						"如果需要按钮一直保持在激活的状态（比如你需要做一个具有开关功能的按钮），可以通过添加 "
 						code ".active"
-						" 类来实现效果。效果如下："
+						" 类来实现效果。效果如下（仅列出两种颜色的示例）："
 				dl.code-result
 					dt > code '.cmBtn.active'
 					dd
@@ -182,6 +182,13 @@
 							a.cmBtn.active @href="#"
 								"激活的按钮"
 							a.cmBtn.cmBtnBordered.active @href="#"
+								"激活的按钮"
+					dt > code '.cmBtn.cmBtnPrimary.active'
+					dd
+						div.cmBtnLine
+							a.cmBtn.cmBtnPrimary.active @href="#"
+								"激活的按钮"
+							a.cmBtn.cmBtnPrimary.cmBtnBordered.active @href="#"
 								"激活的按钮"
 
 			section.btn-status-disabled
@@ -204,7 +211,7 @@
 
 				-- 禁用
 				div.intro
-					p '上述两种按钮的禁用效果分别如下：'
+					p '不同颜色按钮的禁用效果都是一样的：'
 				dl.code-result
 					dt > code 'a.cmBtn.disabled'
 					dd
@@ -213,19 +220,11 @@
 								"禁用的按钮"
 							a.cmBtn.cmBtnBordered.disabled @href="#"
 								"禁用的按钮"
-				dl.code-result
-					dt > code 'button.cmBtn @disabled'
-					dd
-						div.cmBtnLine
-							button.cmBtn @disabled
-								"禁用的按钮"
-							button.cmBtn.cmBtnBordered @disabled
-								"禁用的按钮"
 
 				-- 禁用 + 激活
-				div.intro
+				-- div.intro
 					p '禁用且激活的效果如下：'
-				dl.code-result
+				-- dl.code-result
 					dt > code 'a.cmBtn.active.disabled'
 					dd
 						div.cmBtnLine
@@ -233,7 +232,7 @@
 								"禁用的按钮"
 							a.cmBtn.cmBtnBordered.active.disabled @href="#"
 								"禁用的按钮"
-				dl.code-result
+				-- dl.code-result
 					dt > code 'button.cmBtn.active @disabled'
 					dd
 						div.cmBtnLine
@@ -242,15 +241,21 @@
 							button.cmBtn.cmBtnBordered.active @disabled
 								"禁用的按钮"
 
-				-- 禁用 + 激活
+				-- div.intro
+					p
+						"如需动态切换按钮的禁用状态，请使用以下 JavaScript API（开发中）："
+					ul
+						li > code "CMUI.btn.disable(btn)"
+						li > code "CMUI.btn.enable(btn)"
+
 				div.intro
 					h4 "注意"
-					p '被禁用的按钮无法响应点击动作。如果你真的需要监听它们的点击事件，则只能为它们包一层容器，然后监听容器的点击事件。'
-					--p
-						"如需动态切换按钮的禁用状态，请使用以下 JavaScript API（开发中）："
-						ul
-							li > code "CMUI.btn.disable(btn)"
-							li > code "CMUI.btn.enable(btn)"
+					ul.cmText
+						li
+							'被禁用的按钮添加 '
+							code ".active"
+							" 类无效。"
+						li '被禁用的按钮无法响应点击动作。如果你真的需要监听它们的点击事件，则只能为它们包一层容器，然后监听容器的点击事件。'
 
 		section.btn-multiple
 			h2 "按钮的排列组合"
