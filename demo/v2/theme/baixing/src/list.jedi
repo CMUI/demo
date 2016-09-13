@@ -122,18 +122,18 @@
 				div.intro
 					p
 						"给需要加右箭头的列表项添加 "
-						code ".cmRightArrow"
+						code ".cmListRightArrow"
 						" 类名。"
 					p "请记住只有链接列表项才会显示出右箭头——这听起来像个限制，但其实很合理。因为，如果这个列表项没有动作，只是纯展示，那它也是不需要有右箭头的。"
 					pre > code
 						'ul.cmList
 							    li > a
-							    li.cmRightArrow > a
+							    li.cmListRightArrow > a
 				ul.cmList
 					li
 						a @href="#"
 							"列表项"
-					li.cmRightArrow
+					li.cmListRightArrow
 						a @href="#"
 							"列表项"
 			hr
@@ -141,13 +141,13 @@
 				div.intro
 					p
 						"如果恰好一个列表中的每个列表项都需要右箭头，那把 "
-						code ".cmRightArrow"
+						code ".cmListRightArrow"
 						" 类名加给列表元素就可以了。"
 					pre > code
-						'ul.cmList.cmRightArrow
+						'ul.cmList.cmListRightArrow
 							    li > a
 							    li > a
-				ul.cmList.cmRightArrow
+				ul.cmList.cmListRightArrow
 					li
 						a @href="#"
 							"列表项"
@@ -165,19 +165,19 @@
 						" 属性可以生成一个徽章。"
 					pre > code
 						'ul.cmList
-							    li @data-badge="999"
+							    li @data-badge="9"
 							        p
 							    li @data-badge="999999"
 							        a
-							    li.cmRightArrow @data-badge="999"
+							    li.cmListRightArrow @data-badge="999"
 							        a
 				ul.cmList
-					li @data-badge="999"
+					li @data-badge="9"
 						p "列表项"
 					li @data-badge="999999"
 						a @href="#"
 							"列表项"
-					li.cmRightArrow @data-badge="999"
+					li.cmListRightArrow @data-badge="999"
 						a @href="#"
 							"列表项"
 
@@ -195,7 +195,7 @@
 							        p
 							    li @data-value="foo"
 							        a
-							    li.cmRightArrow @data-value="bar"
+							    li.cmListRightArrow @data-value="bar"
 							        a
 				ul.cmList
 					li @data-value="列表项的值"
@@ -203,7 +203,7 @@
 					li @data-value="列表项的值"
 						a @href="#"
 							"列表项"
-					li.cmRightArrow @data-value="列表项的值很长很长很长很长很长很长很长很长很长很长"
+					li.cmListRightArrow @data-value="列表项的值很长很长很长很长很长很长很长很长很长很长"
 						a @href="#"
 							"列表项很长很长很长很长很长很长"
 
