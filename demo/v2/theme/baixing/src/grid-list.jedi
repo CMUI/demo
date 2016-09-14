@@ -96,14 +96,14 @@
 				div.intro
 					p
 						"如果列表项中包含很长的文字，不希望每列太窄裁掉文字，可以给列表添加 "
-						code ".cm-grid-list-long-text"
+						code ".cm-grid-list-with-long-text"
 						" 类。它可以让弹性网格列表在窄屏上显示 2 列。"
 					pre > code
-						'ul.cm-grid-list.cm-grid-list-flexible.cm-grid-list-long-text
+						'ul.cm-grid-list.cm-grid-list-flexible.cm-grid-list-with-long-text
 							    li > a
 							    li > a
 							    ...
-				ul.cm-grid-list.cm-grid-list-flexible.cm-grid-list-long-text
+				ul.cm-grid-list.cm-grid-list-flexible.cm-grid-list-with-long-text
 					li > a @href="#"
 						"列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长"
 					li > a @href="#"

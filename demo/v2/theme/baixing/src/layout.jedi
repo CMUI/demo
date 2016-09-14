@@ -15,21 +15,21 @@
 			div.intro
 				p
 					"一个 HTML 页面可能包含多个 “view”。一个 view 就是一个功能视图，页面中至少应包含一个 view，其中第一个 view 称作 root view（主视图），其它称作 sub view（子视图）。每个 view 都应该被放置在单独的 "
-					code "body > article.cm-subview"
+					code "body > article.subview"
 					" 元素中。"
 				p "因此整个 HTML 文档的结构应该是这样的（以 L2V 为例）："
 				pre > code
 					'html
 						    head
 						    body
-						        article.cm-subview#listing-view  //主视图（必需）
-						        article.cm-subview#vad-view      //子视图（可选）
-						        article.cm-subview#other-view    //子视图（可选）
+						        article.subview#listing-view  //主视图（必需）
+						        article.subview#vad-view      //子视图（可选）
+						        article.subview#other-view    //子视图（可选）
 			div.intro
 				p
 					"每个 view 内的主要结构应该是这样的："
 				pre > code
-					'article.cm-subview  //页面级容器
+					'article.subview  //页面级容器
 						    header  //页头
 						    main    //页面主体
 						    footer  //页脚
@@ -53,7 +53,7 @@
 				pre > code
 					'header  //页头区域
 						    nav.cm-nav-bar  //导航栏
-			div.demo-stage.cm-subview
+			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
 						h1 "（这里是导航栏）"
@@ -70,7 +70,7 @@
 					'header  //页头区域
 						    nav.cm-nav-bar  //导航栏
 						    nav           //其它导航元素
-			div.demo-stage.cm-subview
+			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
 						h1 "（这里是导航栏）"
@@ -94,7 +94,7 @@
 						        a.cm-btn                     //后退按钮
 						    div.cm-btn-wrapper.cm-nav-bar-right  //右按钮容器
 						        a.cm-btn                     //动作按钮
-			div.demo-stage.cm-subview
+			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
 						h1 "标题"
@@ -109,7 +109,7 @@
 				h3 "注意"
 				p "导航栏按钮可以通过辅助类来设置为不同的场景（颜色），也可以设置为空心样式。但导航栏按钮的尺寸是固定的。"
 
-			div.demo-stage.cm-subview
+			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
 						h1 "标题"
@@ -140,7 +140,7 @@
 					code "<section>"
 					" 元素来标记。因此页面主体的结构往往是这样的："
 				pre > code
-					'article.cm-subview > main  //页面主体
+					'article.subview > main  //页面主体
 						    section  //逻辑区块
 						    section  //逻辑区块
 						    ...
@@ -187,7 +187,7 @@
 							        p "区块内容"
 					p "如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）"
 
-				div.demo-stage.cm-subview
+				div.demo-stage.subview
 					section
 						h2.cm-section-title "区块标题"
 						div.cm-section-content
