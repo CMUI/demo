@@ -8,83 +8,116 @@
 		section
 			h2 "提示框"
 			div.intro
-				p "目前来说，提示框是静态的 UI 元素，用户无法自行关闭。开发者可通过脚本手动控制其显隐。未来可能会提供关闭按钮的功能。"
 				p
 					"块元素添加 "
-					code ".cmMsgBox"
+					code ".cm-msg-box"
 					" 类即可显示为提示框。"
 				pre > code
-					'div.cmMsgBox
-						    "常规提示文本。"
-			div.cmMsgBox
-				"常规提示文本。"
-			div.cmMsgBox
-				"常规提示文本超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长。"
+					'div.cm-msg-box
+						    "常规提示文本"
+			div.intro
+				p
+					"效果如下：（绿色虚线表示容器边界）"
+			div.demo-stage
+				div.cm-msg-box
+					"常规提示文本"
+			div.demo-stage
+				div.cm-msg-box
+					"常规提示文本超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长"
+
 			div.intro
 				h3 "注意"
-				ul.cmText > li "提示框具有默认的垂直外边距。"
+				ul.cm-text > li "提示框没有预设垂直外边距。"
 
 		section
 			h2 "场景样式"
 			div.intro
 				p "可在提示框元素上增加额外的类名，以设置其场景样式。"
 			dl.code-result
-				dt > code ".cmMsgBox.cmMsgBoxWarning"
+				dt > code ".cm-msg-box.cm-msg-box-info"
 				dd
-					div.cmMsgBox.cmMsgBoxWarning
-						"警告提示文本"
-				dt > code ".cmMsgBox.cmMsgBoxSuccess"
+					div.demo-stage
+						div.cm-msg-box.cm-msg-box-info
+							"信息提示文本"
+				dt > code ".cm-msg-box.cm-msg-box-success"
 				dd
-					div.cmMsgBox.cmMsgBoxSuccess
-						"成功提示文本"
-				dt > code ".cmMsgBox.cmMsgBoxError"
+					div.demo-stage
+						div.cm-msg-box.cm-msg-box-success
+							"成功提示文本"
+				dt > code ".cm-msg-box.cm-msg-box-warning"
 				dd
-					div.cmMsgBox.cmMsgBoxError
-						"错误提示文本"
-				dt > code ".cmMsgBox.cmMsgBoxForbidden"
+					div.demo-stage
+						div.cm-msg-box.cm-msg-box-warning
+							"警告提示文本"
+				dt > code ".cm-msg-box.cm-msg-box-error"
 				dd
-					div.cmMsgBox.cmMsgBoxForbidden
-						"禁止操作提示文本"
+					div.demo-stage
+						div.cm-msg-box.cm-msg-box-error
+							"错误提示文本"
 
-		section.rich-text
-			h2 "富文本提示"
+		section
+			h2 "图标"
 			div.intro
 				p
-					"如果需要在提示框内呈现标题、段落、列表等元素的样式，需要在提示框元素上增加 "
-					code '.cmText'
-					" 类名。"
-				p "比如说，提示框可以包含多个文本段落。"
+					"提示框一般都会搭配图标显示。需要显式地给容器添加 "
+					code ".cm-msg-box-with-icon"
+					" 类，同时添加一个 20x20 的图标元素。（可用图标参见 "
+					a @@ href="icon.php"
+						"图标"
+					"。）"
 				pre > code
-					'div.cmMsgBox.cmText
-						    p "提示内容文本段落。"
-						    p "提示内容文本段落。"
+					'div.cm-msg-box.cm-msg-box-with-icon
+						    i.cm-icon  //图标元素
+						    "带图标的提示框"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-info.cm-msg-box-with-icon
+					i.cm-icon.cm-icon-x20-msg-info
+					"带图标的提示框"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-success.cm-msg-box-with-icon
+					i.cm-icon.cm-icon-x20-msg-success
+					"带图标的提示框"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-icon
+					i.cm-icon.cm-icon-x20-msg-warning
+					"带图标的提示框"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-error.cm-msg-box-with-icon
+					i.cm-icon.cm-icon-x20-msg-error
+					"带图标的提示框"
 
-			div.cmMsgBox.cmText
-				p "提示内容文本段落。"
-				p "提示内容文本段落。"
+		section
+			h2 "关闭"
+			div.intro
+				p
+					"可以为提示框增加关闭按钮。需要显式地给容器添加 "
+					code ".cm-msg-box-with-close-btn"
+					" 类，同时添加一个关闭按钮。"
+				pre > code
+					'div.cm-msg-box.cm-msg-box-with-close-btn
+						    a.cm-msg-box-close-btn
+						        @@ href="#" data-action="cm-close-msg-box"
+						    "这是一个可关闭的提示框。"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-close-btn
+					a.cm-msg-box-close-btn
+						@@ href="#" data-action="cm-close-msg-box"
+					"这是一个可关闭的提示框。"
 
 			div.intro
-				p "不过一般来说，如果提示框需要包含一段富文本，则这些文本需要有一个标题。"
+				p "提示框的图标和关闭按钮可以同时存在："
 				pre > code
-					'div.cmMsgBox.cmText
-						    h3 "提示框标题"
-						    p "提示内容文本段落。"
-						    ul
-						        li "提示内容列表项。"
-						    ...
-			div.cmMsgBox.cmText
-				h3 "提示框标题"
-				p "提示内容文本段落。"
-			div.cmMsgBox.cmText
-				h3 "提示框标题"
-				p "提示内容文本段落。"
-				ul
-					li "提示内容列表项。"
-					li "提示内容列表项。"
-			div.cmMsgBox.cmText
-				h3 "提示框标题"
-				p "提示内容文本段落。"
-				ul
-					li "提示内容列表项。"
-					li "提示内容列表项。"
-				p "提示内容文本段落超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长。"
+					'div.cm-msg-box.cm-msg-box-with-icon.cm-msg-box-with-close-btn
+						    i.cm-icon
+						    a.cm-msg-box-close-btn @href="#"
+						    "带图标的、可关闭的提示框。"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-icon.cm-msg-box-with-close-btn
+					i.cm-icon.cm-icon-x20-msg-warning
+					a.cm-msg-box-close-btn @href="#"
+					"带图标的、可关闭的提示框。"
+			div.demo-stage
+				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-icon.cm-msg-box-with-close-btn
+					i.cm-icon.cm-icon-x20-msg-warning
+					a.cm-msg-box-close-btn @href="#"
+					"带图标的、可关闭的提示框。超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长"

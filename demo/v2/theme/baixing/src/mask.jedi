@@ -15,21 +15,21 @@
 					strong "不过请注意这不是遮罩本身的特性，只是本页面为了便于测试而增加的行为。"
 			dl
 				dt
-					a.cmBtn @href="#" @data-action="mask-show"
+					a.cm-btn @href="#" @data-action="mask-show"
 						"显示"
 				dd > code 'CMUI.mask.show()'
 			dl
 				dt
-					a.cmBtn @href="#" @data-action="mask-hide"
+					a.cm-btn @href="#" @data-action="mask-hide"
 						"隐藏"
 				dd > code 'CMUI.mask.hide()'
 			dl
 				dt
-					a.cmBtn @href="#" @data-action="mask-fade-in"
+					a.cm-btn @href="#" @data-action="mask-fade-in"
 						"淡入"
 				dd > code 'CMUI.mask.fadeIn()'
 			dl
 				dt
-					a.cmBtn @href="#" @data-action="mask-fade-out"
+					a.cm-btn @href="#" @data-action="mask-fade-out"
 						"淡出"
 				dd > code 'CMUI.mask.fadeOut()'

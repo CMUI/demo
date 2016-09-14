@@ -10,7 +10,7 @@
 			div.intro
 				p
 					"为行内元素添加 "
-					code ".cmLabel"
+					code ".cm-label"
 					" 类名即可将其设置为标签。"
 				p
 					"标签的 "
@@ -19,8 +19,8 @@
 					code "inline-block"
 					"。"
 			dl.code-result
-				dt > code ".cmLabel"
-				dd > span.cmLabel
+				dt > code ".cm-label"
+				dd > span.cm-label
 					"标签"
 
 		section.size
@@ -29,34 +29,34 @@
 				p
 					"为标签追加辅助类即可设置其尺寸。"
 			dl.code-result
-				dt > code ".cmLabel.cmLabelSmall"
+				dt > code ".cm-label.cm-label-small"
 				dd
-					span.cmLabel.cmLabelSmall
+					span.cm-label.cm-label-small
 						"小标签"
-				dt > code ".cmLabel"
+				dt > code ".cm-label"
 				dd
-					span.cmLabel
+					span.cm-label
 						"常规标签"
-				dt > code ".cmLabel.cmLabelLarge"
+				dt > code ".cm-label.cm-label-large"
 				dd
-					span.cmLabel.cmLabelLarge
+					span.cm-label.cm-label-large
 						"大标签"
-				dt > code ".cmLabel.cmLabelXLarge"
+				dt > code ".cm-label.cm-label-x-large"
 				dd
-					span.cmLabel.cmLabelXLarge
+					span.cm-label.cm-label-x-large
 						"超大标签"
 			hr
 			div.intro
 				p
 					"把 "
-					code ".cmLabel"
+					code ".cm-label"
 					" 类名加到 "
 					code "<small>"
 					" 元素上也可以得到 “小标签” 的效果。"
 			dl.code-result
-				dt > code "small.cmLabel"
+				dt > code "small.cm-label"
 				dd
-					small.cmLabel
+					small.cm-label
 						"小标签"
 
 		section.style
@@ -64,15 +64,15 @@
 			div.intro
 				p
 					"给标签追加 "
-					code ".cmLabelSolid"
+					code ".cm-label-solid"
 					" 类名可以得到实心标签的效果。"
 				p
 					strong "注意"
 					"：Firefox 48- 可能无法正常显示实心标签效果。"
 			dl.code-result
-				dt > code ".cmLabel.cmLabelSolid"
+				dt > code ".cm-label.cm-label-solid"
 				dd
-					span.cmLabel.cmLabelSolid
+					span.cm-label.cm-label-solid
 						"实心标签"
 
 		section.color

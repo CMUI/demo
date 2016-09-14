@@ -29,13 +29,13 @@
 			section
 				h3 "尺寸"
 				dl.code-result
-					dt > code '.cmX20'
+					dt > code '.cm-x20'
 					dd '将元素的宽高均设置为 20px'
-					dt > code '.cmX30'
+					dt > code '.cm-x30'
 					dd '将元素的宽高均设置为 30px'
-					dt > code '.cmX40'
+					dt > code '.cm-x40'
 					dd '将元素的宽高均设置为 40px'
-					dt > code '.cmX50'
+					dt > code '.cm-x50'
 					dd '将元素的宽高均设置为 50px'
 
 		section

@@ -62,7 +62,7 @@ div.demo-stage
 	padding 10px $cm-content-padding 25px
 	background-color $cm-color-bg
 
-body > .cmSubview
+body > .cm-subview
 	-page-wrapper()
 	> header
 		padding 10px $cm-content-padding
@@ -77,7 +77,7 @@ body > .cmSubview
 		padding 15px
 		text-align center
 
-body > .cmSubview > section
+body > .cm-subview > section
 	-section()
 
 	> h2
@@ -201,7 +201,7 @@ body > .cmSubview > section
 		display inline-block
 		margin-bottom 0.5em
 		border 2px solid #999
-		i.cmIcon.cmX50.loading-black-bg
+		i.cm-icon.cm-x50.loading-black-bg
 			background-color black
 
 /* --------------------------------------------- */
@@ -212,25 +212,25 @@ body > .cmSubview > section
 /** btn **/
 #btn
 	section
-		div.cmBtnLine
-		div.cmBtnGroup
+		div.cm-btn-line
+		div.cm-btn-group
 			margin-bottom 0.5em
 
 /* --------------------------------------------- */
 /** list **/
 #list
-	ul.cmList
+	ul.cm-list
 		+ div.intro
 			margin-top 2em
 
-		&.icon-size .cmIcon
+		&.icon-size .cm-icon
 			background-color green
 
 
 /* --------------------------------------------- */
 /** grid list **/
 #grid-list
-	.cmGridList
+	.cm-grid-list
 		+ div.intro
 			margin-top 2em
 
@@ -238,11 +238,11 @@ body > .cmSubview > section
 /* --------------------------------------------- */
 /** msg box **/
 #msg-box
-	.cmMsgBox + div.intro
+	.cm-msg-box + div.intro
 		margin-top 2em
-	.cmMsgBox:last-child
+	.cm-msg-box:last-child
 		margin-bottom 0
-	.code-result dd .cmMsgBox
+	.code-result dd .cm-msg-box
 		margin 0
 
 /* --------------------------------------------- */
@@ -296,7 +296,7 @@ body > .cmSubview > section
 					background #eee
 					full-width-block()
 	section.section
-		.demo-stage .cmSectionContent p
+		.demo-stage .cm-section-content p
 			padding 15px
 			text-align center
 
@@ -317,7 +317,7 @@ body > .cmSubview > section
 		display inline-block
 		vertical-align middle
 #mask
-	.cmMask
+	.cm-mask
 		pointer-events none
 #loading
 	section.loading

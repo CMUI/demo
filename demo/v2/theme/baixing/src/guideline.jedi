@@ -8,7 +8,7 @@
 		section
 			h2 "CMUI 规范"
 			div.intro
-				ul.cmList.cmListRightArrow
+				ul.cm-list.cm-list-right-arrow
 					li
 						a @@ href="https://github.com/CMUI/doc/issues/2" target="_blank"
 							"CMUI 浏览器分级支持策略"
@@ -19,7 +19,7 @@
 		section
 			h2 "Haojing 开发规范"
 			div.intro
-				ul.cmList.cmListRightArrow
+				ul.cm-list.cm-list-right-arrow
 					li
 						a @@ href="https://github.com/baixing/Notes/issues/152" target="_blank"
 							"前端代码通用规范（草案）"

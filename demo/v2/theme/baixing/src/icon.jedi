@@ -13,13 +13,13 @@
 				div.intro
 					p
 						"所有图标采用 "
-						code "i.cmIcon"
+						code "i.cm-icon"
 						" 这样的结构。"
 			section
 				h3 "初始样式"
-				div.intro.cmText
+				div.intro.cm-text
 					p
-						code ".cmIcon"
+						code ".cm-icon"
 						" 类具有以下初始样式："
 					ul
 						li '显示为块级'
@@ -28,20 +28,20 @@
 						li '内部文字自动隐藏（可在其内部包含文本，以增强可访问性）'
 			section
 				h3 "图标尺寸"
-				div.intro.cmText
+				div.intro.cm-text
 					p "添加以下类名来指定图标的尺寸。"
 					ul
 						li
-							code ".cmX20"
+							code ".cm-x20"
 							" —— 20px 宽高的正方形"
 						li
-							code ".cmX30"
+							code ".cm-x30"
 							" —— 30px 宽高的正方形"
 						li
-							code ".cmX40"
+							code ".cm-x40"
 							" —— 40px 宽高的正方形"
 						li
-							code ".cmX50"
+							code ".cm-x50"
 							" —— 50px 宽高的正方形"
 		section.system-icon
 			h2 "系统图标"
@@ -50,11 +50,11 @@
 
 		section.custom-icon
 			h2 "自定义图标"
-			div.intro.cmText
+			div.intro.cm-text
 				p "CMUI 未对图标的实现做限制，选择权完全交给业务层。"
 				p
 					"以下图标方案都可与 "
-					code "i.cmIcon"
+					code "i.cm-icon"
 					" 正常整合："
 				ul
 					li '背景图片（以及 CSS Sprites）'
@@ -62,5 +62,5 @@
 					li 'SVG Icon'
 				p
 					"图标尺寸可自行定义，也可以采用上述 "
-					code ".cmX20"
+					code ".cm-x20"
 					" 等尺寸类。"

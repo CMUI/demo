@@ -13,38 +13,38 @@
 			section.normal
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-show"
+						a.cm-btn @href="#" @data-action="loading-show"
 							"显示"
 					dd > code 'CMUI.loading.show()'
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-hide"
+						a.cm-btn @href="#" @data-action="loading-hide"
 							"隐藏"
 					dd > code 'CMUI.loading.hide()'
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-fade-in"
+						a.cm-btn @href="#" @data-action="loading-fade-in"
 							"淡入"
 					dd > code 'CMUI.loading.fadeIn()'
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-fade-out"
+						a.cm-btn @href="#" @data-action="loading-fade-out"
 							"淡出"
 					dd > code 'CMUI.loading.fadeOut()'
 			section.with-text
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-show-with-text"
+						a.cm-btn @href="#" @data-action="loading-show-with-text"
 							"带文字显示"
 					dd > code "CMUI.loading.show('str')"
 					dd > code "CMUI.loading.fadeIn('str')"
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-update-text"
+						a.cm-btn @href="#" @data-action="loading-update-text"
 							"更新文字"
 					dd > code "CMUI.loading.updateText('new-str')"
 				dl
 					dt
-						a.cmBtn @href="#" @data-action="loading-clear-text"
+						a.cm-btn @href="#" @data-action="loading-clear-text"
 							"清除文字"
 					dd > code "CMUI.loading.updateText('')"

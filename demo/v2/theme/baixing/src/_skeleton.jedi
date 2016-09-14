@@ -35,7 +35,7 @@ html @lang='zh-cmn-Hans'
 
 	body @id="{pageId}"
 		#content
-			article.cmSubview.cmSubviewRoot
+			article.cm-subview.cm-subview-root
 				#header
 					header
 						h1
