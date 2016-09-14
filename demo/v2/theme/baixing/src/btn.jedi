@@ -47,20 +47,20 @@
 			div.intro
 				p "为按钮添加尺寸辅助类，可以设置其尺寸。"
 			dl.code-result
-				dt > code ".cm-btn.cm-btn-x-small"
+				dt > code ".cm-btn.cm-btn-xs"
 				dd
 					div.cm-btn-line
-						a.cm-btn.cm-btn-x-small @href="#"
+						a.cm-btn.cm-btn-xs @href="#"
 							"超小按钮"
-						a.cm-btn.cm-btn-bordered.cm-btn-x-small @href="#"
+						a.cm-btn.cm-btn-bordered.cm-btn-xs @href="#"
 							"超小按钮"
 			dl.code-result
-				dt > code ".cm-btn.cm-btn-small"
+				dt > code ".cm-btn.cm-btn-s"
 				dd
 					div.cm-btn-line
-						a.cm-btn.cm-btn-small @href="#"
+						a.cm-btn.cm-btn-s @href="#"
 							"小按钮"
-						a.cm-btn.cm-btn-bordered.cm-btn-small @href="#"
+						a.cm-btn.cm-btn-bordered.cm-btn-s @href="#"
 							"小按钮"
 			dl.code-result
 				dt > code ".cm-btn"
@@ -71,20 +71,20 @@
 						a.cm-btn.cm-btn-bordered @href="#"
 							"常规按钮"
 			dl.code-result
-				dt > code ".cm-btn.cm-btn-large"
+				dt > code ".cm-btn.cm-btn-l"
 				dd
 					div.cm-btn-line
-						a.cm-btn.cm-btn-large @href="#"
+						a.cm-btn.cm-btn-l @href="#"
 							"大按钮"
-						a.cm-btn.cm-btn-bordered.cm-btn-large @href="#"
+						a.cm-btn.cm-btn-bordered.cm-btn-l @href="#"
 							"大按钮"
 			dl.code-result
-				dt > code ".cm-btn.cm-btn-x-large"
+				dt > code ".cm-btn.cm-btn-xl"
 				dd
 					div.cm-btn-line
-						a.cm-btn.cm-btn-x-large @href="#"
+						a.cm-btn.cm-btn-xl @href="#"
 							"超大按钮"
-						a.cm-btn.cm-btn-bordered.cm-btn-x-large @href="#"
+						a.cm-btn.cm-btn-bordered.cm-btn-xl @href="#"
 							"超大按钮"
 
 		section.btn-type

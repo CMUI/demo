@@ -29,21 +29,21 @@
 				p
 					"为标签追加辅助类即可设置其尺寸。"
 			dl.code-result
-				dt > code ".cm-label.cm-label-small"
+				dt > code ".cm-label.cm-label-s"
 				dd
-					span.cm-label.cm-label-small
+					span.cm-label.cm-label-s
 						"小标签"
 				dt > code ".cm-label"
 				dd
 					span.cm-label
 						"常规标签"
-				dt > code ".cm-label.cm-label-large"
+				dt > code ".cm-label.cm-label-l"
 				dd
-					span.cm-label.cm-label-large
+					span.cm-label.cm-label-l
 						"大标签"
-				dt > code ".cm-label.cm-label-x-large"
+				dt > code ".cm-label.cm-label-xl"
 				dd
-					span.cm-label.cm-label-x-large
+					span.cm-label.cm-label-xl
 						"超大标签"
 			hr
 			div.intro
