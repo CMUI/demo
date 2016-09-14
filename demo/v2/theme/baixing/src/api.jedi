@@ -73,10 +73,12 @@
 					dd '段落文本的行高'
 
 			section
-				h3 "元素样式"
+				h3 "布局"
 				dl.code-result
 					dt > code '$cm-content-padding = 10px'
 					dd '文本距离容器边缘的空隙'
+					dt > code '$cm-section-gap = 10px'
+					dd '区块之间的空隙'
 
 		section
 			h2 "Mixin"
