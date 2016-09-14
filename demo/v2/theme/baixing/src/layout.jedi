@@ -56,7 +56,7 @@
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
-						h1 "（这里是导航栏）"
+						h1.cm-nav-bar-title "（这里是导航栏）"
 						div.cm-btn-wrapper.cm-nav-bar-left
 							a.cm-btn @href="#action"
 								"导航栏按钮"
@@ -69,11 +69,11 @@
 				pre > code
 					'header  //页头区域
 						    nav.cm-nav-bar  //导航栏
-						    nav           //其它导航元素
+						    nav             //其它导航元素
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
-						h1 "（这里是导航栏）"
+						h1.cm-nav-bar-title "（这里是导航栏）"
 						div.cm-btn-wrapper.cm-nav-bar-left
 							a.cm-btn @href="#action"
 								"导航栏按钮"
@@ -89,15 +89,15 @@
 				p "导航栏内部的结构约定如下："
 				pre > code
 					'nav.cm-nav-bar  //导航栏
-						    h1                              //导航栏标题
+						    h1.cm-nav-bar-title                  //导航栏标题
 						    div.cm-btn-wrapper.cm-nav-bar-left   //左按钮容器
-						        a.cm-btn                     //后退按钮
+						        a.cm-btn
 						    div.cm-btn-wrapper.cm-nav-bar-right  //右按钮容器
-						        a.cm-btn                     //动作按钮
+						        a.cm-btn
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
-						h1 "标题"
+						h1.cm-nav-bar-title "标题"
 						div.cm-btn-wrapper.cm-nav-bar-left
 							a.cm-btn @href="#back"
 								"返回"
@@ -112,7 +112,7 @@
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
-						h1 "标题"
+						h1.cm-nav-bar-title "标题"
 						div.cm-btn-wrapper.cm-nav-bar-left
 							a.cm-btn.cm-btn-bordered @href="#back"
 								"空心按钮"
