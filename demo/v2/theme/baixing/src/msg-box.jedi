@@ -95,13 +95,11 @@
 					" 类，同时添加一个关闭按钮。"
 				pre > code
 					'div.cm-msg-box.cm-msg-box-with-close-btn
-						    a.cm-msg-box-close-btn
-						        @@ href="#" data-action="cm-close-msg-box"
+						    a.cm-msg-box-close-btn @href="#"
 						    "这是一个可关闭的提示框。"
 			div.demo-stage
 				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-close-btn
-					a.cm-msg-box-close-btn
-						@@ href="#" data-action="cm-close-msg-box"
+					a.cm-msg-box-close-btn @href="#"
 					"这是一个可关闭的提示框。"
 
 			div.intro
