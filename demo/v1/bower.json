@@ -4,7 +4,7 @@
   "license": "MIT",
   "homepage": "http://cmui.net/",
   "dependencies": {
-    "cmui": "^0.10"
+    "cmui": "^0.12"
   },
   "authors": [
     "cssmagic <cssmagic.cn@gmail.com>"

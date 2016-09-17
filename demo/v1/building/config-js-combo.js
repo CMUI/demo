@@ -4,7 +4,7 @@ jsSrcList['lib'] = [
 	// zepto.js 结尾没有分号，所以以下文件的顺序需要注意。
 	'./bower_components/underscore/underscore.js',
 	'./bower_components/zepto.js/dist/zepto.js',
-	'./bower_components/underscore.ext/dist/underscore.ext.js',
+	'./bower_components/gearbox/dist/gearbox.js',
 ]
 jsSrcList['cmui'] = [
 	'./bower_components/cmui/src/js/adapter-trad/_intro.js',
