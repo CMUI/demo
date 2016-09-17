@@ -7,7 +7,7 @@ void function () {
 			this._initPage()
 		},
 		_getPageId: function () {
-			this.pageId = _.dom.$body.attr('id') || '__unknown__'
+			this.pageId = gearbox.dom.$body.attr('id') || '__unknown__'
 		},
 		_initPage: function () {
 			var pageModule = this[this.pageId]
@@ -22,7 +22,7 @@ void function () {
 			this._setAction()
 		},
 		_setAction: function () {
-			_.action.add({
+			gearbox.action.add({
 				'mask-show': function () {
 					return CMUI.mask.show()
 				},
@@ -44,7 +44,7 @@ void function () {
 			this._setAction()
 		},
 		_setAction: function () {
-			_.action.add({
+			gearbox.action.add({
 				'loading-show': function () {
 					return CMUI.loading.show()
 				},
