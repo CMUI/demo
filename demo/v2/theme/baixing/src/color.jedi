@@ -16,11 +16,11 @@
 			section
 				h3 "文本颜色"
 				dl.code-result.fg-light
-					dt > code '$cm-color-fg-light = #666'
+					dt > code '$cm-color-fg-light = #999'
 					dd '[浅灰]'
 					dd '次要文本颜色'
 				dl.code-result.fg
-					dt > code '$cm-color-fg = #999'
+					dt > code '$cm-color-fg = #666'
 					dd '[中灰]'
 					dd '常规的文本颜色'
 				dl.code-result.fg-dark
