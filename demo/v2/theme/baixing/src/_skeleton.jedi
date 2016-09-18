@@ -1,8 +1,8 @@
 #base
 	- $data = new ArrayObject(array(), ArrayObject::ARRAY_AS_PROPS)
-	- $data->pathStatic = 'http://s.baixing.net/w'
-	- $data->pathCSS = $data->pathStatic
-	- $data->pathJS = $data->pathStatic
+	- $data->pathStatic = '/demo/v2/static/baixing'
+	- $data->pathCSS = $data->pathStatic . '/css/dist'
+	- $data->pathJS = $data->pathStatic . '/js/dist'
 	- $data->pageId = ''
 	- $data->pageTitle = ''
 	- $data->metaKeywords = 'CMUI, UI, Framework, CSS, Mobile, Web'
@@ -58,6 +58,6 @@ html @lang='zh-cmn-Hans'
 		#widgets
 
 		#defer-scripts
-			script @src="{pathJS}/cmui-v2-libs.js"
-			script @src="{pathJS}/cmui-v2.js"
-			script @src="{pathJS}/cmui-v2-demo.js"
+			script @src="{pathJS}/lib.js"
+			script @src="{pathJS}/cmui.js"
+			script @src="{pathJS}/demo.js"
