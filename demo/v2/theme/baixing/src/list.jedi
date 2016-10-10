@@ -174,23 +174,23 @@
 				div.intro
 					p
 						"给列表项添加 "
-						code "data-badge"
+						code "data-cm-badge"
 						" 属性可以生成一个徽章。"
 					pre > code
 						'ul.cm-list
-							    li @data-badge="9"
+							    li @data-cm-badge="9"
 							        p
-							    li @data-badge="999999"
+							    li @data-cm-badge="999999"
 							        a
-							    li.cm-list-with-right-arrow @data-badge="999"
+							    li.cm-list-with-right-arrow @data-cm-badge="999"
 							        a
 				ul.cm-list
-					li @data-badge="9"
+					li @data-cm-badge="9"
 						p "列表项"
-					li @data-badge="999999"
+					li @data-cm-badge="999999"
 						a @href="#"
 							"列表项"
-					li.cm-list-with-right-arrow @data-badge="999"
+					li.cm-list-with-right-arrow @data-cm-badge="999"
 						a @href="#"
 							"列表项"
 
@@ -200,23 +200,23 @@
 				div.intro
 					p
 						"给列表项添加 "
-						code "data-value"
+						code "data-cm-value"
 						" 属性可以在列表项右侧显示一个值。"
 					pre > code
 						'ul.cm-list
-							    li @data-value="foobar"
+							    li @data-cm-value="foobar"
 							        p
-							    li @data-value="foo"
+							    li @data-cm-value="foo"
 							        a
-							    li.cm-list-with-right-arrow @data-value="bar"
+							    li.cm-list-with-right-arrow @data-cm-value="bar"
 							        a
 				ul.cm-list
-					li @data-value="列表项的值"
+					li @data-cm-value="列表项的值"
 						p "列表项"
-					li @data-value="列表项的值"
+					li @data-cm-value="列表项的值"
 						a @href="#"
 							"列表项"
-					li.cm-list-with-right-arrow @data-value="列表项的值很长很长很长很长很长很长很长很长很长很长"
+					li.cm-list-with-right-arrow @data-cm-value="列表项的值很长很长很长很长很长很长很长很长很长很长"
 						a @href="#"
 							"列表项很长很长很长很长很长很长"
 
