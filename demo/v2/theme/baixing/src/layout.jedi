@@ -20,19 +20,19 @@
 				p "因此整个 HTML 文档的结构应该是这样的（以 L2V 为例）："
 				pre > code
 					'html
-						    head
-						    body
-						        article.subview#listing-view  //主视图（必需）
-						        article.subview#vad-view      //子视图（可选）
-						        article.subview#other-view    //子视图（可选）
+							head
+							body
+								article.subview#listing-view  //主视图（必需）
+								article.subview#vad-view	  //子视图（可选）
+								article.subview#other-view	//子视图（可选）
 			div.intro
 				p
 					"每个 view 内的主要结构应该是这样的："
 				pre > code
 					'article.subview  //页面级容器
-						    header  //页头
-						    main    //页面主体
-						    footer  //页脚
+							header  //页头
+							main	//页面主体
+							footer  //页脚
 			hr
 			div.intro
 				p
@@ -52,7 +52,7 @@
 				p "通常页头内唯一的导航元素就是导航栏（导航栏的具体结构和样式参见下一节）。"
 				pre > code
 					'header  //页头区域
-						    nav.cm-nav-bar  //导航栏
+							nav.cm-nav-bar  //导航栏
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
@@ -68,8 +68,8 @@
 				p "除了导航栏之外，你还可以在页头中添加其它导航元素（比如面包屑）。"
 				pre > code
 					'header  //页头区域
-						    nav.cm-nav-bar  //导航栏
-						    nav             //其它导航元素
+							nav.cm-nav-bar  //导航栏
+							nav			 //其它导航元素
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
@@ -89,11 +89,11 @@
 				p "导航栏内部的结构约定如下："
 				pre > code
 					'nav.cm-nav-bar  //导航栏
-						    h1.cm-nav-bar-title                  //导航栏标题
-						    div.cm-btn-wrapper.cm-nav-bar-left   //左按钮容器
-						        a.cm-btn
-						    div.cm-btn-wrapper.cm-nav-bar-right  //右按钮容器
-						        a.cm-btn
+							h1.cm-nav-bar-title				  //导航栏标题
+							div.cm-btn-wrapper.cm-nav-bar-left   //左按钮容器
+								a.cm-btn
+							div.cm-btn-wrapper.cm-nav-bar-right  //右按钮容器
+								a.cm-btn
 			div.demo-stage.subview
 				header
 					nav.cm-nav-bar
@@ -141,9 +141,9 @@
 					" 元素来标记。因此页面主体的结构往往是这样的："
 				pre > code
 					'article.subview > main  //页面主体
-						    section  //逻辑区块
-						    section  //逻辑区块
-						    ...
+							section  //逻辑区块
+							section  //逻辑区块
+							...
 			div.intro
 				h3 "注意"
 				ul.cm-text
@@ -182,9 +182,9 @@
 					p "如果一个逻辑区块拥有标题，则它的结构可能是这样的："
 					pre > code
 						'section
-							    h2.cm-section-title "区块标题"
-							    div.cm-section-content
-							        p "区块内容"
+								h2.cm-section-title "区块标题"
+								div.cm-section-content
+									p "区块内容"
 					p "如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）"
 
 				div.demo-stage.subview

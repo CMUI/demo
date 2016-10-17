@@ -265,9 +265,9 @@
 					p "如果需要呈现并排的按钮，请使用以下结构："
 					pre > code
 						'.cm-btn-line
-							    .cm-btn
-							    .cm-btn
-							    .cm-btn
+								.cm-btn
+								.cm-btn
+								.cm-btn
 				div.result
 					div.cm-btn-line
 						a.cm-btn @href="#"
@@ -300,9 +300,9 @@
 						"如果需要将多个按钮合并为一组，请使用以下结构："
 					pre > code
 						'.cm-btn-group
-							    .cm-btn
-							    .cm-btn
-							    .cm-btn
+								.cm-btn
+								.cm-btn
+								.cm-btn
 				div.result
 					div.cm-btn-group
 						a.cm-btn @href="#"

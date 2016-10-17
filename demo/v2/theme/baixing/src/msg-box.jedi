@@ -14,7 +14,7 @@
 					" 类即可显示为提示框。"
 				pre > code
 					'div.cm-msg-box
-						    "常规提示文本"
+							"常规提示文本"
 			div.intro
 				p
 					"效果如下：（绿色虚线表示容器边界）"
@@ -67,8 +67,8 @@
 					"。）"
 				pre > code
 					'div.cm-msg-box.cm-msg-box-with-icon
-						    i.cm-icon  //图标元素
-						    "带图标的提示框"
+							i.cm-icon  //图标元素
+							"带图标的提示框"
 			div.demo-stage
 				div.cm-msg-box.cm-msg-box-info.cm-msg-box-with-icon
 					i.cm-icon.cm-icon-x20-msg-info
@@ -95,8 +95,8 @@
 					" 类，同时添加一个关闭按钮。"
 				pre > code
 					'div.cm-msg-box.cm-msg-box-with-close-btn
-						    a.cm-msg-box-close-btn @href="#"
-						    "这是一个可关闭的提示框。"
+							a.cm-msg-box-close-btn @href="#"
+							"这是一个可关闭的提示框。"
 			div.demo-stage
 				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-close-btn
 					a.cm-msg-box-close-btn @href="#"
@@ -106,9 +106,9 @@
 				p "提示框的图标和关闭按钮可以同时存在："
 				pre > code
 					'div.cm-msg-box.cm-msg-box-with-icon.cm-msg-box-with-close-btn
-						    i.cm-icon
-						    a.cm-msg-box-close-btn @href="#"
-						    "带图标的、可关闭的提示框。"
+							i.cm-icon
+							a.cm-msg-box-close-btn @href="#"
+							"带图标的、可关闭的提示框。"
 			div.demo-stage
 				div.cm-msg-box.cm-msg-box-warning.cm-msg-box-with-icon.cm-msg-box-with-close-btn
 					i.cm-icon.cm-icon-x20-msg-warning
