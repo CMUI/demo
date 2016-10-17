@@ -1,3 +1,10 @@
+::div.cm-msg-box.cm-msg-box-warning:notice (api)
+	:let api = *
+		strong "注意"
+		"：仅当业务层以 Stylus 作为 CSS 开发语言、且已引入 CMUI 的样式入口文件（ "
+		code "src/css/theme/*/index.styl"
+		"）时可使用 “{api}” 作为 API。"
+
 :import _skeleton
 
 	#base::after
@@ -41,14 +48,16 @@
 		section
 			h2 "变量"
 			div.intro
-				p "业务层应把这些变量视为常量，不应在业务开发中修改它们的值。"
-				p
-					"关于颜色变量，请参见 "
-					a @href='color.php'
-						'颜色'
-					" 章节。"
+				div.cm-msg-box.cm-msg-box-warning:notice = '变量'
 			div.intro
-				p "更多变量的值和含义如下："
+				p "业务层应把这些变量视为常量，不应在业务开发中修改它们的值。"
+				ul.cm-text
+					li
+						"颜色变量请参见 "
+						a @href='color.php'
+							'颜色'
+						" 章节。"
+					li "其它变量的值和含义如下。"
 
 			section
 				h3 "字体大小"
@@ -78,10 +87,32 @@
 					dt > code '$cm-content-padding = 10px'
 					dd '文本距离容器边缘的空隙'
 					dt > code '$cm-section-gap = 10px'
-					dd '区块之间的空隙'
+					dd '列表区块之间的空隙、表单区块之间的空隙'
+
+			-- section
+				h3 "选择符"
+				div.intro
+					p '通过 Stylus 的选择符插值语法来使用：'
+					pre > code
+						'.wrapper
+								{$cm-sel-foo}
+									display block
+									color red
+				dl.code-result
+					dt > code '$cm-sel-input-text'
+					dd
+						'选中所有文本输入框元素，不包含 '
+						code '<textarea>'
+						' 元素。'
+					dt > code '$cm-sel-input-option'
+					dd '选中复选框与单选框。'
+					dt > code '$cm-sel-btn'
+					dd '选中所有按钮元素。'
 
 		section
 			h2 "Mixin"
+			div.intro
+				div.cm-msg-box.cm-msg-box-warning:notice = 'mixin'
 			div.intro
 				p
 					"Mixin 可以生成多行声明或多条规则，从而实现某种样式或功能。"

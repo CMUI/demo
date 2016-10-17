@@ -32,7 +32,7 @@
 				li
 					a @href="layout.php"
 						"页面框架"
-					small "Subview、标题栏、内容区、卡片等"
+					small "Subview、导航栏、视图主体、逻辑区块等"
 				li
 					a @href="label.php"
 						"标签"
