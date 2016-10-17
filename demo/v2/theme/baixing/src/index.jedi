@@ -53,6 +53,10 @@
 					a @href="msg-box.php"
 						"提示框"
 					small "包含常规、警告、成功、错误等状态"
+				li
+					a @href="form.php"
+						"表单"
+					small "表单布局、表单控件、错误提示等"
 
 		section
 			h2 "交互组件"

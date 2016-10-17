@@ -1,0 +1,601 @@
+
+:import _skeleton
+
+	#base::after
+		- $data->pageId = 'form'
+		- $data->pageTitle = 'Form'
+
+		- $data->imgUrl = 'https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg'
+
+	#main
+		section
+			h2 "概述"
+			div.intro
+				p
+					strong "注意"
+					"：以下示例中的绿色虚线表示容器边界。"
+
+		section.layout
+			h2 "表单布局"
+			div.intro
+				p
+					"表单的容器（通常就是 "
+					code "<form>"
+					" 元素）需要添加 "
+					code ".cm-form"
+					" 这个类。建议把表单作为 "
+					code "<section>"
+					" 的子元素。"
+				p
+					'表单的每个字段独占一行，以下简称 “表单行”。每个表单行都需要有
+					code ".cm-form-line"
+					" 这个类。"
+				p
+					'多个表单行可以组成一个区块（'
+					code ".cm-section-content"
+					'）；整张发布表单可能是由多个区块组成的。区块之间有间隙。'
+			div.intro
+				p
+					"表单的结构大致如下："
+				pre > code
+					'main > section    //视图主体中的逻辑区块
+							form.cm-form  //表单容器
+								div.cm-section-content  //表单区块
+									div.cm-form-line    //表单行
+									div.cm-form-line    //表单行
+									...
+								div.cm-section-content  //表单区块
+									div.cm-form-line    //表单行
+									...
+
+			div.demo-stage
+				section
+					form.cm-form @action='#'
+						div.cm-section-content
+							div.cm-form-line
+								p '表单行'
+							div.cm-form-line
+								p '表单行'
+							div.cm-form-line
+								p '表单行'
+						div.cm-section-content
+							div.cm-form-line
+								p '表单行'
+							div.cm-form-line
+								p '表单行'
+
+			div.intro
+				p
+					'可以在表单区块的上方添加标题（'
+					code ".cm-section-title"
+					'）。'
+			div.demo-stage
+				form.cm-form @action='#'
+					h2.cm-section-title "表单区块标题"
+					div.cm-section-content
+						div.cm-form-line
+							p '表单行'
+					h2.cm-section-title "表单区块标题"
+					div.cm-section-content
+						div.cm-form-line
+							p '表单行'
+						div.cm-form-line
+							p '表单行'
+
+		section
+			h2 "表单行"
+			div.intro
+				p '表单行内的基本结构如下：'
+				pre > code
+					'div.cm-form-line    //表单行
+							label.cm-form-label  //标签容器
+								em.required '*'  //必填标记（可选）
+								'标签'           //标签文本
+							div.cm-form-ctrl     //控件容器
+								input            //控件
+				p '控件的详细约定将在下面详细陈述（各控件的结构约定请直接查看页面源码）。'
+
+		section
+			h2 "基本控件"
+			div.intro
+				p '文本输入框（包括数字、Email、URL 等 HTML5 新增的文本类型的输入框）的效果如下：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'标签'
+							div.cm-form-ctrl
+								input @@ type="text" placeholder="这是一个文本输入框"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'标签超过六个字了啊啊啊'
+							div.cm-form-ctrl
+								input @@ type="number" placeholder="这是一个数字输入框"
+			div.intro
+				p '还可以有单位（请留意该元素在结构中的位置）：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'行驶里程'
+							label.cm-form-unit "万公里"
+							div.cm-form-ctrl
+								input @@ type="number" placeholder="请填写数字"
+			div.intro
+				p '多行文本输入框的效果如下：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'标签'
+							div.cm-form-ctrl
+								textarea @@ placeholder="可填写多行文本……"
+			div.intro
+				p '下拉框的效果如下：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'标签'
+							div.cm-form-ctrl
+								div.cm-form-select-wrapper
+									select
+										option.cm-form-placeholder @value=''
+											'请选择颜色'
+										option '红'
+										option '黑'
+										option '白'
+										option '银'
+			hr
+			section
+				h3 '关于占位符'
+				div.intro
+					p
+						'文本输入框的占位符采用原生的 '
+						code "placeholder"
+						' 属性来实现。'
+					p
+						'下拉框的占位符效果需要分三步走：'
+					ol.cm-text
+						li
+							'给用作占位符的 '
+							code "<option>"
+							' 元素添加 '
+							code ".cm-form-placeholder"
+							' 类。'
+						li
+							'在页面中加载 CMUI 的脚本文件及其依赖，下拉框即可获得占位符效果。'
+						li
+							'为避免脚本生效前后的闪动效果，对于那些给没有初始值的（即默认选中占位符选项的）下拉框，我们可以为它们手动添加 '
+							code ".cm-form-placeholder"
+							' 类。如果下拉框是在脚本加载之后动态生成的，也需要做这个处理。'
+					p '没有初始值的下拉框的结构如下：'
+					pre > code
+						'div.cm-form-select-wrapper    //下拉框的容器
+								select.cm-form-placeholder      //下拉框
+									option.cm-form-placeholder  //占位符选项
+										'请选择颜色'
+									option '红'                 //常规选项
+									option '黑'                 //常规选项
+
+					p '有初始值的下拉框的结构如下：'
+					pre > code
+						'div.cm-form-select-wrapper    //下拉框的容器
+								select                          //下拉框
+									option.cm-form-placeholder  //占位符选项
+										'请选择颜色'
+									option @selected '红'       //常规选项
+									option '黑'                 //常规选项
+
+		section
+			h2 "复合控件"
+			div.intro
+				p '某些字段包含了多个控件，其布局也稍复杂。'
+
+			div.intro
+				p '两个下拉框的组合有两种形式：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'出生年月'
+							div.cm-form-ctrl
+								div.cm-form-dual-select
+									div.cm-form-select-wrapper
+										select
+											option.cm-form-placeholder @value=''
+												'请选择年份'
+											option '2014年'
+											option '2015年'
+											option '2016年'
+									div.cm-form-select-wrapper
+										select
+											option.cm-form-placeholder @value=''
+												'请选择月份'
+											option '1月'
+											option '2月'
+											option '3月'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'年龄范围'
+							div.cm-form-ctrl
+								div.cm-form-select-range
+									div.cm-form-select-wrapper
+										select
+											option.cm-form-placeholder @value=''
+												'请选择'
+											option '18'
+											option '19'
+											option '20'
+										label.cm-form-unit '岁'
+									span '至'
+									div.cm-form-select-wrapper
+										select
+											option.cm-form-placeholder @value=''
+												'请选择'
+											option '19'
+											option '20'
+											option '21'
+										label.cm-form-unit '岁'
+
+			div.intro
+				p '多个复选框的效果如下：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'发布人身份'
+							div.cm-form-ctrl
+								div.cm-form-option-list
+									label
+										input @@ type="radio" name="posterType"
+										"个人"
+									label
+										input @@ type="radio" name="posterType"
+										"商家"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'多个选项'
+							div.cm-form-ctrl
+								div.cm-form-option-list
+									label
+										input @@ type="radio" name="posterType"
+										"选项一"
+									label
+										input @@ type="radio" name="posterType"
+										"选项二"
+									label
+										input @@ type="radio" name="posterType"
+										"选项三超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长"
+									label
+										input @@ type="radio" name="posterType"
+										"选项四"
+									label
+										input @@ type="radio" name="posterType"
+										"选项五超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长"
+
+		section
+			h2 "图片上传"
+			div.intro
+				div.cm-msg-box.cm-msg-box-warning
+					strong '注意'
+					'：CMUI 只提供了图片上传控件的样式，未提供上传功能。'
+			div.intro
+				p '图片上传控件的初始状态如下。'
+
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'图片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+
+			div.intro
+				p '已上传不同张数的效果分别如下。'
+
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'图片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-title '封面'
+											span.cm-form-image-wrapper
+												img @src="{imgUrl}"
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'图片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-title '封面'
+											span.cm-form-image-wrapper
+												img @src="{imgUrl}"
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-wrapper
+												img @src="{imgUrl}"
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'图片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-title '封面'
+											span.cm-form-image-wrapper
+												img @src="{imgUrl}"
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-wrapper
+												img @src="{imgUrl}"
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-wrapper
+												img @src="{imgUrl}"
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+			div.intro
+				p.copyright '（图片来源：Peter Miller @ Flickr）'
+
+			div.intro
+				p '上传的不同阶段的样式分别如下。'
+
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'正在上传示意'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-status-loading
+											span.cm-form-image-wrapper
+												img
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'上传失败示意'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-status-failed '上传失败'
+											span.cm-form-image-wrapper
+												img @src="about:blank"
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+
+		section
+			h2 "提示信息"
+			div.intro
+				p '静态的提示语有以下几种形式：'
+
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'联系电话'
+							div.cm-form-ctrl
+								input @@ type="tel" placeholder="请填写您的联系电话"
+							div.cm-form-note-minor
+								'为保护您的账号安全，请填写注册手机号'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'联系电话'
+							span.cm-form-unit "万元"
+							div.cm-form-ctrl
+								input @@ type="tel" placeholder="请填写您的联系电话"
+							div.cm-form-note
+								'为保护您的账号安全，请填写注册手机号。'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'联系电话'
+							span.cm-form-unit "万元"
+							div.cm-form-ctrl
+								input @@ type="tel" placeholder="请填写您的联系电话"
+							div.cm-form-note
+								h4 '富文本也没问题'
+								p '为保护您的账号安全，请填写注册手机号。'
+								p '提示语段落文字文字文字文字。'
+
+			div.intro
+				p '表单校验时显示的错误信息效果如下：'
+				div.cm-msg-box.cm-msg-box-warning
+					strong '注意'
+					'：CMUI 仅提供了错误信息的样式，未提供表单校验功能。'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'QQ号'
+							div.cm-form-ctrl
+								input @@ type="number" placeholder="请填写数字"
+							div.cm-form-error
+								i.cm-icon.cm-icon-x20-msg-error
+								'此项必填，错误信息超长超长超长超长超长超长超长超长超长超长超长超长超长'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'联系电话'
+							div.cm-form-ctrl
+								input @@ type="tel" placeholder="请填写您的联系电话"
+							div.cm-form-note-minor
+								'为保护您的账号安全，请填写注册手机号'
+							div.cm-form-error
+								i.cm-icon.cm-icon-x20-msg-error
+								'此项必填'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'图片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+							div.cm-form-note-minor '最多上传12张图片'
+							div.cm-form-error
+								i.cm-icon.cm-icon-x20-msg-error
+								'必须上传一张图片'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'行驶证照片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+							div.cm-form-error
+								i.cm-icon.cm-icon-x20-msg-error
+								'必须上传一张图片'
+							div.cm-form-note
+								strong '郑重承诺：'
+								'证件照片仅用于信息核查，不会在页面展示'
+
+			div.intro
+				p '其它错误提示参见以下效果：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'上传失败示意'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+										li.cm-form-image-item
+											button.cm-form-image-btn-remove '×'
+											span.cm-form-image-status-failed '上传失败'
+											span.cm-form-image-wrapper
+												img @src="about:blank"
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+							div.cm-form-note.cm-form-note-error
+								'超时了，网络不给力哦'
+
+		section
+			h2 "交互组件"
+			div.intro
+				p '某些字段点击后会打开一个独立的交互组件（比如 Panel、Dialog 或 Subview）来完成内容的填写。因此这些字段在显示值的位置并不是一个表单控件，而是交互组件的占位符和触发器。'
+
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'标签'
+							div.cm-form-ctrl
+								span.cm-form-ctrl-value.cm-form-placeholder
+									"占位符（无箭头）"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'标签'
+							div.cm-form-ctrl
+								span.cm-form-ctrl-value.cm-form-placeholder.cm-form-ctrl-value-with-right-arrow
+									"占位符（有箭头）"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'品牌'
+							div.cm-form-ctrl
+								span.cm-form-ctrl-value.cm-form-placeholder.cm-form-ctrl-value-with-right-arrow
+									"请选择（可多选）"
+							div.cm-form-note-minor
+								'找不到您的车？'
+								a @@ href="#"
+									'填写一个'
+
+			div.intro
+				p '已填状态如下。'
+
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'地区'
+							div.cm-form-ctrl
+								span.cm-form-ctrl-value.cm-form-ctrl-value-with-right-arrow
+									"徐汇区 / 徐家汇"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'福利待遇'
+							div.cm-form-ctrl
+								span.cm-form-ctrl-value.cm-form-ctrl-value-with-right-arrow
+									"五险一金,包吃,双休,年底双薪"
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'品牌'
+							div.cm-form-ctrl
+								span.cm-form-ctrl-value.cm-form-ctrl-value-with-right-arrow
+									"奥迪100 1992年款 2.6 手动E化油器"
+							div.cm-form-note-minor
+								'找不到您的车？'
+								a @@ href="#"
+									'填写一个'

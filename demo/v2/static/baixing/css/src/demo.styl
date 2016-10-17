@@ -106,7 +106,9 @@ body > .subview > section
 		ul:not(:last-child)
 		p:not(:last-child)
 			margin-bottom 0.5em
-		pre + p
+		pre + p,
+		div.cm-msg-box + p,
+		p + div.cm-msg-box
 			margin-top 1em !important
 
 	// l2 section
@@ -247,6 +249,20 @@ body > .subview > section
 		margin-bottom 0
 	.code-result dd .cm-msg-box
 		margin 0
+
+/* --------------------------------------------- */
+/** form **/
+#form
+	//.demo-stage {width: 320px;}	// debug
+	section.layout
+		.cm-form-line > p
+			line-height 50px
+			text-align center
+
+	p.copyright
+		margin-top -1em
+		font-size $cm-font-size-s
+		color $cm-color-fg-light
 
 /* --------------------------------------------- */
 /** layout **/
