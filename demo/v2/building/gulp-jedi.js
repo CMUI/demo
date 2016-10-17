@@ -18,8 +18,9 @@ module.exports = function () {
 			const tree = transform(parseFile(file.path))
 			code = compile(tree, 'php')
         } catch (e) {
-            var err = new gutil.PluginError('gulp-jedi', e);
-            this.emit('error', err);
+            // var err = new gutil.PluginError('gulp-jedi', e);
+            // this.emit('error', err);
+			console.log(e)
             return cb();
         }
         if (file.isStream()) {

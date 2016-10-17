@@ -116,13 +116,13 @@ gulp.task('dist', gulp.series([
 gulp.task('watch-css', function () {
 	return gulp.watch([
 		FILES_SRC_CSS,
-		// './node_modules/cmui-v2/src/**/*.styl',
+		'./node_modules/cmui-v2/src/**/*.styl',
 	], gulp.parallel('css'))
 })
 gulp.task('watch-js', function () {
 	return gulp.watch([
 		'./static/baixing/js/src/demo.js',
-		// './node_modules/cmui-v2/src/**/*.js',
+		'./node_modules/cmui-v2/src/**/*.js',
 	], gulp.parallel('js'))
 })
 gulp.task('watch-jedi', function () {
@@ -131,15 +131,13 @@ gulp.task('watch-jedi', function () {
 	], gulp.parallel('jedi'))
 })
 
-gulp.task('watch', function () {
-	return gulp.series([
-		'dist',
-		gulp.parallel([
-			'watch-css',
-			'watch-js',
-			'watch-jedi',
-		])
+gulp.task('watch', gulp.series([
+	'dist',
+	gulp.parallel([
+		'watch-css',
+		'watch-js',
+		'watch-jedi',
 	])
-})
+]))
 
 gulp.task('default', gulp.series('dist'))
