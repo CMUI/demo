@@ -71,6 +71,28 @@ void function () {
 		}
 	}
 
+	demo.panel = {
+		init: function () {
+			this._setAction()
+		},
+		_setAction: function () {
+			gearbox.action.add({
+				'demo-panel-show': function () {
+					return CMUI.panel.show('#demo-panel')
+				},
+				'demo-panel-hide': function () {
+					return CMUI.panel.hide()
+				},
+				'demo-panel-switch-to': function () {
+					return CMUI.panel.switchTo('#demo-panel-alt')
+				},
+				'demo-panel-switch-back': function () {
+					return CMUI.panel.switchBack()
+				},
+			})
+		}
+	}
+
 	//exports
 	window.demo = demo
 
