@@ -6,9 +6,9 @@
 
 	#main
 		section.loading
-			h2 "Loading 提示"
+			h2 "加载提示"
 			div.intro
-				p "Loading 标志一种很好的暗示用户等待的方式，可以显著提升用户的耐心。"
+				p "加载提示（Loading 动画图标）一种很好的暗示用户等待的方式，可以显著提升用户的耐心。"
 				p "当某个操作可能耗时超过 100ms 时，就应该使用 Loading 提示。当某个操作耗时超过 10 秒且仍然存活时，应在 Loading 提示上更新提示语，以提示用户当前操作仍在进行。"
 			section.normal
 				dl
