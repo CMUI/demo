@@ -20,14 +20,19 @@
 			div.intro
 				p "在使用浮出面板的 JS API 之前，需要在页面中写好（或由 JS 动态生成）相应的面板元素。面板元素的结构大致如下："
 				pre > code
-					'div.cm-panel  //浮出面板的容器
+					'div.cm-panel  //面板的容器
 							header.cm-panel-header        //标题栏
 								h2.cm-panel-header-title  //标题文字
-								a.cm-panel-header-btn.cm-panel-header-left.cm-panel-header-btn-minor  //标题栏的左按钮
+								a.cm-panel-header-btn.cm-panel-header-left   //标题栏的左按钮
 								a.cm-panel-header-btn.cm-panel-header-right  //标题栏的右按钮
-							main.cm-panel-content.cm-scrollable-content  //内容主体
+							main.cm-panel-content.cm-scrollable-content  //面板主体
 								ul.cm-list
 									...
+				p
+					'面板标题栏的左右按钮也可以添加 '
+					code ".cm-panel-header-btn-minor"
+					' 类，以作弱化处理。'
+
 			div.intro
 				p
 					"浮出面板并不是静态的布局元素，且默认不显示，因此，如果要看它的样式，还是要由 JS API 来打开它，才能看到它的庐山真面目。"
