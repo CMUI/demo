@@ -231,7 +231,7 @@
 								em.required '*'
 								'年龄范围'
 							div.cm-form-ctrl
-								div.cm-form-select-range
+								div.cm-form-range-select
 									div.cm-form-select-wrapper
 										select
 											option.cm-form-placeholder @value=''
