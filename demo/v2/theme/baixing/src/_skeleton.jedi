@@ -48,7 +48,7 @@ html @lang='zh-cmn-Hans'
 
 				#back
 					section.back if pageTitle
-						a @href="index.php"
+						a @href="./"
 							"<< 返回首页"
 				#footer
 					footer
