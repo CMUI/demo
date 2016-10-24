@@ -1,5 +1,9 @@
 'use strict'
 
+var IS_DEV = !(process.env.NODE_ENV === 'production')
+// console.log(process.env.NODE_ENV)
+// console.log(IS_DEV)
+
 var _ = require('underscore')
 
 var gulp = require('gulp')
@@ -73,7 +77,6 @@ gulp.task('js', function () {
 
 var stylus = require('gulp-stylus')
 var nib = require('nib')
-var IS_DEV = true
 gulp.task('css', function () {
 	var styl = stylus({
 		use: [nib()],

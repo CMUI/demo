@@ -10,7 +10,7 @@
     "js": "gulp js",
     "jedi": "gulp jedi",
     "watch": "gulp watch",
-    "dist": "gulp dist"
+    "dist": "NODE_ENV=production gulp dist"
   },
   "author": "cssmagic <cssmagic.cn@gmail.com>",
   "license": "MIT",
