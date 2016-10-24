@@ -73,7 +73,7 @@ gulp.task('js', function () {
 
 var stylus = require('gulp-stylus')
 var nib = require('nib')
-var IS_DEV = false
+var IS_DEV = true
 gulp.task('css', function () {
 	var styl = stylus({
 		use: [nib()],
@@ -88,6 +88,10 @@ gulp.task('css', function () {
 		.on('end', function () {
 			console.log('[css] compiling stylus: ' + FILES_SRC_CSS)
 			console.log('[css] output css: ' + PATH_DIST_CSS)
+		})
+		.on('error', function (err) {
+			console.error(err.message)
+			this.emit('end')
 		})
 })
 
