@@ -71,7 +71,7 @@
 					dt > code "CMUI.panel.switchBack(options)"
 					dd '请在切换后的面板中，点击标题栏中的 “返回” 按钮来测试效果。'
 
-		section
+		-- section
 			h2 "HTML API"
 			div.intro
 				p '本组件还支持声明式的 HTML API。只需要在触发动作的元素（以下简称 “触发元素”）身上加上特定的属性，该元素就具备相应的功能了。'
