@@ -418,19 +418,11 @@
 		section
 			h2 "提示信息"
 			div.intro
-				p '静态的提示语有以下几种形式：'
+				p '静态的提示语有以下两种形式。首先是块状的强化提示：'
 
 			div.demo-stage
 				form.cm-form @action='#'
 					div.cm-section-content
-						div.cm-form-line
-							label.cm-form-label
-								em.required '*'
-								'联系电话'
-							div.cm-form-ctrl
-								input @@ type="tel" placeholder="请填写您的联系电话"
-							div.cm-form-note-minor
-								'为保护您的账号安全，请填写注册手机号'
 						div.cm-form-line
 							label.cm-form-label
 								em.required '*'
@@ -453,7 +445,32 @@
 								p '提示语段落文字文字文字文字。'
 
 			div.intro
-				p '表单校验时显示的错误信息效果如下：'
+				p '然后是放置在输入框附近的弱化提示：'
+			div.demo-stage
+				form.cm-form @action='#'
+					div.cm-section-content
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'联系电话'
+							div.cm-form-ctrl
+								input @@ type="tel" placeholder="请填写您的联系电话"
+								div.cm-form-note-minor
+									'为保护您的账号安全，请填写注册手机号'
+						div.cm-form-line
+							label.cm-form-label
+								em.required '*'
+								'图片'
+							div.cm-form-ctrl
+								div.cm-form-image
+									ul.cm-form-image-list
+									div.cm-form-image-btn-add
+										label
+										input @@ type="file"
+									div.cm-form-note-minor '最多上传12张图片'
+
+			div.intro
+				p '动态的提示语也有两种形式。一是表单校验时显示的错误信息，效果如下：'
 				div.cm-msg-box.cm-msg-box-warning
 					strong '注意'
 					'：CMUI 仅提供了错误信息的样式，未提供表单校验功能。'
@@ -512,7 +529,7 @@
 								'证件照片仅用于信息核查，不会在页面展示'
 
 			div.intro
-				p '其它错误提示参见以下效果：'
+				p '二是交互过程中产生的强化错误提示，参见以下效果：'
 			div.demo-stage
 				form.cm-form @action='#'
 					div.cm-section-content
