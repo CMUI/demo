@@ -7,7 +7,7 @@ var IS_DEV = !(process.env.NODE_ENV === 'production')
 var _ = require('underscore')
 
 var gulp = require('gulp')
-var del = require('del')
+var gulpfiles = require('gulpfiles')
 var concat = require('gulp-concat')
 
 var path = require('path')
@@ -26,25 +26,13 @@ var FILES_DIST_BAIXING = path.join(PATH_DIST_BAIXING, '*.php')
 var PATH_SRC_BAIXING = path.join(PATH_THEME_ROOT, 'baixing/src')
 var FILES_SRC_BAIXING = path.join(PATH_SRC_BAIXING, '*.jedi')
 
-gulp.task('clean', function (cb) {
-	del([
+gulp.task('clean', gulpfiles.del({
+	glob: [
 		FILES_DIST_JS,
 		FILES_DIST_CSS,
 		FILES_DIST_BAIXING,
-	], {
-		force: true
-	}, function (err, deletedFiles) {
-		var infoTitle = '[clean] deleted: '
-		if (deletedFiles.length) {
-			console.log(infoTitle)
-			console.log(deletedFiles.join('\n'))
-		} else {
-			console.log(infoTitle + '(no files).')
-		}
-
-		cb()
-	})
-})
+	],
+}))
 
 var jsSrcList = require('./building/config-js-combo').jsSrcList
 gulp.task('js', function () {
@@ -75,28 +63,14 @@ gulp.task('js', function () {
 	return Promise.all(tasks)
 })
 
-var stylus = require('gulp-stylus')
-var nib = require('nib')
-gulp.task('css', function () {
-	var styl = stylus({
-		use: [nib()],
-		import: 'nib',
+gulp.task('css', gulpfiles.stylus({
+	src: FILES_SRC_CSS,
+	dest: PATH_DIST_CSS,
+	config: {
 		linenos: IS_DEV,
 		compress: !IS_DEV,
-		errors: true,
-	})
-	return gulp.src(FILES_SRC_CSS)
-		.pipe(styl)
-		.pipe(gulp.dest(PATH_DIST_CSS))
-		.on('end', function () {
-			console.log('[css] compiling stylus: ' + FILES_SRC_CSS)
-			console.log('[css] output css: ' + PATH_DIST_CSS)
-		})
-		.on('error', function (err) {
-			console.error(err.message)
-			this.emit('end')
-		})
-})
+	}
+}))
 
 var jedi = require('./building/gulp-jedi')
 gulp.task('jedi', function () {
