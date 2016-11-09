@@ -1,6 +1,6 @@
 var jsSrcList = {}
 
-jsSrcList['lib'] = [
+jsSrcList['lib.js'] = [
 	'./node_modules/underscore/underscore.js',
 
 	'./node_modules/zepto.js/src/zepto.js',
@@ -14,7 +14,7 @@ jsSrcList['lib'] = [
 
 	'./node_modules/cmui-gearbox/dist/gearbox.js',
 ]
-jsSrcList['cmui'] = [
+jsSrcList['cmui.js'] = [
 	'./node_modules/cmui-v2/src/js/adapter-trad/_intro.js',
 	'./node_modules/cmui-v2/src/js/adapter-trad/_var.js',
 	'./node_modules/cmui-v2/src/js/core.js',
@@ -27,10 +27,10 @@ jsSrcList['cmui'] = [
 	'./node_modules/cmui-v2/src/js/panel.js',
 	'./node_modules/cmui-v2/src/js/adapter-trad/_outro.js',
 ]
-jsSrcList['demo'] = [
+jsSrcList['demo.js'] = [
 	'./static/baixing/js/src/demo.js',
 ]
 
 module.exports = {
-	jsSrcList: jsSrcList
+	jsSrcList,
 }

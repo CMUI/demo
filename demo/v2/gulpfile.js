@@ -1,14 +1,11 @@
 'use strict'
 
 var IS_DEV = !(process.env.NODE_ENV === 'production')
-// console.log(process.env.NODE_ENV)
-// console.log(IS_DEV)
 
 var _ = require('underscore')
 
 var gulp = require('gulp')
 var gulpfiles = require('gulpfiles')
-var concat = require('gulp-concat')
 
 var path = require('path')
 
@@ -35,33 +32,10 @@ gulp.task('clean', gulpfiles.del({
 }))
 
 var jsSrcList = require('./building/config-js-combo').jsSrcList
-gulp.task('js', function () {
-	var tasks = []
-	var jsFilenames = Object.keys(jsSrcList)
-	jsFilenames.forEach(function (filename) {
-		if (!filename || filename.indexOf('_') === 0) return
-		tasks.push(new Promise(function (resolve, reject) {
-			var src = jsSrcList[filename]
-			gulp.src(src)
-				.pipe(concat(filename + '.js', {
-					newLine: '\n;',
-				}))
-				// .pipe(replace(/\/\*\* DEBUG_INFO_START \*\*\//g, '/*'))
-				// .pipe(replace(/\/\*\* DEBUG_INFO_END \*\*\//g, '*/'))
-				.pipe(gulp.dest(PATH_DIST_JS))
-				.on('error', function (e) {
-					console.error('\x07', e.message)
-					reject(e)
-				})
-				.on('finish', resolve)
-				.on('end', function () {
-					console.log('[js] src: ' + src)
-					console.log('[js] concat: ' + PATH_DIST_JS + filename + '.js')
-				})
-		}))
-	})
-	return Promise.all(tasks)
-})
+gulp.task('js', gulpfiles.concat({
+	rules: jsSrcList,
+	dest: PATH_DIST_JS,
+}))
 
 gulp.task('css', gulpfiles.stylus({
 	src: FILES_SRC_CSS,

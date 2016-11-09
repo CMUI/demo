@@ -22,9 +22,8 @@
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-concat": "^2.4.1",
     "gulp-util": "*",
-    "gulpfiles": "^0.3.0",
+    "gulpfiles": "^0.3.1",
     "jedi": "1.0.0-rc5.6",
     "through2": "*"
   }
