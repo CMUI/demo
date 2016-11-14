@@ -57,15 +57,13 @@ gulp.task('jedi', function () {
 		.pipe(gulp.dest(PATH_DIST_BAIXING))
 })
 
-gulp.task('build', gulp.parallel([
-	'js',
-	'css',
-	'jedi',
-]))
-
 gulp.task('dist', gulp.series([
 	'clean',
-	'build',
+	gulp.parallel([
+		'js',
+		'css',
+		'jedi',
+	]),
 ]))
 
 gulp.task('watch-css', function () {

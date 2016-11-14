@@ -5,10 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "gulp clean",
-    "css": "gulp css",
-    "js": "gulp js",
-    "jedi": "gulp jedi",
     "watch": "gulp watch",
     "dist": "NODE_ENV=production gulp dist"
   },
