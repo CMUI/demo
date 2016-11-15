@@ -41,6 +41,7 @@ gulp.task('css', gulpfiles.stylus({
 	src: FILES_SRC_CSS,
 	dest: PATH_DIST_CSS,
 	config: {
+		nib: true,
 		linenos: IS_DEV,
 		compress: !IS_DEV,
 	}
