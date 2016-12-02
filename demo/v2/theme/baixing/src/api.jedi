@@ -18,7 +18,7 @@
 				p
 					"和绝大多数 UI 框架一样，CMUI 提供的接口以 HTML 结构约定和元素的类名为主。"
 				p
-					"此外，为保证风格统一，CMUI 也抽象出了一些变量供业务层使用；为提升开发效率，CMUI 还为业务层提供了一些工具性的 mixin。"
+					"此外，为保证样式统一，CMUI 也抽象出了一些变量供业务层使用；为提升开发效率，CMUI 还为业务层提供了一些工具性的 mixin。"
 
 		section
 			h2 "类名"
@@ -50,14 +50,18 @@
 			div.intro
 				div.cm-msg-box.cm-msg-box-warning:notice = '变量'
 			div.intro
-				p "业务层应把这些变量视为常量，不应在业务开发中修改它们的值。"
+				div.cm-msg-box.cm-msg-box-warning
+					strong "注意"
+					"：业务层应把这些变量视为常量，不应在业务开发中修改它们的值。"
+			div.intro
+				p "CMUI 提供的 Stylus 变量包括："
 				ul.cm-text
 					li
-						"颜色变量请参见 "
+						"颜色变量：请参见 "
 						a @href='color.php'
 							'颜色'
 						" 章节。"
-					li "其它变量的值和含义如下。"
+					li "其它变量：其它变量的值和含义如下。"
 
 			section
 				h3 "字体大小"
@@ -122,3 +126,56 @@
 				dl.code-result
 					dt > code 'clearfix()'
 					dd '闭合浮动'
+
+		section
+			h2 "环境信息"
+			div.intro
+				div.cm-msg-box.cm-msg-box-warning
+					strong "注意"
+					"：这个接口是为 CMUI 的开发者准备的内部功能，不建议在业务开发中使用。"
+			div.intro
+				p
+					"为便于开发者针对不同浏览器及其特性写样式，CMUI 脚本会自动根据当前浏览器环境为 "
+					code "<html>"
+					" 元素添加以下类："
+				ul.cm-text
+					li
+						code ".cmui"
+						" —— 表示 CMUI 的脚本文件已加载。"
+				ul.cm-text
+					li
+						code ".ios"
+						" —— 表示当前的移动操作系统是 iOS（根据 UA 信息判断）。"
+					li
+						code ".android"
+						" —— 表示当前的移动操作系统是 Android（根据 UA 信息判断）。"
+					li
+						code ".legacy"
+						" —— 表示当前的移动操作系统版本过低（根据 UA 信息判断），比如 iOS 版本低于 7 或 Android 版本低于 4。"
+				ul.cm-text
+					li
+						code ".mobile"
+						" —— 表示当前用户处于移动操作系统（根据 UA 信息判断），iOS 和 Android 将被视为移动操作系统。"
+					li
+						code ".desktop"
+						" —— 表示当前用户处于桌面操作系统（根据 UA 信息判断），非 iOS 和 Android 一律视为桌面操作系统。"
+				ul.cm-text
+					li
+						code ".safari"
+						" —— 表示当前浏览器是 Safari，包括桌面版和移动版（根据 UA 信息判断）。"
+					li
+						code ".chrome"
+						" —— 表示当前浏览器是 Chrome，包括桌面版和移动版（根据 UA 信息判断）。"
+				ul.cm-text
+					li
+						code ".touch"
+						" —— 表示当前浏览器支持触摸事件（根据特性探测）。"
+					li
+						code ".no-touch"
+						" —— 表示当前浏览器不支持触摸事件（根据特性探测）。"
+			div.intro
+				p
+					"如果需要在脚本中判断浏览器等环境特征，请参考 Gearbox 提供的 "
+					a @@ href="https://github.com/CMUI/gearbox/issues/5" target="_blank"
+						"相关 API"
+					'。'
