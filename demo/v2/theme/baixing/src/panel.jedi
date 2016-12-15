@@ -25,7 +25,7 @@
 								h2.cm-panel-header-title  //标题文字
 								a.cm-panel-header-btn.cm-panel-header-left   //标题栏的左按钮
 								a.cm-panel-header-btn.cm-panel-header-right  //标题栏的右按钮
-							main.cm-panel-content.cm-scrollable-content  //面板主体
+							main.cm-panel-content.cm-scroll-box  //面板主体
 								ul.cm-list
 									...
 				p
@@ -137,13 +137,25 @@
 					'取消'
 				a.cm-panel-header-btn.cm-panel-header-right @href='#' @data-action="demo-panel-hide"
 					'确定'
-			main.cm-panel-content.cm-scrollable-content
+			main.cm-panel-content.cm-scroll-box
 				ul.cm-list
 					li.cm-list-with-right-arrow
 						a
 							@href='#'
 							@data-action="demo-panel-switch-to"
 							'切至其它面板'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
+					li > p '第一个面板的列表项'
 					li > p '第一个面板的列表项'
 					li > p '第一个面板的列表项'
 
@@ -154,7 +166,7 @@
 					'返回'
 				a.cm-panel-header-btn.cm-panel-header-right @href='#' @data-action="demo-panel-hide"
 					'确定'
-			main.cm-panel-content.cm-scrollable-content
+			main.cm-panel-content.cm-scroll-box
 				ul.cm-list
 					li > p '第二个面板的列表项'
 					li > p '第二个面板的列表项'
