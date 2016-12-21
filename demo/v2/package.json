@@ -11,8 +11,8 @@
   "author": "cssmagic <cssmagic.cn@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cmui": "2.0.0-beta.14",
     "cmui-gearbox": "^0.6.0",
-    "cmui-v2": "github:CMUI/CMUI#2.0.0-beta.9",
     "underscore": "^1.7.0",
     "zepto.js": "*"
   },
