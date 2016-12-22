@@ -76,7 +76,7 @@
 				li
 					a @href="scroll-box.php"
 						"区域滚动（ScrollBox）"
-					small "让一个容器根据的内容长短自动出现滚动条、JS API"
+					small "让定高容器的内容可滚动、JS API"
 				-- li
 					a @href="#"
 						"悬浮提示（Toast）"

@@ -13,21 +13,21 @@
 			div.intro
 				p "ScrollBox 组件正是为这类需求而生的。它的特性如下："
 				ul.cm-text
-					li
+					li > p
 						"通过 "
 						code "overflow-y: auto;"
 						" 来实现原生的滚动条效果。"
-					li
+					li > p
 						"通过 "
 						code "-webkit-overflow-scrolling: touch;"
 						" 来实现触摸滚动的交互方式。"
-					li
+					li > p
 						"当内容的滚动位置处于最顶端或最底端时，为防止触摸操作引起整个页面的滚动，参考 "
 						a @@ href="https://github.com/joelambert/ScrollFix" target="_blank"
 							"ScrollFix"
 						" 项目对交互细节进行了优化。"
-					li
-						"当内容过短、没有出现垂直滚动条时，为防止触摸操作引起整个页面的滚动，禁用触摸事件。"
+					li > p
+						"当内容过短、没有出现垂直滚动条时，为防止触摸操作引起整个页面的滚动，禁用触摸事件。（有待进一步优化）"
 
 		section
 			h2 "结构"
