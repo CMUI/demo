@@ -179,3 +179,19 @@
 					a @@ href="https://github.com/CMUI/gearbox/issues/5" target="_blank"
 						"相关 API"
 					'。'
+
+			hr
+
+			div.intro
+				p
+					"CMUI 脚本会在加载后尝试移除 "
+					code "<html>"
+					" 元素的 "
+					code ".no-js"
+					" 类。"
+				p
+					"这意味着，如果你在编写 HTML 时预先给 "
+					code "<html>"
+					" 元素写上这个类，就可以利用 "
+					code "html.no-js"
+					" 作为顶层选择符来编写无脚本情况下的 fallback 样式，以保障可访问性。"
