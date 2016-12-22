@@ -72,7 +72,11 @@
 				li
 					a @href="panel.php"
 						"浮出面板（Panel）"
-					small "视口底部浮出操作面板、JS API、HTML API"
+					small "视口底部浮出操作面板、JS API"
+				li
+					a @href="scroll-box.php"
+						"区域滚动（ScrollBox）"
+					small "让一个容器根据的内容长短自动出现滚动条、JS API"
 				-- li
 					a @href="#"
 						"悬浮提示（Toast）"

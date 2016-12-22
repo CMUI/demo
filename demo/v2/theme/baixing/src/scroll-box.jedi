@@ -1,0 +1,86 @@
+:import _skeleton
+
+	#base::after
+		- $data->pageId = 'scroll-box'
+		- $data->pageTitle = 'ScrollBox'
+
+	#main
+		section
+			h2 "概述"
+			div.intro
+				p "在很多时候，我们需要让某个固定高度的容器根据其内容的长短自动出现垂直滚动条。"
+				p "在早期，我们只能求助于 iScroll 这样的模拟滚动条方式，在性能、可访问性、交互体验等方面存在不少弊端。随着浏览器能力的不断提升，我们也可以利用原生滚动条来实现这种效果。"
+			div.intro
+				p "ScrollBox 组件正是为这类需求而生的。它的特性如下："
+				ul.cm-text
+					li
+						"通过 "
+						code "overflow-y: auto;"
+						" 来实现原生的滚动条效果。"
+					li
+						"通过 "
+						code "-webkit-overflow-scrolling: touch;"
+						" 来实现触摸滚动的交互方式。"
+					li
+						"当内容的滚动位置处于最顶端或最底端时，为防止触摸操作引起整个页面的滚动，参考 "
+						a @@ href="https://github.com/joelambert/ScrollFix" target="_blank"
+							"ScrollFix"
+						" 项目对交互细节进行了优化。"
+					li
+						"当内容过短、没有出现垂直滚动条时，为防止触摸操作引起整个页面的滚动，禁用触摸事件。"
+
+		section
+			h2 "结构"
+			div.intro
+				p
+					"为使容器具备基本的交互样式，我们需要给它添加 "
+					code ".cm-scroll-box"
+					" 这个类。容器及其内容的结构大致如下："
+				pre > code
+					'div.cm-scroll-box  //容器
+							ul.cm-list      //内容
+								li
+								...
+
+		section
+			h2 "JS API"
+			div.intro
+				p
+					"光有样式是不够的，每个 ScrollBox 都需要由脚本来初始化，以实现上述交互优化。ScrollBox 组件在加载时会初始化一次页面中的所有 "
+					code ".cm-scroll-box"
+					" 元素。"
+
+			div.intro
+				code "CMUI.scrollBox.refresh()"
+				p
+					"如果页面中的 ScrollBox 是由 JS 动态生成的，则我们需要手动调用 "
+					" 方法来初始化页面中所有未初始化的 "
+					code ".cm-scroll-box"
+					" 元素。"
+
+		section.demo
+			h2 "演示"
+			div.intro
+				p
+					"以下就是一个已经初始化的 ScrollBox 示例：（绿色虚线表示容器边界）"
+			div.demo-stage
+				div.cm-scroll-box
+					ul.cm-list
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+						li > p '列表项'
+			div.intro
+				p
+					"下面是一个内容过短的 ScrollBox 示例："
+			div.demo-stage
+				div.cm-scroll-box
+					ul.cm-list
+						li > p '列表项'
+						li > p '列表项'
+
