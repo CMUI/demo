@@ -22,10 +22,10 @@
 						code "-webkit-overflow-scrolling: touch;"
 						" 来实现触摸滚动的交互方式。"
 					li > p
-						"当内容的滚动位置处于最顶端或最底端时，为防止触摸操作引起整个页面的滚动，参考 "
+						"当内容的滚动位置处于最顶端或最底端时，为防止触摸操作引起整个页面的滚动，借鉴 "
 						a @@ href="https://github.com/joelambert/ScrollFix" target="_blank"
 							"ScrollFix"
-						" 项目对交互细节进行了优化。"
+						" 对交互细节进行了优化。"
 					li > p
 						"当内容过短、没有出现垂直滚动条时，为防止触摸操作引起整个页面的滚动，禁用触摸事件。（有待进一步优化）"
 
@@ -38,7 +38,7 @@
 					" 这个类。容器及其内容的结构大致如下："
 				pre > code
 					'div.cm-scroll-box  //容器
-							ul.cm-list      //内容
+							ul.cm-list      //内容列表
 								li
 								...
 
