@@ -4,9 +4,9 @@
   "description": "Demo site for CMUI.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp watch",
-    "dist": "NODE_ENV=production gulp dist"
+    "dev": "gulp dev",
+    "dist": "NODE_ENV=production gulp dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cssmagic <cssmagic.cn@gmail.com>",
   "license": "MIT",

@@ -85,7 +85,7 @@ gulp.task('watch-jedi', function () {
 	], gulp.parallel('jedi'))
 })
 
-gulp.task('watch', gulp.series([
+gulp.task('dev', gulp.series([
 	'dist',
 	gulp.parallel([
 		'watch-css',
