@@ -70,6 +70,10 @@
 						"加载提示（Loading）"
 					small "提示用户操作正在进行、可附加文字提示、JS API"
 				li
+					a @href="dialog.php"
+						"弹框（Dialog）"
+					small "亦称对话框、JS API"
+				li
 					a @href="panel.php"
 						"浮出面板（Panel）"
 					small "视口底部浮出操作面板、JS API"
@@ -80,10 +84,6 @@
 				-- li
 					a @href="#"
 						"悬浮提示（Toast）"
-					small "（开发中）"
-				-- li
-					a @href="#"
-						"弹框（Dialog）"
 					small "（开发中）"
 				-- li
 					a @href="#"

@@ -24,6 +24,7 @@ jsSrcList['cmui.js'] = [
 	'./node_modules/cmui/src/js/msg-box.js',
 	'./node_modules/cmui/src/js/overlay-mask.js',
 	'./node_modules/cmui/src/js/overlay-loading.js',
+	'./node_modules/cmui/src/js/overlay-dialog.js',
 	'./node_modules/cmui/src/js/panel.js',
 	'./node_modules/cmui/src/js/scroll-box.js',
 	'./node_modules/cmui/src/js/adapter-trad/_outro.js',
