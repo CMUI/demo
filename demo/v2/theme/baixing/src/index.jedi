@@ -15,15 +15,15 @@
 			ul.content
 				li
 					a @href="color.php"
-						"颜色"
+						"Color（颜色）"
 					small "预定义的颜色变量"
 				li
 					a @href="text.php"
-						"文本"
+						"Text（文本）"
 					small "标题、段落、列表等元素的语义化样式"
 				li
 					a @href="icon.php"
-						"图标"
+						"Icon（图标）"
 					small "预定义图标、自定义图标等"
 
 		section
@@ -35,27 +35,27 @@
 					small "Subview、导航栏、视图主体、逻辑区块等"
 				li
 					a @href="label.php"
-						"标签"
+						"Label（标签）"
 					small "空心标签、实心标签、多种尺寸"
 				li
 					a @href="btn.php"
-						"按钮"
+						"Btn（按钮）"
 					small "多种尺寸、多种类型、多种状态、多种排列组合"
 				li
 					a @href="list.php"
-						"列表"
+						"List（列表）"
 					small "普通列表、链接列表、带箭头、带徽章、带值、带图标"
 				li
 					a @href="grid-list.php"
-						"网格列表"
+						"Grid List（网格列表）"
 					small "行列式布局的列表、弹性网络列表"
 				li
 					a @href="msg-box.php"
-						"提示框"
+						"Msg Box（提示框）"
 					small "包含常规、警告、成功、错误等状态"
 				li
 					a @href="form.php"
-						"表单"
+						"Form（表单）"
 					small "表单布局、表单控件、错误提示等"
 
 		section
@@ -63,31 +63,31 @@
 			ul.content
 				li
 					a @href="mask.php"
-						"遮罩层（Mask）"
+						"Mask（遮罩层）"
 					small "覆盖全页面的半透明遮罩层、JS API"
 				li
 					a @href="loading.php"
-						"加载提示（Loading）"
+						"Loading（加载提示）"
 					small "提示用户操作正在进行、可附加文字提示、JS API"
 				li
 					a @href="dialog.php"
-						"弹框（Dialog）"
+						"Dialog（弹框）"
 					small "亦称对话框、JS API"
 				li
 					a @href="panel.php"
-						"浮出面板（Panel）"
+						"Panel（浮出面板）"
 					small "视口底部浮出操作面板、JS API"
 				li
 					a @href="scroll-box.php"
-						"区域滚动（ScrollBox）"
+						"Scroll Box（区域滚动）"
 					small "让定高容器的内容可滚动、JS API"
 				-- li
 					a @href="#"
-						"悬浮提示（Toast）"
+						"Toast（悬浮提示）"
 					small "（开发中）"
 				-- li
 					a @href="#"
-						"标签页（Tab）"
+						"Tab（标签页）"
 					small "（开发中）"
 
 		section

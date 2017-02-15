@@ -2,7 +2,7 @@
 
 	#base::after
 		- $data->pageId = 'scroll-box'
-		- $data->pageTitle = 'ScrollBox'
+		- $data->pageTitle = 'Scroll Box'
 
 	#main
 		section
