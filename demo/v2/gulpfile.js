@@ -44,6 +44,7 @@ gulp.task('css', gulpfiles.stylus({
 		nib: true,
 		linenos: IS_DEV,
 		compress: !IS_DEV,
+		force: true,
 	}
 }))
 
