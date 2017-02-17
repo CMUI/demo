@@ -348,16 +348,21 @@ body > .subview > section
 				display block
 
 #dialog
+	.cm-dialog
+		width 282px
+		&#demo-dialog
+			width 300px
+
 	section.style
 		.cm-dialog
 			position relative
 			left auto
 			top auto
+			z-index auto
 			display block
 			margin auto
 			margin-bottom 10px
-			width 282px
-			//box-shadow 0 0 3px 2px rgba(0,0,0,0.5)
+			box-shadow 0 0 5px rgba(0,0,0,0.5)
 			+ .cm-dialog
 				margin-top 20px
 
@@ -365,6 +370,15 @@ body > .subview > section
 			height 150px
 			background #00d0c0 url("http://file.baixing.net/201701/cmui-demo-dialog-img.png") no-repeat
 			background-size 100% 100%
+
+	.debug
+		position fixed
+		left 5px
+		top 5px
+		z-index 200
+		padding 10px
+		background white
+		border 1px solid brown
 
 /* --------------------------------------------- */
 /** scroll box **/

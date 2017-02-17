@@ -93,6 +93,65 @@ void function () {
 		}
 	}
 
+	demo.dialog = {
+		init: function () {
+			this._setAction()
+			// this._debug()
+		},
+		_setAction: function () {
+			gearbox.action.add({
+				'demo-dialog-show': function () {
+					return CMUI.dialog.show('#demo-dialog')
+				},
+				'demo-dialog-show-auto-hide': function () {
+					return CMUI.dialog.show('#demo-dialog', {
+						autoHideDelay: 3000,
+					})
+				},
+				'demo-dialog-show-alt': function () {
+					return CMUI.dialog.show('#demo-dialog-alt', {
+						// autoHideDelay: 3000,
+					})
+				},
+				'demo-dialog-create-and-show': function () {
+					return CMUI.dialog.show(CMUI.dialog.create({
+						//...
+					}))
+				},
+			})
+		},
+		_debug: function () {
+			var html = [
+				'<div class="debug">',
+					'<p>doc.offsetHeight: <span class="offsetHeight"></span></p>',
+					'<p>doc.clientHeight: <span class="clientHeight"></span></p>',
+					'<p>win.innerHeight: <span class="innerHeight"></span></p>',
+					'<p>doc.scrollTop: <span class="scrollTop"></span></p>',
+				'</div>',
+			].join('')
+			var $wrapper = $(html)
+			gearbox.dom.$body.append($wrapper)
+			var $offsetHeight = $('.offsetHeight')
+			var $clientHeight = $('.clientHeight')
+			var $innerHeight = $('.innerHeight')
+			var $scrollTop = $('.scrollTop')
+			gearbox.dom.$win.on('touchmove scroll', function () {
+				$offsetHeight.html(document.documentElement.offsetHeight)
+				$clientHeight.html(document.documentElement.clientHeight)
+				$innerHeight.html(window.innerHeight)
+				$scrollTop.html((document.documentElement.scrollTop || document.body.scrollTop))
+			})
+			gearbox.dom.$win.on('resize', function () {
+				var randomChannels = [
+					_.random(0, 255),
+					_.random(0, 255),
+					_.random(0, 255),
+				]
+				$wrapper.css('background-color', 'rgb(' + randomChannels.join(',') + ')')
+			})
+		},
+	}
+
 	//exports
 	window.demo = demo
 

@@ -8,7 +8,7 @@
 		section
 			h2 "弹框"
 			div.intro
-				p "弹框亦称对话框，是最常见的 UI 交互元素之一。"
+				p "“弹框” 亦称 “对话框”，是最常见的 UI 交互元素之一。"
 				p "CMUI 只支持模态弹框。模态弹框是指弹框将下层的页面内容遮盖，避免用户与弹框之外的内容进行交互。"
 			div.intro
 				h4 > strong '注意'
@@ -64,6 +64,12 @@
 						h2.cm-dialog-header-title
 							'标题文字'
 			section
+				h3 '仅有内容'
+				div.cm-dialog
+					a.cm-dialog-close-btn @href="#"
+					main.cm-dialog-content
+						'内容文字'
+			section
 				h3 '头图 + 标题'
 				div.cm-dialog
 					a.cm-dialog-close-btn @href="#"
@@ -88,7 +94,7 @@
 					main.cm-dialog-content
 						'内容文字'
 			section
-				h3 '标题文字 + 底栏'
+				h3 '标题 + 底栏'
 				div.cm-dialog
 					a.cm-dialog-close-btn @href="#"
 					header.cm-dialog-header
@@ -124,8 +130,8 @@
 				div.cm-dialog
 					a.cm-dialog-close-btn @href="#"
 					div.cm-dialog-img
-					div.cm-dialog-auto-close
-						span.cm-dialog-auto-close-countdown
+					div.cm-dialog-auto-hide
+						span.cm-dialog-auto-hide-countdown
 							'?'
 						' 秒后自动关闭……'
 				div.intro
@@ -138,8 +144,8 @@
 					header.cm-dialog-header
 						h2.cm-dialog-header-title
 							'标题文字'
-					div.cm-dialog-auto-close
-						span.cm-dialog-auto-close-countdown
+					div.cm-dialog-auto-hide
+						span.cm-dialog-auto-hide-countdown
 							'?'
 						' 秒后自动关闭……'
 			section
@@ -151,8 +157,8 @@
 							'标题文字'
 					main.cm-dialog-content
 						'内容文字'
-					div.cm-dialog-auto-close
-						span.cm-dialog-auto-close-countdown
+					div.cm-dialog-auto-hide
+						span.cm-dialog-auto-hide-countdown
 							'?'
 						' 秒后自动关闭……'
 			section
@@ -169,8 +175,8 @@
 							'确定'
 						a.cm-btn.cm-btn-primary.cm-btn-bordered @href="#"
 							'取消'
-					div.cm-dialog-auto-close
-						span.cm-dialog-auto-close-countdown
+					div.cm-dialog-auto-hide
+						span.cm-dialog-auto-hide-countdown
 							'?'
 						' 秒后自动关闭……'
 
@@ -179,7 +185,11 @@
 			div.intro
 				p '在 JS 中调用以下 API，即可触发相应的功能。'
 			div.intro
-				p '各参数的含义详见 API 文档（暂未完成）。'
+				p
+					'各参数的含义详见 '
+					a @@ href="https://github.com/CMUI/doc/issues/3" target="_blank"
+						'API 文档'
+					'。'
 			section
 				h3 '显示'
 				dl.code-result
@@ -187,10 +197,15 @@
 					dd
 						a.cm-btn @href="#" @data-action="demo-dialog-show"
 							"显示"
+					dd
+						a.cm-btn @href="#" @data-action="demo-dialog-show-auto-hide"
+							"显示并设置自动隐藏"
 			section
 				h3 '隐藏'
 				dl.code-result
 					dt > code "CMUI.dialog.hide()"
+					dd
+						p '此方法可以关闭当前显示的弹框。'
 					dd
 						p '请在弹出的弹框中，点击关闭按钮来测试隐藏效果。'
 				div.intro
@@ -202,34 +217,34 @@
 				dl.code-result
 					dt > code "CMUI.dialog.create(options)"
 					dd '可以通过这个 API 来动态构造一个弹框出来。'
+					dd
+						'构造完成之后，这个新弹框会被添加到 DOM 中，但默认不显示。我们需要显式调用 '
+						code '.show()'
+						' 方法来将其打开。以下示例按钮包含了构造和显示两个步骤。'
+					dd
+						a.cm-btn @href="#" @data-action="demo-dialog-create-and-show"
+							"构造并显示"
 
 
 	#widgets
-		div.cm-dialog#demo-panel
+		div.cm-dialog#demo-dialog
 			header.cm-dialog-header
 				h2.cm-dialog-header-title '弹框'
-				a.cm-dialog-header-btn.cm-dialog-header-left.cm-dialog-header-btn-minor @href='#' @data-action="demo-panel-hide"
-					'取消'
-				a.cm-dialog-header-btn.cm-dialog-header-right @href='#' @data-action="demo-panel-hide"
-					'确定'
 			main.cm-dialog-content.cm-scrollable-content
-				ul.cm-list
-					li.cm-list-with-right-arrow
-						a
-							@href='#'
-							@data-action="demo-panel-switch-to"
-							'切至其它弹框'
-					li > p '第一个弹框的列表项'
-					li > p '第一个弹框的列表项'
+				p '弹框的内容'
+				p '弹框的内容'
+				p '弹框的内容'
+			footer.cm-dialog-footer
+				button.cm-btn.cm-btn-primary @data-action="demo-dialog-show-alt"
+					'打开另一个弹框'
+				button.cm-btn.cm-btn-primary.cm-btn-bordered @data-action="cm-dialog-hide"
+					'取消'
 
-		div.cm-dialog#demo-panel-alt
+		div.cm-dialog#demo-dialog-alt
 			header.cm-dialog-header
 				h2.cm-dialog-header-title '另一个弹框'
-				a.cm-dialog-header-btn.cm-dialog-header-left.cm-dialog-header-btn-minor @href='#' @data-action="demo-panel-switch-back"
-					'返回'
-				a.cm-dialog-header-btn.cm-dialog-header-right @href='#' @data-action="demo-panel-hide"
-					'确定'
 			main.cm-dialog-content.cm-scrollable-content
-				ul.cm-list
-					li > p '第二个弹框的列表项'
-					li > p '第二个弹框的列表项'
+				p '关闭本弹框后将返回上一个弹框。'
+			footer.cm-dialog-footer
+				button.cm-btn.cm-btn-primary @data-action="cm-dialog-hide"
+					'关闭'
