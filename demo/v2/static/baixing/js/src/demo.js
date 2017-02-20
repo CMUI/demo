@@ -1,6 +1,17 @@
 void function () {
 	'use strict'
 
+	var templateConfig = {
+		//compatible with ejs
+		interpolate : /<%-([\s\S]+?)%>/g,
+		escape      : /<%=([\s\S]+?)%>/g,
+
+		//to avoid use `with` in compiled templates
+		//see: https://github.com/cssmagic/blog/issues/4
+		variable: 'data',
+	}
+	_.extend(_.templateSettings, templateConfig)
+
 	var demo = {
 		init: function () {
 			this._getPageId()
