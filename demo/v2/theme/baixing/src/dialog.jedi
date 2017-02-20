@@ -6,7 +6,7 @@
 
 	#main
 		section
-			h2 "弹框"
+			h2 "简介"
 			div.intro
 				p "“弹框” 亦称 “对话框”，是最常见的 UI 交互元素之一。"
 				p "CMUI 只支持模态弹框。模态弹框是指弹框将下层的页面内容遮盖，避免用户与弹框之外的内容进行交互。"
@@ -14,13 +14,15 @@
 				h4 > strong '注意'
 				ul.cm-text
 					li "此组件依赖 CMUI 的 Mask 组件。"
-			hr
+
+		section
+			h2 "结构"
 			div.intro
 				p "在使用弹框的 JS API 之前，需要在页面中写好（或由 JS 动态生成）相应的弹框元素。弹框元素的结构大致如下："
 				pre > code
 					'div.cm-dialog  //弹框的容器
 							a.cm-dialog-close-btn @href="#"  //关闭按钮（注 1）
-							div.cm-dialog-img        //头图（注 2）
+							div.cm-dialog-img        //头图（注 2）（注 4）
 							header.cm-dialog-header  //弹框标题栏（注 2）
 								h2.cm-dialog-header-title  //标题文字
 							main.cm-dialog-content   //弹框主体（注 3）
@@ -33,29 +35,32 @@
 					'：“关闭按钮” 会由 JS API 自动生成，无需手工编写。'
 				p
 					strong '注 2'
-					'：有此标注的两个元素至少应该存在一个。'
+					'：有此标注的多个元素至少应该存在一个。'
 				p
 					strong '注 3'
 					'：有此标注的各个元素均为可选。'
+				p
+					strong '注 4'
+					'：头图可由 '
+					code '<img>'
+					' 标签来实现，也可由背景图片来实现。无论使用哪种方法，都需要指定图片的高度。'
 
 		section.style
 			h2 "样式"
 			div.intro
 				p
+					'弹框默认具有圆角样式，其内容会被切圆角。'
+			div.intro
+				p
 					"弹框并不是静态的布局元素，且默认不显示。但由于弹框有多种样式组合，为便于演示，下面把弹框以静态元素的形式展示出来。"
+				p
+					strong '注意'
+					"：以下示例并没有列出所有可能的样式组合，你可以根据 “结构” 段落所述的约定自行搭配出更多的弹框样式。"
 			section
 				h3 '仅有头图'
 				div.cm-dialog
 					a.cm-dialog-close-btn @href="#"
 					div.cm-dialog-img
-
-				div.intro
-					p
-						'题图可由 '
-						code '<img>'
-						' 标签来实现，也可由背景图片来实现。无论使用哪种方法，都需要指定图片的高度。'
-					p
-						'题图的最顶部会被切圆角。'
 			section
 				h3 '仅有标题'
 				div.cm-dialog
@@ -63,7 +68,7 @@
 					header.cm-dialog-header
 						h2.cm-dialog-header-title
 							'标题文字'
-			section
+			--section
 				h3 '仅有内容'
 				div.cm-dialog
 					a.cm-dialog-close-btn @href="#"
@@ -195,6 +200,9 @@
 				dl.code-result
 					dt > code "CMUI.dialog.show(elem, options)"
 					dd
+						p '此方法用于把指定的弹框显示出来。'
+						p 'Dialog 组件支持在弹框中打开另一个弹框。多个弹框的打开顺序会保存在一个栈中，当栈中有多个弹框时，关闭当前弹框会恢复上一个弹框的显示。在打开的弹框中可以测试这一特性。'
+					dd
 						a.cm-btn @href="#" @data-action="demo-dialog-show"
 							"显示"
 					dd
@@ -206,7 +214,6 @@
 					dt > code "CMUI.dialog.hide()"
 					dd
 						p '此方法可以关闭当前显示的弹框。'
-					dd
 						p '请在弹出的弹框中，点击关闭按钮来测试隐藏效果。'
 				div.intro
 					p
@@ -216,11 +223,12 @@
 				h3 '构造一个弹框'
 				dl.code-result
 					dt > code "CMUI.dialog.create(options)"
-					dd '可以通过这个 API 来动态构造一个弹框出来。'
 					dd
-						'构造完成之后，这个新弹框会被添加到 DOM 中，但默认不显示。我们需要显式调用 '
-						code '.show()'
-						' 方法来将其打开。以下示例按钮包含了构造和显示两个步骤。'
+						p '此方法可以动态构造一个新的弹框。'
+						p
+							'构造完成之后，这个新弹框会被添加到 DOM 中，但默认不显示。我们需要显式调用 '
+							code '.show()'
+							' 方法来将其打开。以下示例按钮包含了构造和显示两个步骤。'
 					dd
 						a.cm-btn @href="#" @data-action="demo-dialog-create-and-show"
 							"构造并显示"
