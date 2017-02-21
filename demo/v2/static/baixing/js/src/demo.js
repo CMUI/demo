@@ -1,6 +1,7 @@
 void function () {
 	'use strict'
 
+	// prepare
 	var templateConfig = {
 		//compatible with ejs
 		interpolate : /<%-([\s\S]+?)%>/g,
@@ -11,6 +12,12 @@ void function () {
 		variable: 'data',
 	}
 	_.extend(_.templateSettings, templateConfig)
+
+	gearbox.action.add({
+		'test-action': function () {
+			alert('You just triggered this action: `test-action`!')
+		},
+	})
 
 	var demo = {
 		init: function () {
