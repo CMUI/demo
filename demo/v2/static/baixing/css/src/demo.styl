@@ -39,9 +39,6 @@ dl.code-result
 		margin-bottom 1em
 	dd + dd
 		margin-top 0.25em
-	dd
-		p + p
-			margin-top 0.5em
 
 dl.code-result
 div.result
@@ -101,13 +98,15 @@ body > .subview > section
 	div.intro
 		&:not(:last-child)
 			margin-bottom 1.5em
+	div.intro
+	dl.code-result
 		pre:not(:first-child)
 		ul:not(:first-child)
-		> p:not(:first-child)
+		p:not(:first-child)
 			margin-top 0.5em
 		pre:not(:last-child)
 		ul:not(:last-child)
-		> p:not(:last-child)
+		p:not(:last-child)
 			margin-bottom 0.5em
 		pre + p,
 		div.cm-msg-box + p,

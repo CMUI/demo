@@ -197,28 +197,29 @@
 					'。'
 			section
 				h3 '显示'
+				div.intro
+					p '需要使用 JS API 来把指定的弹框显示出来。'
+					p 'Dialog 组件支持在弹框中打开另一个弹框。多个弹框的打开顺序会保存在一个栈中，当栈中有多个弹框时，关闭当前弹框会恢复上一个弹框的显示。通过下面的按钮打开弹框，可以测试这一特性。'
 				dl.code-result
-					dt > code "CMUI.dialog.show(elem, options)"
-					dd
-						p '此方法用于把指定的弹框显示出来。'
-						p 'Dialog 组件支持在弹框中打开另一个弹框。多个弹框的打开顺序会保存在一个栈中，当栈中有多个弹框时，关闭当前弹框会恢复上一个弹框的显示。在打开的弹框中可以测试这一特性。'
+					dt > code "CMUI.dialog.show(elem)"
 					dd
 						a.cm-btn @href="#" @data-action="demo-dialog-show"
 							"显示"
+					dt > code 'CMUI.dialog.show(elem, {autoHideDelay: 3000})'
 					dd
 						a.cm-btn @href="#" @data-action="demo-dialog-show-auto-hide"
 							"显示并设置自动隐藏"
+
 			section
 				h3 '隐藏'
 				dl.code-result
 					dt > code "CMUI.dialog.hide()"
 					dd
 						p '此方法可以关闭当前显示的弹框。'
-						p '请在弹出的弹框中，点击关闭按钮来测试隐藏效果。'
-				div.intro
-					p
-						strong '注意'
-						'：在默认情况下，点击遮罩层并不能隐藏弹框。'
+						p '在弹出的弹框中，点击关闭按钮可以测试隐藏效果；你也可以在控制台调用这个方法来测试效果。'
+				div.cm-msg-box.cm-msg-box-warning
+					strong "注意"
+					"：在默认情况下，点击遮罩层并不能隐藏弹框。"
 			section
 				h3 '构造一个弹框'
 				dl.code-result
@@ -227,11 +228,16 @@
 						p '此方法可以动态构造一个新的弹框。'
 						p
 							'构造完成之后，这个新弹框会被添加到 DOM 中，但默认不显示。我们需要显式调用 '
-							code '.show()'
-							' 方法来将其打开。以下示例按钮包含了构造和显示两个步骤。'
-					dd
-						a.cm-btn @href="#" @data-action="demo-dialog-create-and-show"
-							"构造并显示"
+							code 'CMUI.dialog.show()'
+							' 方法来将其打开，比如：'
+						pre > code
+							'var myDialog = CMUI.dialog.create({...})
+								CMUI.dialog.show(myDialog)
+						p
+							'以下示例按钮包含了构造和显示两个步骤。'
+				div.intro
+					a.cm-btn @href="#" @data-action="demo-dialog-create-and-show"
+						"构造并显示"
 
 
 	#widgets

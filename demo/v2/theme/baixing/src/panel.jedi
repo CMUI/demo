@@ -56,10 +56,9 @@
 					dt > code "CMUI.panel.hide(options)"
 					dd
 						p '请在浮出的面板中，点击标题栏中的左右按钮来测试隐藏效果。'
-				div.intro
-					p
-						strong '注意'
-						'：在默认情况下，点击遮罩层并不能隐藏浮出面板。'
+				div.cm-msg-box.cm-msg-box-warning
+					strong "注意"
+					'：在默认情况下，点击遮罩层并不能隐藏浮出面板。'
 			section
 				h3 '切至其它面板'
 				dl.code-result
