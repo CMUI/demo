@@ -53,8 +53,7 @@
 			div.intro
 				code "CMUI.scrollBox.refresh()"
 				p
-					"如果页面中的 ScrollBox 是由 JS 动态生成的，则我们需要手动调用 "
-					" 方法来初始化页面中所有未初始化的 "
+					"如果页面中的 ScrollBox 是由 JS 动态生成的，则我们需要手动调用此方法来初始化页面中所有未初始化的 "
 					code ".cm-scroll-box"
 					" 元素。"
 
