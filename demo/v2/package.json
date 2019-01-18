@@ -1,26 +1,22 @@
 {
   "name": "cmui-demo",
-  "version": "2.0.0",
-  "description": "Demo site for CMUI.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "gulp dev",
     "dist": "NODE_ENV=production gulp dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "cssmagic <cssmagic.cn@gmail.com>",
-  "license": "MIT",
   "dependencies": {
-    "cmui": "2.0.0-beta.14",
+    "cmui": "2.1.0-alpha.1",
     "cmui-gearbox": "^0.6.0",
     "underscore": "^1.7.0",
-    "zepto.js": "*"
+    "zepto.js": "^1.1.6"
   },
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-util": "*",
-    "gulpfiles": "^0.4.0",
-    "jedi": "1.0.0-rc5.6",
+    "gulpfiles": "^0.4.6",
+    "jedi": "1.0.0-rc6.4",
     "through2": "*"
   }
 }
