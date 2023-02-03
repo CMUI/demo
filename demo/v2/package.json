@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "cmui": "2.1.0-alpha.1",
+    "cmui": "2.1.0-alpha.2",
     "cmui-gearbox": "^0.6.0",
     "underscore": "^1.7.0",
     "zepto.js": "^1.1.6"
