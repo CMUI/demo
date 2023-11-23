@@ -1,0 +1,15 @@
+# 非代码文件
+.idea/
+.DS_Store
+.git/
+.gitignore
+.editorconfig
+_sandbox/
+
+# 不宜公开的文件
+README.*
+*.map
+
+# 仅用于部署操作的文件
+.dockerignore
+deploy.sh

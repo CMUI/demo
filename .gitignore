@@ -23,7 +23,3 @@ npm-debug.log
 
 *.php
 dist/
-
-*.sh
-*.bat
-*.yaml
