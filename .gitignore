@@ -23,3 +23,7 @@ npm-debug.log
 
 *.php
 dist/
+
+!/demo/v0/bower_components/cmui/deps/lib.js
+!/demo/v0/bower_components/cmui/dist/cmui.min.css
+!/demo/v0/bower_components/cmui/dist/cmui.min.js
