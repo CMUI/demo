@@ -32,3 +32,4 @@ dist/
 !/demo/v1/static/baixing/*/dist/
 
 !/demo/v2/**/*.php
+!/demo/v2/static/baixing/*/dist/
