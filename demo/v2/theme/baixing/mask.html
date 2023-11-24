@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>Mask - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css">
+</head>
+<body id="mask">
+<article class="subview subview-root">
+	<header><h1>Mask</h1></header>
+	<section class="mask"><h2>遮罩层</h2>
+		<div class="intro">
+			<p>遮罩层是一个覆盖整个视口的半透明层，被它遮住的元素不可交互。这个组件是一个底层组件，可以和 Loading 组件同时使用，也可以被浮出面板和对话框等组件调用作为 backdrop。</p>
+		</div>
+		<div class="intro">
+			<p>提示：在本页打开遮罩后，仍可点击遮罩下层的按钮。<strong>不过请注意这不是遮罩本身的特性，只是本页面为了便于测试而增加的行为。</strong>
+			</p></div>
+		<dl>
+			<dt><a class="cm-btn" href="#" data-action="mask-show">显示</a></dt>
+			<dd><code>CMUI.mask.show()</code></dd>
+		</dl>
+		<dl>
+			<dt><a class="cm-btn" href="#" data-action="mask-hide">隐藏</a></dt>
+			<dd><code>CMUI.mask.hide()</code></dd>
+		</dl>
+		<dl>
+			<dt><a class="cm-btn" href="#" data-action="mask-fade-in">淡入</a></dt>
+			<dd><code>CMUI.mask.fadeIn()</code></dd>
+		</dl>
+		<dl>
+			<dt><a class="cm-btn" href="#" data-action="mask-fade-out">淡出</a></dt>
+			<dd><code>CMUI.mask.fadeOut()</code></dd>
+		</dl>
+		<hr>
+		<div class="intro"><code>CMUI.mask.get$Element()</code>
+			<p>有些时候，我们可能需要为遮罩层元素绑定事件，此时调用这个 API 就可以得到遮罩层元素的 Zepto 对象。</p></div>
+	</section>
+	<section class="back"><a href="./">&lt;&lt; 返回首页</a></section>
+	<footer>&copy; CMUI.NET</footer>
+</article>
+<script src="/demo/v2/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>

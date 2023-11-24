@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>Form - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css">
+</head>
+<body id="form">
+<article class="subview subview-root">
+	<header><h1>Form</h1></header>
+	<section><h2>概述</h2>
+		<div class="intro"><p><strong>注意</strong>：以下示例中的绿色虚线表示容器边界。</p></div>
+	</section>
+	<section class="layout"><h2>表单布局</h2>
+		<div class="intro"><p>表单的容器（通常就是 <code>&lt;form&gt;</code> 元素）需要添加
+			<code>.cm-form</code> 这个类。建议把表单作为 <code>&lt;section&gt;</code> 的子元素。</p>
+			<p>表单的每个字段独占一行，以下简称 “表单行”。每个表单行都需要有
+				<code>.cm-form-line</code> 这个类。</p><p>多个表单行可以组成一个区块（<code>.cm-section-content</code>）；整张表单可能是由多个区块组成的。区块之间有间隙。
+			</p></div>
+		<div class="intro"><p>表单的结构大致如下：</p>
+			<pre><code>main > section    //视图主体中的逻辑区块
+	form.cm-form  //表单容器
+		div.cm-section-content  //表单区块
+			div.cm-form-line    //表单行
+			div.cm-form-line    //表单行
+			...
+		div.cm-section-content  //表单区块
+			div.cm-form-line    //表单行
+			...
+</code></pre>
+		</div>
+		<div class="demo-stage">
+			<section>
+				<form class="cm-form" action="#">
+					<div class="cm-section-content">
+						<div class="cm-form-line"><p>表单行</p></div>
+						<div class="cm-form-line"><p>表单行</p></div>
+						<div class="cm-form-line"><p>表单行</p></div>
+					</div>
+					<div class="cm-section-content">
+						<div class="cm-form-line"><p>表单行</p></div>
+						<div class="cm-form-line"><p>表单行</p></div>
+					</div>
+				</form>
+			</section>
+		</div>
+		<div class="intro"><p>可以在表单区块的上方添加标题（<code>.cm-section-title</code>）。</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#"><h2 class="cm-section-title">表单区块标题</h2>
+				<div class="cm-section-content">
+					<div class="cm-form-line"><p>表单行</p></div>
+				</div>
+				<h2 class="cm-section-title">表单区块标题</h2>
+				<div class="cm-section-content">
+					<div class="cm-form-line"><p>表单行</p></div>
+					<div class="cm-form-line"><p>表单行</p></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section><h2>表单行</h2>
+		<div class="intro"><p>表单行内的基本结构如下：</p>
+			<pre><code>div.cm-form-line    //表单行
+	label.cm-form-label  //标签容器
+		em.required '*'  //必填标记（可选）
+		'标签'           //标签文本
+	div.cm-form-ctrl     //控件容器
+		input            //控件
+</code></pre>
+			<p>控件的详细约定将在下面详细陈述（各控件的结构约定请直接查看页面源码）。</p></div>
+	</section>
+	<section><h2>基本控件</h2>
+		<div class="intro"><p>文本输入框（包括数字、Email、URL 等 HTML5 新增的文本类型的输入框）的效果如下：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>标签</label>
+						<div class="cm-form-ctrl"><input type="text" placeholder="这是一个文本输入框"></div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>标签超过六个字了啊啊啊</label>
+						<div class="cm-form-ctrl"><input type="number" placeholder="这是一个数字输入框"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>还可以有单位（请留意该元素在结构中的位置）：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line">
+						<label class="cm-form-label"><em class="required">*</em>行驶里程</label><label class="cm-form-unit">万公里</label>
+						<div class="cm-form-ctrl"><input type="number" placeholder="请填写数字"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>多行文本输入框的效果如下：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>标签</label>
+						<div class="cm-form-ctrl">
+							<textarea placeholder="可填写多行文本……"></textarea>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>下拉框的效果如下：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>标签</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-select-wrapper"><select>
+								<option class="cm-form-placeholder" value="">请选择颜色</option>
+								<option>红</option>
+								<option>黑</option>
+								<option>白</option>
+								<option>银</option>
+							</select></div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<hr>
+		<section><h3>关于占位符</h3>
+			<div class="intro"><p>文本输入框的占位符采用原生的 <code>placeholder</code> 属性来实现。</p>
+				<p>下拉框的占位符效果需要分三步走：</p>
+				<ol class="cm-text"><li>给用作占位符的 <code>&lt;option&gt;</code> 元素添加
+					<code>.cm-form-placeholder</code> 类。</li>
+					<li>在页面中加载 CMUI 的脚本文件及其依赖，下拉框即可获得占位符效果。</li>
+					<li>为避免脚本生效前后的闪动效果，对于那些给没有初始值的（即默认选中占位符选项的）下拉框，我们可以为它们手动添加
+						<code>.cm-form-placeholder</code> 类。如果下拉框是在脚本加载之后动态生成的，也需要做这个处理。</li>
+				</ol>
+				<p>没有初始值的下拉框的结构如下：</p>
+				<pre><code>div.cm-form-select-wrapper    //下拉框的容器
+	select.cm-form-placeholder      //下拉框
+		option.cm-form-placeholder  //占位符选项
+			'请选择颜色'
+		option '红'                 //常规选项
+		option '黑'                 //常规选项
+</code></pre>
+				<p>有初始值的下拉框的结构如下：</p>
+				<pre><code>div.cm-form-select-wrapper    //下拉框的容器
+	select                          //下拉框
+		option.cm-form-placeholder  //占位符选项
+			'请选择颜色'
+		option @selected '红'       //常规选项
+		option '黑'                 //常规选项
+</code></pre>
+			</div>
+		</section>
+	</section>
+	<section><h2>复合控件</h2>
+		<div class="intro"><p>某些字段包含了多个控件，其布局也稍复杂。</p></div>
+		<div class="intro"><p>两个下拉框的组合有两种形式：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>出生年月</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-dual-select">
+								<div class="cm-form-select-wrapper"><select>
+									<option class="cm-form-placeholder" value="">请选择年份</option>
+									<option>2014年</option>
+									<option>2015年</option>
+									<option>2016年</option>
+								</select></div>
+								<div class="cm-form-select-wrapper"><select>
+									<option class="cm-form-placeholder" value="">请选择月份</option>
+									<option>1月</option>
+									<option>2月</option>
+									<option>3月</option>
+								</select></div>
+							</div>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>年龄范围</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-range-select">
+								<div class="cm-form-select-wrapper"><select>
+									<option class="cm-form-placeholder" value="">请选择</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+								</select><label class="cm-form-unit">岁</label></div>
+								<span>至</span>
+								<div class="cm-form-select-wrapper"><select>
+									<option class="cm-form-placeholder" value="">请选择</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+								</select><label class="cm-form-unit">岁</label></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>多个复选框的效果如下：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>发布人身份</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-option-list">
+								<label><input type="radio" name="posterType">个人</label><label><input type="radio" name="posterType">商家</label>
+							</div>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>多个选项</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-option-list"><label><input type="radio" name="posterType">选项一</label><label><input type="radio" name="posterType">选项二</label><label><input type="radio" name="posterType">选项三超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长</label><label><input type="radio" name="posterType">选项四</label><label><input type="radio" name="posterType">选项五超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section><h2>图片上传</h2>
+		<div class="intro">
+			<div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：CMUI 只提供了图片上传控件的样式，未提供上传功能。
+			</div>
+		</div>
+		<div class="intro"><p>图片上传控件的初始状态如下。</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>图片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list"></ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>已上传不同张数的效果分别如下。</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>图片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list">
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-title">封面</span><span class="cm-form-image-wrapper"><img src="https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg"></span>
+									</li>
+								</ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>图片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list">
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-title">封面</span><span class="cm-form-image-wrapper"><img src="https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg"></span>
+									</li>
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-wrapper"><img src="https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg"></span>
+									</li>
+								</ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>图片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list">
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-title">封面</span><span class="cm-form-image-wrapper"><img src="https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg"></span>
+									</li>
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-wrapper"><img src="https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg"></span>
+									</li>
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-wrapper"><img src="https://cloud.githubusercontent.com/assets/1231359/19432187/0106b376-948e-11e6-8171-cb089ff94b4c.jpg"></span>
+									</li>
+								</ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p class="copyright">（图片来源：Peter Miller @ Flickr）</p></div>
+		<div class="intro"><p>上传的不同阶段的样式分别如下。</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line">
+						<label class="cm-form-label"><em class="required">*</em>正在上传示意</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list">
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-status-loading"></span><span class="cm-form-image-wrapper"><img></span>
+									</li>
+								</ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+					</div>
+					<div class="cm-form-line">
+						<label class="cm-form-label"><em class="required">*</em>上传失败示意</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list">
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-status-failed">上传失败</span><span class="cm-form-image-wrapper"><img src="about:blank"></span>
+									</li>
+								</ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section><h2>提示信息</h2>
+		<div class="intro"><p>静态的提示语有以下两种形式。首先是块状的强化提示：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line">
+						<label class="cm-form-label"><em class="required">*</em>联系电话</label><span class="cm-form-unit">万元</span>
+						<div class="cm-form-ctrl"><input type="tel" placeholder="请填写您的联系电话"></div>
+						<div class="cm-form-note">为保护您的账号安全，请填写注册手机号。</div>
+					</div>
+					<div class="cm-form-line">
+						<label class="cm-form-label"><em class="required">*</em>联系电话</label><span class="cm-form-unit">万元</span>
+						<div class="cm-form-ctrl"><input type="tel" placeholder="请填写您的联系电话"></div>
+						<div class="cm-form-note"><h4>富文本也没问题</h4><p>为保护您的账号安全，请填写注册手机号。</p>
+							<p>提示语段落文字文字文字文字。</p></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>然后是放置在输入框附近的弱化提示：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>联系电话</label>
+						<div class="cm-form-ctrl"><input type="tel" placeholder="请填写您的联系电话">
+							<div class="cm-form-note-minor">为保护您的账号安全，请填写注册手机号</div>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>图片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list"></ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+								<div class="cm-form-note-minor">最多上传12张图片</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>动态的提示语也有两种形式。一是表单校验时显示的错误信息，效果如下：</p>
+			<div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：CMUI 仅提供了错误信息的样式，未提供表单校验功能。
+			</div>
+		</div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>QQ号</label>
+						<div class="cm-form-ctrl"><input type="number" placeholder="请填写数字"></div>
+						<div class="cm-form-error"><i class="cm-icon cm-icon-x20-msg-error"></i>此项必填，错误信息超长超长超长超长超长超长超长超长超长超长超长超长超长
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>联系电话</label>
+						<div class="cm-form-ctrl"><input type="tel" placeholder="请填写您的联系电话"></div>
+						<div class="cm-form-note-minor">为保护您的账号安全，请填写注册手机号</div>
+						<div class="cm-form-error"><i class="cm-icon cm-icon-x20-msg-error"></i>此项必填</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>图片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list"></ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+						<div class="cm-form-note-minor">最多上传12张图片</div>
+						<div class="cm-form-error"><i class="cm-icon cm-icon-x20-msg-error"></i>必须上传一张图片</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>行驶证照片</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list"></ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+						<div class="cm-form-error"><i class="cm-icon cm-icon-x20-msg-error"></i>必须上传一张图片</div>
+						<div class="cm-form-note"><strong>郑重承诺：</strong>证件照片仅用于信息核查，不会在页面展示</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>二是交互过程中产生的强化错误提示，参见以下效果：</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line">
+						<label class="cm-form-label"><em class="required">*</em>上传失败示意</label>
+						<div class="cm-form-ctrl">
+							<div class="cm-form-image">
+								<ul class="cm-form-image-list">
+									<li class="cm-form-image-item">
+										<button class="cm-form-image-btn-remove">×</button>
+										<span class="cm-form-image-status-failed">上传失败</span><span class="cm-form-image-wrapper"><img src="about:blank"></span>
+									</li>
+								</ul>
+								<div class="cm-form-image-btn-add"><label></label><input type="file"></div>
+							</div>
+						</div>
+						<div class="cm-form-note cm-form-note-error">超时了，网络不给力哦</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section><h2>交互组件</h2>
+		<div class="intro">
+			<p>某些字段点击后会打开一个独立的交互组件（比如 Panel、Dialog 或 Subview）来完成内容的填写。因此这些字段在显示值的位置并不是一个表单控件，而是交互组件的占位符和触发器。</p>
+		</div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>标签</label>
+						<div class="cm-form-ctrl">
+							<span class="cm-form-ctrl-value cm-form-placeholder">占位符（无箭头）</span></div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>标签</label>
+						<div class="cm-form-ctrl">
+							<span class="cm-form-ctrl-value cm-form-placeholder cm-form-ctrl-value-with-right-arrow">占位符（有箭头）</span>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>品牌</label>
+						<div class="cm-form-ctrl">
+							<span class="cm-form-ctrl-value cm-form-placeholder cm-form-ctrl-value-with-right-arrow">请选择（可多选）</span>
+						</div>
+						<div class="cm-form-note-minor">找不到您的车？<a href="#">填写一个</a></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="intro"><p>已填状态如下。</p></div>
+		<div class="demo-stage">
+			<form class="cm-form" action="#">
+				<div class="cm-section-content">
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>地区</label>
+						<div class="cm-form-ctrl">
+							<span class="cm-form-ctrl-value cm-form-ctrl-value-with-right-arrow">徐汇区 / 徐家汇</span>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>福利待遇</label>
+						<div class="cm-form-ctrl">
+							<span class="cm-form-ctrl-value cm-form-ctrl-value-with-right-arrow">五险一金,包吃,双休,年底双薪</span>
+						</div>
+					</div>
+					<div class="cm-form-line"><label class="cm-form-label"><em class="required">*</em>品牌</label>
+						<div class="cm-form-ctrl">
+							<span class="cm-form-ctrl-value cm-form-ctrl-value-with-right-arrow">奥迪100 1992年款 2.6 手动E化油器</span>
+						</div>
+						<div class="cm-form-note-minor">找不到您的车？<a href="#">填写一个</a></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section class="back"><a href="./">&lt;&lt; 返回首页</a></section>
+	<footer>&copy; CMUI.NET</footer>
+</article>
+<script src="/demo/v2/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>
