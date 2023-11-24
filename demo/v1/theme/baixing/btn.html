@@ -1,12 +1,139 @@
 <!doctype html>
-<html lang="zh-cmn-Hans"><head><meta charset="utf-8"><title>Button - CMUI Demo</title><meta name="viewport" content="initial-scale=1, user-scalable=no"><meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web"><meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。"><link rel="stylesheet" href="/demo/v1/static/baixing/css/dist/demo.css"></head><body id="btn"><div class="cmSubview cmSubviewRoot"><header><h1>Button</h1></header><article class="summary"><h1>概述</h1><div class="intro"><p>目前仅可通过预定义的类名（而不是 mixin）来设置按钮样式。</p><p>所有按钮都应该添加 <code>.cmBtn</code> 类名，并根据需要添加其它辅助类名，以设置其尺寸、颜色等样式。</p></div><div class="intro"><p>所有按钮默认显示为块级，可以按需对特定按钮指定宽度属性。</p><p>不建议在文本段落中混入按钮。</p></div></article><article class="btn-size"><h1>按钮尺寸</h1><div><p class="cmBtnWrapper"><a class="cmBtn cmBtnXSmall" href="#">超小按钮</a></p><p class="code"><code>.cmBtn.cmBtnXSmall</code></p></div><div><p class="cmBtnWrapper"><a class="cmBtn cmBtnSmall" href="#">小按钮</a></p><p class="code"><code>.cmBtn.cmBtnSmall</code></p></div><div><p class="cmBtnWrapper"><a class="cmBtn" href="#">普通按钮</a></p><p class="code"><code>.cmBtn</code></p></div><div><p class="cmBtnWrapper"><a class="cmBtn cmBtnLarge" href="#">大按钮</a></p><p class="code"><code>.cmBtn.cmBtnLarge</code></p></div><div><p class="cmBtnWrapper"><a class="cmBtn cmBtnXLarge" href="#">超大按钮</a></p><p class="code"><code>.cmBtn.cmBtnXLarge</code></p></div></article><article class="btn-type"><h1>场景类型</h1><div class="btn-default"><p class="cmBtnWrapper"><a class="cmBtn" href="#">常规按钮</a></p><p class="code"><code>.cmBtn</code></p></div><div class="btn-success"><p class="cmBtnWrapper"><a class="cmBtn cmBtnInfo" href="#">信息按钮</a></p><p class="code"><code>.cmBtn.cmBtnInfo</code></p></div><div class="btn-success"><p class="cmBtnWrapper"><a class="cmBtn cmBtnSuccess" href="#">成功按钮</a></p><p class="code"><code>.cmBtn.cmBtnSuccess</code></p></div><div class="btn-danger"><p class="cmBtnWrapper"><a class="cmBtn cmBtnDanger" href="#">危险按钮</a></p><p class="code"><code>.cmBtn.cmBtnDanger</code></p></div><div class="btn-warning"><p class="cmBtnWrapper"><a class="cmBtn cmBtnWarning" href="#">警告按钮</a></p><p class="code"><code>.cmBtn.cmBtnWarning</code></p></div></article><article class="form-btn"><h1>表单按钮</h1><div class="intro"><p>以上的各个类名除了可以用于 <code>&lt;a&gt;</code> 元素外，还可用于 <code>&lt;input&gt;</code> 和 <code>&lt;button&gt;</code> 这样的表单按钮元素。</p><p>表单内的按钮应该优先选择表单元素来实现。</p></div><div class="intro"><p>表单按钮天生具备收缩包围的特性，在不指定宽度时，它们只呈现最小宽度。为使它们呈现出通长的块级效果，已对它们设置 <code>width: 100%;</code>。</p></div><div><p class="cmBtnWrapper"><input class="cmBtn" type="button" value="input 元素"></p></div><div><p class="cmBtnWrapper"><button class="cmBtn" type="button">button 元素</button></p></div></article><article class="btn-status"><h1>按钮状态</h1><section class="btn-status-hover"><h2>悬停状态</h2><div class="intro"><p>鼠标悬停时可见此状态，不需要修改结构。</p><p>触屏设备不支持此状态。</p></div></section><section class="btn-status-active"><h2>按下状态</h2><div class="intro"><p>鼠标按下或手指触摸时可见此状态，不需要修改结构。</p><p>Android 2.X 不支持此状态。</p></div><div class="intro"><p>以下按钮可供把玩：</p></div><div><p><a class="cmBtn" href="#">按钮</a></p></div></section><section class="btn-status-force-active"><h2>选中状态</h2><div class="intro"><p>当某个按钮具备开关状态时，可以通过添加或除移 <code>.active</code> 类来实现效果。</p><p>请注意，这个类和 CSS 伪类 <code>:active</code> 不仅在含义上有区别，样式上也有差异。</p></div><div><p><a class="cmBtn active" href="#">.cmBtn.active</a></p></div></section><section class="btn-status-disabled"><h2>禁用状态</h2><div class="intro cmText"><p>表单按钮（<code>&lt;button&gt;</code>、<code>&lt;input&gt;</code> 元素）具有 <code>disabled</code> 属性时，可见此状态。</p><p>对于由 <code>&lt;a&gt;</code> 元素实现的按钮，需要添加 <code>.disabled</code> 类。（注意：此时链接仍可响应点击动作。）</p></div><div class="intro cmText"><p>上述两种按钮禁用状态的结构和效果分别如下：</p><pre><code>a.cmBtn.disabled
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>Button - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v1/static/baixing/css/dist/demo.css">
+</head>
+<body id="btn">
+<div class="cmSubview cmSubviewRoot">
+	<header><h1>Button</h1></header>
+	<article class="summary"><h1>概述</h1>
+		<div class="intro"><p>目前仅可通过预定义的类名（而不是 mixin）来设置按钮样式。</p><p>所有按钮都应该添加
+			<code>.cmBtn</code> 类名，并根据需要添加其它辅助类名，以设置其尺寸、颜色等样式。</p></div>
+		<div class="intro"><p>所有按钮默认显示为块级，可以按需对特定按钮指定宽度属性。</p>
+			<p>不建议在文本段落中混入按钮。</p></div>
+	</article>
+	<article class="btn-size"><h1>按钮尺寸</h1>
+		<div><p class="cmBtnWrapper"><a class="cmBtn cmBtnXSmall" href="#">超小按钮</a></p><p class="code">
+			<code>.cmBtn.cmBtnXSmall</code></p></div>
+		<div><p class="cmBtnWrapper"><a class="cmBtn cmBtnSmall" href="#">小按钮</a></p><p class="code">
+			<code>.cmBtn.cmBtnSmall</code></p></div>
+		<div><p class="cmBtnWrapper"><a class="cmBtn" href="#">普通按钮</a></p><p class="code"><code>.cmBtn</code></p>
+		</div>
+		<div><p class="cmBtnWrapper"><a class="cmBtn cmBtnLarge" href="#">大按钮</a></p><p class="code">
+			<code>.cmBtn.cmBtnLarge</code></p></div>
+		<div><p class="cmBtnWrapper"><a class="cmBtn cmBtnXLarge" href="#">超大按钮</a></p><p class="code">
+			<code>.cmBtn.cmBtnXLarge</code></p></div>
+	</article>
+	<article class="btn-type"><h1>场景类型</h1>
+		<div class="btn-default"><p class="cmBtnWrapper"><a class="cmBtn" href="#">常规按钮</a></p><p class="code">
+			<code>.cmBtn</code></p></div>
+		<div class="btn-success"><p class="cmBtnWrapper"><a class="cmBtn cmBtnInfo" href="#">信息按钮</a></p>
+			<p class="code"><code>.cmBtn.cmBtnInfo</code></p></div>
+		<div class="btn-success"><p class="cmBtnWrapper"><a class="cmBtn cmBtnSuccess" href="#">成功按钮</a></p>
+			<p class="code"><code>.cmBtn.cmBtnSuccess</code></p></div>
+		<div class="btn-danger"><p class="cmBtnWrapper"><a class="cmBtn cmBtnDanger" href="#">危险按钮</a></p>
+			<p class="code"><code>.cmBtn.cmBtnDanger</code></p></div>
+		<div class="btn-warning"><p class="cmBtnWrapper"><a class="cmBtn cmBtnWarning" href="#">警告按钮</a></p>
+			<p class="code"><code>.cmBtn.cmBtnWarning</code></p></div>
+	</article>
+	<article class="form-btn"><h1>表单按钮</h1>
+		<div class="intro"><p>以上的各个类名除了可以用于 <code>&lt;a&gt;</code> 元素外，还可用于
+			<code>&lt;input&gt;</code> 和 <code>&lt;button&gt;</code> 这样的表单按钮元素。</p>
+			<p>表单内的按钮应该优先选择表单元素来实现。</p></div>
+		<div class="intro"><p>表单按钮天生具备收缩包围的特性，在不指定宽度时，它们只呈现最小宽度。为使它们呈现出通长的块级效果，已对它们设置
+			<code>width: 100%;</code>。</p></div>
+		<div><p class="cmBtnWrapper"><input class="cmBtn" type="button" value="input 元素"></p></div>
+		<div>
+			<p class="cmBtnWrapper">
+				<button class="cmBtn" type="button">button 元素</button>
+			</p>
+		</div>
+	</article>
+	<article class="btn-status"><h1>按钮状态</h1>
+		<section class="btn-status-hover"><h2>悬停状态</h2>
+			<div class="intro"><p>鼠标悬停时可见此状态，不需要修改结构。</p><p>触屏设备不支持此状态。</p></div>
+		</section>
+		<section class="btn-status-active"><h2>按下状态</h2>
+			<div class="intro"><p>鼠标按下或手指触摸时可见此状态，不需要修改结构。</p><p>Android 2.X 不支持此状态。</p>
+			</div>
+			<div class="intro"><p>以下按钮可供把玩：</p></div>
+			<div><p><a class="cmBtn" href="#">按钮</a></p></div>
+		</section>
+		<section class="btn-status-force-active"><h2>选中状态</h2>
+			<div class="intro"><p>当某个按钮具备开关状态时，可以通过添加或除移 <code>.active</code> 类来实现效果。</p>
+				<p>请注意，这个类和 CSS 伪类 <code>:active</code> 不仅在含义上有区别，样式上也有差异。</p></div>
+			<div><p><a class="cmBtn active" href="#">.cmBtn.active</a></p></div>
+		</section>
+		<section class="btn-status-disabled"><h2>禁用状态</h2>
+			<div class="intro cmText"><p>表单按钮（<code>&lt;button&gt;</code>、<code>&lt;input&gt;</code> 元素）具有
+				<code>disabled</code> 属性时，可见此状态。</p><p>对于由 <code>&lt;a&gt;</code> 元素实现的按钮，需要添加
+				<code>.disabled</code> 类。（注意：此时链接仍可响应点击动作。）</p></div>
+			<div class="intro cmText"><p>上述两种按钮禁用状态的结构和效果分别如下：</p>
+				<pre><code>a.cmBtn.disabled
 button.cmBtn @disabled
-</code></pre></div><div><p><a class="cmBtn disabled" href="#">.cmBtn.disabled</a></p></div><div><p><button class="cmBtn" disabled>.cmBtn:disabled</button></p></div><div><p><a class="cmBtn active disabled" href="#">.cmBtn.active.disabled</a></p></div><div><p><button class="cmBtn active" disabled>.cmBtn.active:disabled</button></p></div></section></article><article class="btn-multiple"><h1>按钮的排列组合</h1><section class="btn-line"><h2>并排的按钮</h2><div class="intro"><p>如果需要呈现并排的按钮，请使用以下结构：</p><pre><code>.cmBtnLine
+</code></pre>
+			</div>
+			<div><p><a class="cmBtn disabled" href="#">.cmBtn.disabled</a></p></div>
+			<div>
+				<p>
+					<button class="cmBtn" disabled>.cmBtn:disabled</button>
+				</p>
+			</div>
+			<div><p><a class="cmBtn active disabled" href="#">.cmBtn.active.disabled</a></p></div>
+			<div>
+				<p>
+					<button class="cmBtn active" disabled>.cmBtn.active:disabled</button>
+				</p>
+			</div>
+		</section>
+	</article>
+	<article class="btn-multiple"><h1>按钮的排列组合</h1>
+		<section class="btn-line"><h2>并排的按钮</h2>
+			<div class="intro"><p>如果需要呈现并排的按钮，请使用以下结构：</p>
+				<pre><code>.cmBtnLine
     .cmBtn
     .cmBtn
     .cmBtn
-</code></pre><p>如果需要调整各按钮的宽度，建议使用 <code>max-width</code> 和 <code>min-width</code> 属性。</p></div><div class="cmBtnLine"><a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a></div><div class="cmBtnLine"><button class="cmBtn">表单按钮</button><button class="cmBtn">表单按钮</button><button class="cmBtn">表单按钮</button></div></section><hr><section class="btn-group"><h2>按钮组合</h2><div class="intro"><p>如果需要将多个按钮合并为一组，请使用以下结构：</p><pre><code>.cmBtnGroup
+</code></pre>
+				<p>如果需要调整各按钮的宽度，建议使用 <code>max-width</code> 和 <code>min-width</code> 属性。</p></div>
+			<div class="cmBtnLine">
+				<a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a>
+			</div>
+			<div class="cmBtnLine">
+				<button class="cmBtn">表单按钮</button>
+				<button class="cmBtn">表单按钮</button>
+				<button class="cmBtn">表单按钮</button>
+			</div>
+		</section>
+		<hr>
+		<section class="btn-group"><h2>按钮组合</h2>
+			<div class="intro"><p>如果需要将多个按钮合并为一组，请使用以下结构：</p>
+				<pre><code>.cmBtnGroup
     .cmBtn
     .cmBtn
     .cmBtn
-</code></pre></div><div class="cmBtnGroup"><a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a></div><div class="cmBtnGroup"><button class="cmBtn">表单按钮</button><button class="cmBtn">表单按钮</button><button class="cmBtn">表单按钮</button></div></section></article><article class="back"><a href="index.php">&lt;&lt; 返回首页</a></article><footer>&copy; CMUI.NET</footer></div><script src="/demo/v1/static/baixing/js/dist/lib.js"></script><script src="/demo/v1/static/baixing/js/dist/cmui.js"></script><script src="/demo/v1/static/baixing/js/dist/demo.js"></script></body></html>
+</code></pre>
+			</div>
+			<div class="cmBtnGroup">
+				<a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a><a class="cmBtn" href="#">按钮</a>
+			</div>
+			<div class="cmBtnGroup">
+				<button class="cmBtn">表单按钮</button>
+				<button class="cmBtn">表单按钮</button>
+				<button class="cmBtn">表单按钮</button>
+			</div>
+		</section>
+	</article>
+	<article class="back"><a href="index.php">&lt;&lt; 返回首页</a></article>
+	<footer>&copy; CMUI.NET</footer>
+</div>
+<script src="/demo/v1/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v1/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v1/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>
