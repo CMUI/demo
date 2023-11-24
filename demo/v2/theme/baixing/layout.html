@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-cmn-Hans"><head><meta charset="utf-8"><title>Layout - CMUI Demo</title><meta name="viewport" content="initial-scale=1, user-scalable=no"><meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web"><meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。"><link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css"></head><body id="layout"><article class="subview subview-root"><header><h1>Layout</h1></header><section><h2>概述</h2><div class="intro"><p><strong>本页面的 HTML 结构是为演示效果而特别编写的，不具有实际参考意义。所有元素的 HTML 结构约定请以各元素的相关描述为准。（以下示例中的绿色虚线表示容器边界。）</strong></p></div><div class="intro"><p>一个 HTML 页面可能包含多个 “view”。一个 view 就是一个功能视图，页面中至少应包含一个 view，其中第一个 view 称作 root view（主视图），其它称作 sub view（子视图）。每个 view 都应该被放置在单独的 <code>body &gt; article.subview</code> 元素中。</p><p>因此整个 HTML 文档的结构应该是这样的（以 L2V 为例）：</p><pre><code>html
+	head
+	body
+		article.subview#listing-view  //主视图（必需）
+		article.subview#vad-view	  //子视图（可选）
+		article.subview#other-view	//子视图（可选）
+</code></pre></div><div class="intro"><p>每个 view 内的主要结构应该是这样的：</p><pre><code>article.subview  //页面级容器
+	header  //页头
+	main	//页面主体
+	footer  //页脚
+</code></pre></div><hr><div class="intro"><p>多个 view 之间切换应该由 Subview 这个组件来实现，详见 <a href="https://github.com/cssmagic/subview/wiki" target="_blank">Subview 组件的文档</a>。</p></div><hr><div class="intro"><p>View 内的各个区块详见如下各小节。</p></div></section><section class="header"><h2>页头</h2><div class="intro"><p>页头可以包含一个或多个导航元素。</p><p>通常页头内唯一的导航元素就是导航栏（导航栏的具体结构和样式参见下一节）。</p><pre><code>header  //页头区域
+	nav.cm-nav-bar  //导航栏
+</code></pre></div><div class="demo-stage subview"><header><nav class="cm-nav-bar"><h1 class="cm-nav-bar-title">（这里是导航栏）</h1><div class="cm-btn-wrapper cm-nav-bar-left"><a class="cm-btn" href="#action">导航栏按钮</a></div><div class="cm-btn-wrapper cm-nav-bar-right"><a class="cm-btn" href="#action">导航栏按钮</a></div></nav></header></div><div class="intro"><p>除了导航栏之外，你还可以在页头中添加其它导航元素（比如面包屑）。</p><pre><code>header  //页头区域
+	nav.cm-nav-bar  //导航栏
+	nav			 //其它导航元素
+</code></pre></div><div class="demo-stage subview"><header><nav class="cm-nav-bar"><h1 class="cm-nav-bar-title">（这里是导航栏）</h1><div class="cm-btn-wrapper cm-nav-bar-left"><a class="cm-btn" href="#action">导航栏按钮</a></div><div class="cm-btn-wrapper cm-nav-bar-right"><a class="cm-btn" href="#action">导航栏按钮</a></div></nav><nav>（这里是另一个导航元素）</nav></header></div></section><section class="nav-bar"><h2>导航栏</h2><div class="intro"><p>导航栏内部的结构约定如下：</p><pre><code>nav.cm-nav-bar  //导航栏
+	h1.cm-nav-bar-title				  //导航栏标题
+	div.cm-btn-wrapper.cm-nav-bar-left   //左按钮容器
+		a.cm-btn
+	div.cm-btn-wrapper.cm-nav-bar-right  //右按钮容器
+		a.cm-btn
+</code></pre></div><div class="demo-stage subview"><header><nav class="cm-nav-bar"><h1 class="cm-nav-bar-title">标题</h1><div class="cm-btn-wrapper cm-nav-bar-left"><a class="cm-btn" href="#back">返回</a></div><div class="cm-btn-wrapper cm-nav-bar-right"><a class="cm-btn" href="#action">动作按钮</a></div></nav></header></div><div class="intro"><h3>注意</h3><p>导航栏按钮可以通过辅助类来设置为不同的场景（颜色），也可以设置为空心样式。但导航栏按钮的尺寸是固定的。</p></div><div class="demo-stage subview"><header><nav class="cm-nav-bar"><h1 class="cm-nav-bar-title">标题</h1><div class="cm-btn-wrapper cm-nav-bar-left"><a class="cm-btn cm-btn-bordered" href="#back">空心按钮</a></div><div class="cm-btn-wrapper cm-nav-bar-right"><a class="cm-btn cm-btn-primary" href="#action">重要按钮</a></div></nav></header></div></section><section class="main"><h2>视图主体</h2><div class="intro"><p>视图主体由 <code>&lt;main&gt;</code> 元素来实现。<code>&lt;main&gt;</code> 元素没有设置水平内边距，其内部元素在默认情况下都是 “水平满幅” 的布局。</p><p><code>&lt;main&gt;</code> 元素与页头页脚之间没有设置任何垂直外边距。如果视图主体的内容需要与页头页尾保持距离，可以通过设置内容元素的垂直外边距来实现。</p></div></section><section class="section"><h2>逻辑区块</h2><div class="intro"><p>视图主体往往由多个逻辑区块组成，逻辑区块建议采用 <code>&lt;section&gt;</code> 元素来标记。因此页面主体的结构往往是这样的：</p><pre><code>article.subview > main  //页面主体
+	section  //逻辑区块
+	section  //逻辑区块
+	...
+</code></pre></div><div class="intro"><h3>注意</h3><ul class="cm-text"><li><code>&lt;section&gt;</code> 元素没有任何特殊样式，因此你需要另行设置垂直外边距才能将它们分离开。</li><li><code>&lt;section&gt;</code> 元素没有设置水平内边距，其内部元素在默认情况下都是 “水平满幅” 的布局。如果你需要某个 <code>&lt;section&gt;</code> 具有水平内边距以防止其内容碰到视图边缘，请对它添加以下样式：</li></ul><pre><code>padding-left $cm-content-padding
+padding-right $cm-content-padding
+</code></pre></div><hr><section><div class="intro"><p>逻辑区块可以包含一个标题元素（可选）和一个内容元素（必需）。</p></div><h3>标题元素</h3><div class="intro"><p>逻辑区块的标题元素需要添加 <code>.cm-section-title</code> 这个类。</p><p>它设置了水平内边距，以免文字贴在容器边缘；字体不加粗，颜色为灰色；背景透明，因此可以透过它看见 Subview 的背景色。</p></div><h3>内容元素</h3><div class="intro"><p>逻辑区块的内容元素需要添加 <code>.cm-section-content</code> 这个类。</p><p>它将具有白色背景，但没有边框和投影；它是一个容器，因此也没有其它特殊样式。</p></div><h3>示例</h3><div class="intro"><p>如果一个逻辑区块拥有标题，则它的结构可能是这样的：</p><pre><code>section
+	h2.cm-section-title "区块标题"
+	div.cm-section-content
+		p "区块内容"
+</code></pre><p>如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）</p></div><div class="demo-stage subview"><section><h2 class="cm-section-title">区块标题</h2><div class="cm-section-content"><p>区块内容</p></div></section><section><h2 class="cm-section-title">区块标题</h2><div class="cm-section-content"><p>区块内容</p></div></section></div></section></section><section class="footer"><h2>页脚</h2><div class="intro"><p>CMUI 未对页脚进行任何样式定义，请自定处理。</p></div></section><section class="back"><a href="./">&lt;&lt; 返回首页</a></section><footer>&copy; CMUI.NET</footer></article><script src="/demo/v2/static/baixing/js/dist/lib.js"></script><script src="/demo/v2/static/baixing/js/dist/cmui.js"></script><script src="/demo/v2/static/baixing/js/dist/demo.js"></script></body></html>
