@@ -29,3 +29,4 @@ dist/
 !/demo/v0/bower_components/cmui/dist/cmui.min.js
 
 !/demo/v1/**/*.php
+!/demo/v1/static/baixing/*/dist/
