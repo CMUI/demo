@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>Text - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v1/static/baixing/css/dist/demo.css">
+</head>
+<body id="text">
+<div class="cmSubview cmSubviewRoot">
+	<header><h1>Text</h1></header>
+	<article class="text"><h1>通用文本格式</h1>
+		<div class="intro"><p>在文本块的容器元素上加 <code>.cmText</code> 类，可以令其内部的标题、列表、段落元素显示出其自身的语义格式。
+		</p><p>在 <code>&lt;ul&gt;</code> 和 <code>&lt;ol&gt;</code> 元素上直接应用 <code>.cmText</code> 类也可以令其语义格式生效。
+		</p></div>
+		<hr>
+		<section class="cmText"><h1>一级标题</h1><h2>二级标题</h2>
+			<p>段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。</p>
+			<h3>三级标题</h3>
+			<p>段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。</p>
+			<h2>二级标题</h2><h3>三级标题</h3>
+			<p>段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。</p>
+		</section>
+		<hr>
+		<section class="cmText"><h2>二级标题</h2>
+			<ol><li>有序列表</li><li>有序列表</li></ol>
+			<h2>二级标题</h2><h3>三级标题</h3>
+			<ol><li>有序列表</li><li>有序列表</li></ol>
+			<h3>三级标题</h3>
+			<p>段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。</p>
+			<ol><li>有序列表</li><li>有序列表</li></ol>
+			<ol><li>有序列表</li><li>有序列表</li></ol>
+			<p>段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字段落文字。</p>
+		</section>
+		<hr>
+		<section class="cmText">
+			<ul>
+				<li>无序列表
+					<ul>
+						<li>无序列表
+							<ul><li>无序列表</li><li>无序列表</li><li>无序列表</li></ul>
+						</li>
+						<li>无序列表</li></ul>
+				</li>
+				<li>无序列表</li></ul>
+		</section>
+	</article>
+	<article class="theme-text"><h1>主题专有文本格式</h1>
+		<section class="mixin"><h2>预定义 Mixin</h2>
+			<div class="intro"><p>网站内文本内容的行高为 1.6（建议使用变量
+				<code>$line-height-text</code> 指定行高）。如果文本元素符合以下预定义格式，请使用对应的 mixin。</p>
+				<p>绿色虚线框用于示意行高。</p></div>
+			<dl class="bx-headline">
+				<dt><code>bx-headline()</code></dt>
+				<dd>大标题 （18px 常规字重）</dd>
+			</dl>
+			<dl class="bx-headline-minor">
+				<dt><code>bx-headline-minor()</code></dt>
+				<dd>小标题 （16px 粗体）</dd>
+			</dl>
+			<dl class="bx-text">
+				<dt><code>bx-text()</code></dt>
+				<dd>全局通用文本 （15px 常规字重）</dd>
+			</dl>
+			<dl class="bx-text-minor">
+				<dt><code>bx-text-minor()</code></dt>
+				<dd>次级内容 （13px 常规字重）</dd>
+			</dl>
+		</section>
+		<section class="link"><h2>链接元素</h2>
+			<dl>
+				<dt><code>a</code></dt>
+				<dd><a href="#">链接文本</a></dd>
+				<dd class="intro">文本段落中出现的链接，字号与普通文本一致。</dd>
+			</dl>
+		</section>
+	</article>
+	<article class="label"><h1>标签</h1>
+		<div class="intro"><p>对行内元素使用 <code>.cmLabel</code> 类名即可。</p></div>
+		<dl>
+			<dt><code>.cmLabel</code></dt>
+			<dd><span class="cmLabel">普通标签</span></dd>
+		</dl>
+		<dl>
+			<dt><code>.cmLabel.cmLabelSuccess</code></dt>
+			<dd><span class="cmLabel cmLabelSuccess">成功标签</span></dd>
+		</dl>
+	</article>
+	<article class="back"><a href=".">&lt;&lt; 返回首页</a></article>
+	<footer>&copy; CMUI.NET</footer>
+</div>
+<script src="/demo/v1/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v1/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v1/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>
