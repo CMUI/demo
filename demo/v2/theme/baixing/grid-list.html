@@ -1,32 +1,117 @@
 <!doctype html>
-<html lang="zh-cmn-Hans"><head><meta charset="utf-8"><title>Grid List - CMUI Demo</title><meta name="viewport" content="initial-scale=1, user-scalable=no"><meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web"><meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。"><link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css"></head><body id="grid-list"><article class="subview subview-root"><header><h1>Grid List</h1></header><section class="summary"><h2>概述</h2><div class="intro"><p>网格列表是以行列式呈现的列表。</p><p>网格列表元素必须具有 <code>.cm-grid-list</code> 这个基础类名。</p><pre><code>ul.cm-grid-list
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>Grid List - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css">
+</head>
+<body id="grid-list">
+<article class="subview subview-root">
+	<header><h1>Grid List</h1></header>
+	<section class="summary"><h2>概述</h2>
+		<div class="intro"><p>网格列表是以行列式呈现的列表。</p><p>网格列表元素必须具有
+			<code>.cm-grid-list</code> 这个基础类名。</p>
+			<pre><code>ul.cm-grid-list
 	li > a
 	li > a
 	li > a
-</code></pre></div><ul class="cm-grid-list"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li></ul></section><section class="column-width"><h2>列数与列宽</h2><section><h3>默认两列</h3><ul class="cm-grid-list"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li></ul></section><section><h3>多列</h3><div class="intro"><p>可以通过指定列表项的宽度来实现对列数的控制。比如下面的 CSS 代码将列数设置为（最多）4 列，并确保每列最多可显示 6 个汉字。</p><pre><code>#my-grid-list > li {
+</code></pre>
+		</div>
+		<ul class="cm-grid-list"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li>
+			<a href="#">列表项</a></li><li><a href="#">列表项</a></li><li>
+			<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+			<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li></ul>
+	</section>
+	<section class="column-width"><h2>列数与列宽</h2>
+		<section><h3>默认两列</h3>
+			<ul class="cm-grid-list"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li>
+				<a href="#">列表项</a></li><li><a href="#">列表项</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li></ul>
+		</section>
+		<section><h3>多列</h3>
+			<div class="intro">
+				<p>可以通过指定列表项的宽度来实现对列数的控制。比如下面的 CSS 代码将列数设置为（最多）4 列，并确保每列最多可显示 6 个汉字。</p>
+				<pre><code>#my-grid-list > li {
 	width: 25%;
 	min-width: 6em;
 }
-</code></pre></div></section><section><h3>弹性</h3><div class="intro"><p>给列表添加 <code>.cm-grid-list-flexible</code> 类即可将其设置为 “弹性网格列表”。</p><p>弹性网格列表可以根据屏幕宽度自动调整列数（3～5 列）。</p><pre><code>ul.cm-grid-list.cm-grid-list-flexible
+</code></pre>
+			</div>
+		</section>
+		<section><h3>弹性</h3>
+			<div class="intro"><p>给列表添加 <code>.cm-grid-list-flexible</code> 类即可将其设置为 “弹性网格列表”。</p>
+				<p>弹性网格列表可以根据屏幕宽度自动调整列数（3～5 列）。</p>
+				<pre><code>ul.cm-grid-list.cm-grid-list-flexible
 	li > a
 	li > a
 	...
-</code></pre></div><ul class="cm-grid-list cm-grid-list-flexible"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li></ul><div class="intro"><p>如果列表项中包含很长的文字，不希望每列太窄裁掉文字，可以给列表添加 <code>.cm-grid-list-with-long-text</code> 类。它可以让弹性网格列表在窄屏上显示 2 列。</p><pre><code>ul.cm-grid-list.cm-grid-list-flexible.cm-grid-list-with-long-text
+</code></pre>
+			</div>
+			<ul class="cm-grid-list cm-grid-list-flexible"><li><a href="#">列表项</a></li><li><a href="#">列表项</a>
+			</li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li>
+				<a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li>
+				<a href="#">列表项</a></li><li><a href="#">列表项</a></li></ul>
+			<div class="intro"><p>如果列表项中包含很长的文字，不希望每列太窄裁掉文字，可以给列表添加
+				<code>.cm-grid-list-with-long-text</code> 类。它可以让弹性网格列表在窄屏上显示 2 列。</p>
+				<pre><code>ul.cm-grid-list.cm-grid-list-flexible.cm-grid-list-with-long-text
 	li > a
 	li > a
 	...
-</code></pre></div><ul class="cm-grid-list cm-grid-list-flexible cm-grid-list-with-long-text"><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li><a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li></ul></section></section><section><h2>被选中的列表项</h2><div class="intro"><p>给列表项（<code>&lt;li&gt;</code>）元素添加 <code>.selected</code> 类名，即可将其设置为被选中的状态。</p><pre><code>ul.cm-grid-list
+</code></pre>
+			</div>
+			<ul class="cm-grid-list cm-grid-list-flexible cm-grid-list-with-long-text"><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li><li>
+				<a href="#">列表项很长很长很长很长很长很长很长很长很长很长很长很长很长很长</a></li></ul>
+		</section>
+	</section>
+	<section><h2>被选中的列表项</h2>
+		<div class="intro"><p>给列表项（<code>&lt;li&gt;</code>）元素添加 <code>.selected</code> 类名，即可将其设置为被选中的状态。
+		</p>
+			<pre><code>ul.cm-grid-list
 	li > a @href="#"
 	li.selected > a @href="#"
 	li > a @href="#"
 	li > a @href="#"
-</code></pre></div><ul class="cm-grid-list"><li><a href="#">列表项</a></li><li class="selected"><a href="#">被选中的列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li></ul><div class="intro"><p>给列表项内的 <code>&lt;a&gt;</code> 元素添加 <code>.selected</code> 类，也可以将该列表项设置为被选中的状态。（以下代码的实际效果同上。）</p><pre><code>ul.cm-grid-list
+</code></pre>
+		</div>
+		<ul class="cm-grid-list"><li><a href="#">列表项</a></li><li class="selected"><a href="#">被选中的列表项</a></li>
+			<li><a href="#">列表项</a></li><li><a href="#">列表项</a></li></ul>
+		<div class="intro"><p>给列表项内的 <code>&lt;a&gt;</code> 元素添加
+			<code>.selected</code> 类，也可以将该列表项设置为被选中的状态。（以下代码的实际效果同上。）</p>
+			<pre><code>ul.cm-grid-list
 	li > a @href="#"
 	li > a.selected @href="#"
 	li > a @href="#"
 	li > a @href="#"
-</code></pre></div></section><section class="form"><h2>用于表单</h2><div class="intro"><p>可用于组织表单中的单选框、复选框等。</p><pre><code>form > ul.cm-grid-list
+</code></pre>
+		</div>
+	</section>
+	<section class="form"><h2>用于表单</h2>
+		<div class="intro"><p>可用于组织表单中的单选框、复选框等。</p>
+			<pre><code>form > ul.cm-grid-list
 	li > label > input
 	li > label > input
 	li > label > input
-</code></pre></div><ul class="cm-grid-list"><li><label><input name="radio" type="radio">表单选项</label></li><li><label><input name="radio" type="radio">表单选项</label></li><li><label><input name="checkbox" type="checkbox">表单选项</label></li><li><label><input name="checkbox" type="checkbox">表单选项</label></li></ul></section><section class="back"><a href="./">&lt;&lt; 返回首页</a></section><footer>&copy; CMUI.NET</footer></article><script src="/demo/v2/static/baixing/js/dist/lib.js"></script><script src="/demo/v2/static/baixing/js/dist/cmui.js"></script><script src="/demo/v2/static/baixing/js/dist/demo.js"></script></body></html>
+</code></pre>
+		</div>
+		<ul class="cm-grid-list"><li><label><input name="radio" type="radio">表单选项</label></li><li>
+			<label><input name="radio" type="radio">表单选项</label></li><li>
+			<label><input name="checkbox" type="checkbox">表单选项</label></li><li>
+			<label><input name="checkbox" type="checkbox">表单选项</label></li></ul>
+	</section>
+	<section class="back"><a href="./">&lt;&lt; 返回首页</a></section>
+	<footer>&copy; CMUI.NET</footer>
+</article>
+<script src="/demo/v2/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>

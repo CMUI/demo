@@ -1,44 +1,200 @@
 <!doctype html>
-<html lang="zh-cmn-Hans"><head><meta charset="utf-8"><title>List - CMUI Demo</title><meta name="viewport" content="initial-scale=1, user-scalable=no"><meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web"><meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。"><link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css"></head><body id="list"><article class="subview subview-root"><header><h1>List</h1></header><section class="summary"><h2>概述</h2><div class="intro"><p>列表元素有一些基本的结构约定。</p><ul class="cm-text"><li>列表元素必须具有 <code>.cm-list</code> 这个基础类名，然后通过其它辅助性的类名来指定细节样式和属性。</li><li>列表的各个列表项（<code>.cm-list &gt; li</code>）必须有一个（通常也应该只有一个）子元素作为其 “内容元素”。</li></ul><p>因此一个列表的结构往往是这样的：</p><pre><code>ul.cm-list
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>List - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css">
+</head>
+<body id="list">
+<article class="subview subview-root">
+	<header><h1>List</h1></header>
+	<section class="summary"><h2>概述</h2>
+		<div class="intro"><p>列表元素有一些基本的结构约定。</p>
+			<ul class="cm-text"><li>列表元素必须具有 <code>.cm-list</code> 这个基础类名，然后通过其它辅助性的类名来指定细节样式和属性。
+			</li><li>列表的各个列表项（<code>.cm-list &gt; li</code>）必须有一个（通常也应该只有一个）子元素作为其 “内容元素”。
+			</li></ul>
+			<p>因此一个列表的结构往往是这样的：</p>
+			<pre><code>ul.cm-list
 	li > p
 	li > p
 	...
-</code></pre><p>其效果如下：</p></div><ul class="cm-list"><li><p>列表项</p></li><li><p>列表项</p></li><li><p>列表项</p></li></ul></section><section><h2>作为区块内容</h2><div class="intro"><p>列表可以作为逻辑区块的内容元素。我们需要给列表追加 <code>.cm-section-content</code> 类，然后将其作为子元素放置到 <code>&lt;section&gt;</code> 元素中。</p><p>此时列表就可以拥有自己的标题了，参见以下结构：</p><pre><code>section
+</code></pre>
+			<p>其效果如下：</p></div>
+		<ul class="cm-list">
+			<li><p>列表项</p></li>
+			<li><p>列表项</p></li>
+			<li><p>列表项</p></li>
+		</ul>
+	</section>
+	<section><h2>作为区块内容</h2>
+		<div class="intro"><p>列表可以作为逻辑区块的内容元素。我们需要给列表追加
+			<code>.cm-section-content</code> 类，然后将其作为子元素放置到 <code>&lt;section&gt;</code> 元素中。</p>
+			<p>此时列表就可以拥有自己的标题了，参见以下结构：</p>
+			<pre><code>section
 	h2.cm-section-title '列表标题'
 	ul.cm-list.cm-section-content
 		li > p '列表项'
 		li > p '列表项'
-</code></pre><p>如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）</p></div><div class="demo-stage"><section><h2 class="cm-section-title">列表标题</h2><ul class="cm-list cm-section-content"><li><p>列表项</p></li><li><p>列表项</p></li></ul></section><section><h2 class="cm-section-title">列表标题</h2><ul class="cm-list cm-section-content"><li><p>列表项</p></li><li><p>列表项</p></li></ul></section></div></section><section><h2>间距</h2><div class="intro"><p>常规列表没有默认的垂直外边距，因此列表与其它元素之间的间距需要另行设置。不过两个列表之间是有默认间距的：（绿色虚线表示容器边界）</p></div><ul class="cm-list"><li><p>常规列表 · 列表项</p></li><li><p>常规列表 · 列表项</p></li></ul><ul class="cm-list"><li><p>常规列表 · 列表项</p></li></ul><div class="intro"><p>当列表作为区块内容时，两个 <code>ul.cm-list.cm-section-content</code> 元素之间也是有默认间距的：</p></div><div class="demo-stage"><section><ul class="cm-list cm-section-content"><li><p>列表项</p></li><li><p>列表项</p></li></ul><ul class="cm-list cm-section-content"><li><p>列表项</p></li><li><p>列表项</p></li></ul></section></div></section><section><h2>内容</h2><section><h3>普通列表</h3><div class="intro"><p>纯展示列表的列表项的内容元素可以是 <code>&lt;p&gt;</code> 或 <code>&lt;div&gt;</code> 元素。</p><pre><code>ul.cm-list
+</code></pre>
+			<p>如果把以上代码重复两遍，则对应的效果如下：（绿色虚线表示容器边界）</p></div>
+		<div class="demo-stage">
+			<section><h2 class="cm-section-title">列表标题</h2>
+				<ul class="cm-list cm-section-content">
+					<li><p>列表项</p></li>
+					<li><p>列表项</p></li>
+				</ul>
+			</section>
+			<section><h2 class="cm-section-title">列表标题</h2>
+				<ul class="cm-list cm-section-content">
+					<li><p>列表项</p></li>
+					<li><p>列表项</p></li>
+				</ul>
+			</section>
+		</div>
+	</section>
+	<section><h2>间距</h2>
+		<div class="intro">
+			<p>常规列表没有默认的垂直外边距，因此列表与其它元素之间的间距需要另行设置。不过两个列表之间是有默认间距的：（绿色虚线表示容器边界）</p>
+		</div>
+		<ul class="cm-list">
+			<li><p>常规列表 · 列表项</p></li>
+			<li><p>常规列表 · 列表项</p></li>
+		</ul>
+		<ul class="cm-list">
+			<li><p>常规列表 · 列表项</p></li>
+		</ul>
+		<div class="intro"><p>当列表作为区块内容时，两个 <code>ul.cm-list.cm-section-content</code> 元素之间也是有默认间距的：
+		</p></div>
+		<div class="demo-stage">
+			<section>
+				<ul class="cm-list cm-section-content">
+					<li><p>列表项</p></li>
+					<li><p>列表项</p></li>
+				</ul>
+				<ul class="cm-list cm-section-content">
+					<li><p>列表项</p></li>
+					<li><p>列表项</p></li>
+				</ul>
+			</section>
+		</div>
+	</section>
+	<section><h2>内容</h2>
+		<section><h3>普通列表</h3>
+			<div class="intro"><p>纯展示列表的列表项的内容元素可以是 <code>&lt;p&gt;</code> 或
+				<code>&lt;div&gt;</code> 元素。</p>
+				<pre><code>ul.cm-list
 	li > p
 	li > p
 	li > div
-</code></pre></div><ul class="cm-list"><li><p>列表项</p></li><li><p>列表项</p></li><li><div>列表项</div></li></ul></section><section><h3>链接列表</h3><div class="intro"><p>我们用得比较多的其实是链接列表，它是很常见的 UI 元素。</p><p>链接列表的列表项的内容元素是链接元素。</p><pre><code>ul.cm-list
+</code></pre>
+			</div>
+			<ul class="cm-list">
+				<li><p>列表项</p></li>
+				<li><p>列表项</p></li>
+				<li>
+					<div>列表项</div>
+				</li>
+			</ul>
+		</section>
+		<section><h3>链接列表</h3>
+			<div class="intro"><p>我们用得比较多的其实是链接列表，它是很常见的 UI 元素。</p>
+				<p>链接列表的列表项的内容元素是链接元素。</p>
+				<pre><code>ul.cm-list
 	li > a
 	li > a
 	li > a
-</code></pre></div><ul class="cm-list"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li></ul></section></section><section><h2>列表项的右箭头</h2><section><div class="intro"><p>给需要加右箭头的列表项添加 <code>.cm-list-with-right-arrow</code> 类名。</p><p>请记住只有链接列表项才会显示出右箭头——这听起来像个限制，但其实很合理。因为，如果这个列表项没有动作，只是纯展示，那它也是不需要有右箭头的。</p><pre><code>ul.cm-list
+</code></pre>
+			</div>
+			<ul class="cm-list"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li><li><a href="#">列表项</a>
+			</li></ul>
+		</section>
+	</section>
+	<section><h2>列表项的右箭头</h2>
+		<section>
+			<div class="intro"><p>给需要加右箭头的列表项添加 <code>.cm-list-with-right-arrow</code> 类名。</p>
+				<p>请记住只有链接列表项才会显示出右箭头——这听起来像个限制，但其实很合理。因为，如果这个列表项没有动作，只是纯展示，那它也是不需要有右箭头的。</p>
+				<pre><code>ul.cm-list
 	li > a
 	li.cm-list-with-right-arrow > a
-</code></pre></div><ul class="cm-list"><li><a href="#">列表项</a></li><li class="cm-list-with-right-arrow"><a href="#">列表项</a></li></ul></section><hr><section><div class="intro"><p>如果恰好一个列表中的每个列表项都需要右箭头，那把 <code>.cm-list-with-right-arrow</code> 类名加给列表元素就可以了。</p><pre><code>ul.cm-list.cm-list-with-right-arrow
+</code></pre>
+			</div>
+			<ul class="cm-list"><li><a href="#">列表项</a></li><li class="cm-list-with-right-arrow">
+				<a href="#">列表项</a></li></ul>
+		</section>
+		<hr>
+		<section>
+			<div class="intro"><p>如果恰好一个列表中的每个列表项都需要右箭头，那把
+				<code>.cm-list-with-right-arrow</code> 类名加给列表元素就可以了。</p>
+				<pre><code>ul.cm-list.cm-list-with-right-arrow
 	li > a
 	li > a
-</code></pre></div><ul class="cm-list cm-list-with-right-arrow"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li></ul></section></section><section><h2>列表项有徽章</h2><section><div class="intro"><p>给列表项添加 <code>data-cm-badge</code> 属性可以生成一个徽章。</p><pre><code>ul.cm-list
+</code></pre>
+			</div>
+			<ul class="cm-list cm-list-with-right-arrow"><li><a href="#">列表项</a></li><li><a href="#">列表项</a></li>
+			</ul>
+		</section>
+	</section>
+	<section><h2>列表项有徽章</h2>
+		<section>
+			<div class="intro"><p>给列表项添加 <code>data-cm-badge</code> 属性可以生成一个徽章。</p>
+				<pre><code>ul.cm-list
 	li @data-cm-badge="9"
 		p
 	li @data-cm-badge="999999"
 		a
 	li.cm-list-with-right-arrow @data-cm-badge="999"
 		a
-</code></pre></div><ul class="cm-list"><li data-cm-badge="9"><p>列表项</p></li><li data-cm-badge="999999"><a href="#">列表项</a></li><li class="cm-list-with-right-arrow" data-cm-badge="999"><a href="#">列表项</a></li></ul></section></section><section><h2>列表项有值</h2><section><div class="intro"><p>给列表项添加 <code>data-cm-value</code> 属性可以在列表项右侧显示一个值。</p><pre><code>ul.cm-list
+</code></pre>
+			</div>
+			<ul class="cm-list">
+				<li data-cm-badge="9"><p>列表项</p></li>
+				<li data-cm-badge="999999"><a href="#">列表项</a></li>
+				<li class="cm-list-with-right-arrow" data-cm-badge="999"><a href="#">列表项</a></li></ul>
+		</section>
+	</section>
+	<section><h2>列表项有值</h2>
+		<section>
+			<div class="intro"><p>给列表项添加 <code>data-cm-value</code> 属性可以在列表项右侧显示一个值。</p>
+				<pre><code>ul.cm-list
 	li @data-cm-value="foobar"
 		p
 	li @data-cm-value="foo"
 		a
 	li.cm-list-with-right-arrow @data-cm-value="bar"
 		a
-</code></pre></div><ul class="cm-list"><li data-cm-value="列表项的值"><p>列表项</p></li><li data-cm-value="列表项的值"><a href="#">列表项</a></li><li class="cm-list-with-right-arrow" data-cm-value="列表项的值很长很长很长很长很长很长很长很长很长很长"><a href="#">列表项很长很长很长很长很长很长</a></li></ul></section></section><section><h2>列表项有图标</h2><section><div class="intro"><p>图标元素应该是列表项内容元素的第一个子元素。有点拗口，看结构吧：</p><pre><code>ul.cm-list
+</code></pre>
+			</div>
+			<ul class="cm-list">
+				<li data-cm-value="列表项的值"><p>列表项</p></li>
+				<li data-cm-value="列表项的值"><a href="#">列表项</a></li>
+				<li class="cm-list-with-right-arrow" data-cm-value="列表项的值很长很长很长很长很长很长很长很长很长很长">
+					<a href="#">列表项很长很长很长很长很长很长</a></li></ul>
+		</section>
+	</section>
+	<section><h2>列表项有图标</h2>
+		<section>
+			<div class="intro"><p>图标元素应该是列表项内容元素的第一个子元素。有点拗口，看结构吧：</p>
+				<pre><code>ul.cm-list
 	li > a @href="#"
 		i.cm-icon.cm-x20
 		"foobar"
 	...
-</code></pre></div><ul class="cm-list icon-size"><li><a href="#"><i class="cm-icon cm-x20"></i>试试各种尺寸 20x20</a></li><li><a href="#"><i class="cm-icon cm-x30"></i>试试各种尺寸 30x30</a></li><li><a href="#"><i class="cm-icon cm-x40"></i>试试各种尺寸 40x40</a></li><li><a href="#"><i class="cm-icon cm-x50"></i>试试各种尺寸 50x50</a></li></ul></section></section><section class="back"><a href="./">&lt;&lt; 返回首页</a></section><footer>&copy; CMUI.NET</footer></article><script src="/demo/v2/static/baixing/js/dist/lib.js"></script><script src="/demo/v2/static/baixing/js/dist/cmui.js"></script><script src="/demo/v2/static/baixing/js/dist/demo.js"></script></body></html>
+</code></pre>
+			</div>
+			<ul class="cm-list icon-size"><li><a href="#"><i class="cm-icon cm-x20"></i>试试各种尺寸 20x20</a></li><li>
+				<a href="#"><i class="cm-icon cm-x30"></i>试试各种尺寸 30x30</a></li><li>
+				<a href="#"><i class="cm-icon cm-x40"></i>试试各种尺寸 40x40</a></li><li>
+				<a href="#"><i class="cm-icon cm-x50"></i>试试各种尺寸 50x50</a></li></ul>
+		</section>
+	</section>
+	<section class="back"><a href="./">&lt;&lt; 返回首页</a></section>
+	<footer>&copy; CMUI.NET</footer>
+</article>
+<script src="/demo/v2/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>

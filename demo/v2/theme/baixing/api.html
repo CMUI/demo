@@ -1,2 +1,137 @@
 <!doctype html>
-<html lang="zh-cmn-Hans"><head><meta charset="utf-8"><title>API - CMUI Demo</title><meta name="viewport" content="initial-scale=1, user-scalable=no"><meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web"><meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。"><link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css"></head><body id="api"><article class="subview subview-root"><header><h1>API</h1></header><section><h2>概述</h2><div class="intro"><p>和绝大多数 UI 框架一样，CMUI 提供的接口以 HTML 结构约定和元素的类名为主。</p><p>此外，为保证样式统一，CMUI 也抽象出了一些变量供业务层使用；为提升开发效率，CMUI 还为业务层提供了一些工具性的 mixin。</p></div></section><section><h2>类名</h2><div class="intro"><p>CMUI 提供的通用工具类如下：</p></div><section><h3>布局</h3><dl class="code-result"><dt><code>.clearfix</code></dt><dd>闭合浮动（它是通过 <code>clearfix()</code> 这个 mixin 来实现的）</dd></dl></section><section><h3>尺寸</h3><dl class="code-result"><dt><code>.cm-x20</code></dt><dd>将元素的宽高均设置为 20px</dd><dt><code>.cm-x30</code></dt><dd>将元素的宽高均设置为 30px</dd><dt><code>.cm-x40</code></dt><dd>将元素的宽高均设置为 40px</dd><dt><code>.cm-x50</code></dt><dd>将元素的宽高均设置为 50px</dd></dl></section></section><section><h2>变量</h2><div class="intro"><div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：仅当业务层以 Stylus 作为 CSS 开发语言、且已引入 CMUI 的样式入口文件（ <code>src/css/theme/*/index.styl</code>）时可使用 “变量” 作为 API。</div></div><div class="intro"><div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：业务层应把这些变量视为常量，不应在业务开发中修改它们的值。</div></div><div class="intro"><p>CMUI 提供的 Stylus 变量包括：</p><ul class="cm-text"><li>颜色变量：请参见 <a href="color.php">颜色</a> 章节。</li><li>其它变量：其它变量的值和含义如下。</li></ul></div><section><h3>字体大小</h3><dl class="code-result"><dt><code>$cm-font-size-s = 12px</code></dt><dd>小字号（次要文字等）</dd><dt><code>$cm-font-size = 14px</code></dt><dd>常规字号（正文、段落等）</dd><dt><code>$cm-font-size-l = 16px</code></dt><dd>大字号（标题等）</dd><dt><code>$cm-font-size-xl = 18px</code></dt><dd>超大字号（重着强调的文字等）</dd></dl></section><section><h3>文字行高</h3><dl class="code-result"><dt><code>$cm-line-height = 1.5</code></dt><dd>默认行高</dd><dt><code>$cm-line-height-min = 1.2</code></dt><dd>最小行高（某些 UI 元素可能需要把行高压缩到最小值）</dd><dt><code>$cm-line-height-text = 1.5</code></dt><dd>段落文本的行高</dd></dl></section><section><h3>布局</h3><dl class="code-result"><dt><code>$cm-content-padding = 10px</code></dt><dd>文本距离容器边缘的空隙</dd><dt><code>$cm-section-gap = 10px</code></dt><dd>列表区块之间的空隙、表单区块之间的空隙</dd></dl></section></section><section><h2>Mixin</h2><div class="intro"><div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：仅当业务层以 Stylus 作为 CSS 开发语言、且已引入 CMUI 的样式入口文件（ <code>src/css/theme/*/index.styl</code>）时可使用 “mixin” 作为 API。</div></div><div class="intro"><p>Mixin 可以生成多行声明或多条规则，从而实现某种样式或功能。</p></div><section><h3>布局</h3><dl class="code-result"><dt><code>clearfix()</code></dt><dd>闭合浮动</dd></dl></section></section><section><h2>环境信息</h2><div class="intro"><div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：这个接口是为 CMUI 的开发者准备的内部功能，不建议在业务开发中使用。</div></div><div class="intro"><p>为便于开发者针对不同浏览器及其特性写样式，CMUI 脚本会自动根据当前浏览器环境为 <code>&lt;html&gt;</code> 元素添加以下类：</p><ul class="cm-text"><li><code>.cmui</code> —— 表示 CMUI 的脚本文件已加载。</li></ul><ul class="cm-text"><li><code>.ios</code> —— 表示当前的移动操作系统是 iOS（根据 UA 信息判断）。</li><li><code>.android</code> —— 表示当前的移动操作系统是 Android（根据 UA 信息判断）。</li><li><code>.legacy</code> —— 表示当前的移动操作系统版本过低（根据 UA 信息判断），比如 iOS 版本低于 7 或 Android 版本低于 4。</li></ul><ul class="cm-text"><li><code>.mobile</code> —— 表示当前用户处于移动操作系统（根据 UA 信息判断），iOS 和 Android 将被视为移动操作系统。</li><li><code>.desktop</code> —— 表示当前用户处于桌面操作系统（根据 UA 信息判断），非 iOS 和 Android 一律视为桌面操作系统。</li></ul><ul class="cm-text"><li><code>.safari</code> —— 表示当前浏览器是 Safari，包括桌面版和移动版（根据 UA 信息判断）。</li><li><code>.chrome</code> —— 表示当前浏览器是 Chrome，包括桌面版和移动版（根据 UA 信息判断）。</li></ul><ul class="cm-text"><li><code>.touch</code> —— 表示当前浏览器支持触摸事件（根据特性探测）。</li><li><code>.no-touch</code> —— 表示当前浏览器不支持触摸事件（根据特性探测）。</li></ul></div><div class="intro"><p>如果需要在脚本中判断浏览器等环境特征，请参考 Gearbox 提供的 <a href="https://github.com/CMUI/gearbox/issues/5" target="_blank">相关 API</a>。</p></div><hr><div class="intro"><p>CMUI 脚本会在加载后尝试移除 <code>&lt;html&gt;</code> 元素的 <code>.no-js</code> 类。</p><p>这意味着，如果你在编写 HTML 时预先给 <code>&lt;html&gt;</code> 元素写上这个类，就可以利用 <code>html.no-js</code> 作为顶层选择符来编写无脚本情况下的 fallback 样式，以保障可访问性。</p></div></section><section class="back"><a href="./">&lt;&lt; 返回首页</a></section><footer>&copy; CMUI.NET</footer></article><script src="/demo/v2/static/baixing/js/dist/lib.js"></script><script src="/demo/v2/static/baixing/js/dist/cmui.js"></script><script src="/demo/v2/static/baixing/js/dist/demo.js"></script></body></html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>API - CMUI Demo</title>
+<meta name="viewport" content="initial-scale=1, user-scalable=no">
+<meta name="keywords" content="CMUI, UI, Framework, CSS, Mobile, Web">
+<meta name="description" content="CMUI - Lightweight UI solution for mobile web. CMUI 是一个专攻移动网页的 UI 框架，它提供了丰富的组件和简洁的接口，开箱即用。CMUI 帮助开发者摆脱样式细节和兼容性困扰，从而腾出更多精力投入到业务开发中。">
+<link rel="stylesheet" href="/demo/v2/static/baixing/css/dist/demo.css">
+</head>
+<body id="api">
+<article class="subview subview-root">
+	<header><h1>API</h1></header>
+	<section><h2>概述</h2>
+		<div class="intro"><p>和绝大多数 UI 框架一样，CMUI 提供的接口以 HTML 结构约定和元素的类名为主。</p>
+			<p>此外，为保证样式统一，CMUI 也抽象出了一些变量供业务层使用；为提升开发效率，CMUI 还为业务层提供了一些工具性的 mixin。</p>
+		</div>
+	</section>
+	<section><h2>类名</h2>
+		<div class="intro"><p>CMUI 提供的通用工具类如下：</p></div>
+		<section><h3>布局</h3>
+			<dl class="code-result">
+				<dt><code>.clearfix</code></dt>
+				<dd>闭合浮动（它是通过 <code>clearfix()</code> 这个 mixin 来实现的）</dd>
+			</dl>
+		</section>
+		<section><h3>尺寸</h3>
+			<dl class="code-result">
+				<dt><code>.cm-x20</code></dt>
+				<dd>将元素的宽高均设置为 20px</dd>
+				<dt><code>.cm-x30</code></dt>
+				<dd>将元素的宽高均设置为 30px</dd>
+				<dt><code>.cm-x40</code></dt>
+				<dd>将元素的宽高均设置为 40px</dd>
+				<dt><code>.cm-x50</code></dt>
+				<dd>将元素的宽高均设置为 50px</dd>
+			</dl>
+		</section>
+	</section>
+	<section><h2>变量</h2>
+		<div class="intro">
+			<div class="cm-msg-box cm-msg-box-warning">
+				<strong>注意</strong>：仅当业务层以 Stylus 作为 CSS 开发语言、且已引入 CMUI 的样式入口文件（
+				<code>src/css/theme/*/index.styl</code>）时可使用 “变量” 作为 API。
+			</div>
+		</div>
+		<div class="intro">
+			<div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：业务层应把这些变量视为常量，不应在业务开发中修改它们的值。
+			</div>
+		</div>
+		<div class="intro"><p>CMUI 提供的 Stylus 变量包括：</p>
+			<ul class="cm-text"><li>颜色变量：请参见 <a href="color.php">颜色</a> 章节。</li>
+				<li>其它变量：其它变量的值和含义如下。</li></ul>
+		</div>
+		<section><h3>字体大小</h3>
+			<dl class="code-result">
+				<dt><code>$cm-font-size-s = 12px</code></dt>
+				<dd>小字号（次要文字等）</dd>
+				<dt><code>$cm-font-size = 14px</code></dt>
+				<dd>常规字号（正文、段落等）</dd>
+				<dt><code>$cm-font-size-l = 16px</code></dt>
+				<dd>大字号（标题等）</dd>
+				<dt><code>$cm-font-size-xl = 18px</code></dt>
+				<dd>超大字号（重着强调的文字等）</dd>
+			</dl>
+		</section>
+		<section><h3>文字行高</h3>
+			<dl class="code-result">
+				<dt><code>$cm-line-height = 1.5</code></dt>
+				<dd>默认行高</dd>
+				<dt><code>$cm-line-height-min = 1.2</code></dt>
+				<dd>最小行高（某些 UI 元素可能需要把行高压缩到最小值）</dd>
+				<dt><code>$cm-line-height-text = 1.5</code></dt>
+				<dd>段落文本的行高</dd>
+			</dl>
+		</section>
+		<section><h3>布局</h3>
+			<dl class="code-result">
+				<dt><code>$cm-content-padding = 10px</code></dt>
+				<dd>文本距离容器边缘的空隙</dd>
+				<dt><code>$cm-section-gap = 10px</code></dt>
+				<dd>列表区块之间的空隙、表单区块之间的空隙</dd>
+			</dl>
+		</section>
+	</section>
+	<section><h2>Mixin</h2>
+		<div class="intro">
+			<div class="cm-msg-box cm-msg-box-warning">
+				<strong>注意</strong>：仅当业务层以 Stylus 作为 CSS 开发语言、且已引入 CMUI 的样式入口文件（
+				<code>src/css/theme/*/index.styl</code>）时可使用 “mixin” 作为 API。
+			</div>
+		</div>
+		<div class="intro"><p>Mixin 可以生成多行声明或多条规则，从而实现某种样式或功能。</p></div>
+		<section><h3>布局</h3>
+			<dl class="code-result">
+				<dt><code>clearfix()</code></dt>
+				<dd>闭合浮动</dd>
+			</dl>
+		</section>
+	</section>
+	<section><h2>环境信息</h2>
+		<div class="intro">
+			<div class="cm-msg-box cm-msg-box-warning"><strong>注意</strong>：这个接口是为 CMUI 的开发者准备的内部功能，不建议在业务开发中使用。
+			</div>
+		</div>
+		<div class="intro"><p>为便于开发者针对不同浏览器及其特性写样式，CMUI 脚本会自动根据当前浏览器环境为
+			<code>&lt;html&gt;</code> 元素添加以下类：</p>
+			<ul class="cm-text"><li><code>.cmui</code> —— 表示 CMUI 的脚本文件已加载。</li></ul>
+			<ul class="cm-text"><li><code>.ios</code> —— 表示当前的移动操作系统是 iOS（根据 UA 信息判断）。</li><li>
+				<code>.android</code> —— 表示当前的移动操作系统是 Android（根据 UA 信息判断）。</li><li>
+				<code>.legacy</code> —— 表示当前的移动操作系统版本过低（根据 UA 信息判断），比如 iOS 版本低于 7 或 Android 版本低于 4。
+			</li></ul>
+			<ul class="cm-text"><li>
+				<code>.mobile</code> —— 表示当前用户处于移动操作系统（根据 UA 信息判断），iOS 和 Android 将被视为移动操作系统。
+			</li><li>
+				<code>.desktop</code> —— 表示当前用户处于桌面操作系统（根据 UA 信息判断），非 iOS 和 Android 一律视为桌面操作系统。
+			</li></ul>
+			<ul class="cm-text"><li><code>.safari</code> —— 表示当前浏览器是 Safari，包括桌面版和移动版（根据 UA 信息判断）。
+			</li><li><code>.chrome</code> —— 表示当前浏览器是 Chrome，包括桌面版和移动版（根据 UA 信息判断）。</li></ul>
+			<ul class="cm-text"><li><code>.touch</code> —— 表示当前浏览器支持触摸事件（根据特性探测）。</li><li>
+				<code>.no-touch</code> —— 表示当前浏览器不支持触摸事件（根据特性探测）。</li></ul>
+		</div>
+		<div class="intro"><p>如果需要在脚本中判断浏览器等环境特征，请参考 Gearbox 提供的
+			<a href="https://github.com/CMUI/gearbox/issues/5" target="_blank">相关 API</a>。</p></div>
+		<hr>
+		<div class="intro"><p>CMUI 脚本会在加载后尝试移除 <code>&lt;html&gt;</code> 元素的 <code>.no-js</code> 类。</p>
+			<p>这意味着，如果你在编写 HTML 时预先给 <code>&lt;html&gt;</code> 元素写上这个类，就可以利用
+				<code>html.no-js</code> 作为顶层选择符来编写无脚本情况下的 fallback 样式，以保障可访问性。</p></div>
+	</section>
+	<section class="back"><a href="./">&lt;&lt; 返回首页</a></section>
+	<footer>&copy; CMUI.NET</footer>
+</article>
+<script src="/demo/v2/static/baixing/js/dist/lib.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/cmui.js"></script>
+<script src="/demo/v2/static/baixing/js/dist/demo.js"></script>
+</body>
+</html>
